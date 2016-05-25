@@ -2,8 +2,8 @@
 	require('dbconfig.php');
 
 	$q = intval(@$_REQUEST['q']);
-	$sql_Area = 'SELECT are_id, are_c, are_e FROM area WHERE dis_id='.$q.' order by are_e';
-	$result = mysqli_query($link,$sql_Area);
+	$sql = 'SELECT are_id, are_e FROM area WHERE dis_id='.$q.' order by are_e';
+	$result = mysqli_query($link,$sql);
 	
 	if (!$result) {
 	    echo "DB Error, could not query the database\n";

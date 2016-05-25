@@ -1,8 +1,8 @@
 ﻿<?php 
 	require('dbconfig.php');
 	$q = intval(@$_REQUEST['q']);
-	$sql_District = 'SELECT dis_id, dis_c, dis_e FROM district WHERE reg_id='.$q.' order by dis_c';
-	$result = mysqli_query($link,$sql_District);
+	$sql = 'SELECT dis_id, dis_c FROM district WHERE reg_id='.$q.' order by dis_c';
+	$result = mysqli_query($link,$sql);
 	
 	if (!$result) {
 	    echo "DB Error, could not query the database\n";

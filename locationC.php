@@ -1,10 +1,10 @@
 ﻿<?php 
-include ('dbconfig.php');
+    require('dbconfig.php');
 
 	$q = intval(@$_REQUEST['q']);
 	
-	$sql_Location = 'SELECT id, qty, lat, lng, loc_c, loc_e, LatLng FROM location WHERE are_id='.$q.' order by loc_c';
-	$result = mysqli_query($link,$sql_Location);
+	$sql= 'SELECT id, loc_c FROM location WHERE are_id='.$q.' order by loc_c';
+	$result = mysqli_query($link,$sql);
 	
 	if (!$result) {
 	    echo "DB Error, could not query the database\n";

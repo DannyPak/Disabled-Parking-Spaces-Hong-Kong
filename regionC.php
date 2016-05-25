@@ -1,9 +1,9 @@
 <?php
-		include('dbconfig.php');
+		require('dbconfig.php');
 		
 		
-		$sql_Region = 'SELECT distinct reg_id, reg_c, reg_e FROM region';
-		$result = mysqli_query($link,$sql_Region);
+		$sql = 'SELECT distinct reg_id, reg_c FROM region';
+		$result = mysqli_query($link,$sql);
 		
 		if (!$result) {
 		    echo "DB Error, could not query the database\n";

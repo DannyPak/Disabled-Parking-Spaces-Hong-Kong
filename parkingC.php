@@ -1,9 +1,9 @@
 ﻿<?php
 	
-	include ('dbconfig.php');
+	require('dbconfig.php');
 	$q = intval(@$_REQUEST['q']);
-	$sql_parking = 'SELECT qty, lat, lng FROM location WHERE id='.$q;
-	$result = mysqli_query($link,$sql_parking);
+	$sql = 'SELECT qty, lat, lng FROM location WHERE id='.$q;
+	$result = mysqli_query($link,$sql);
 	
 	if (!$result) {
 	    echo "DB Error, could not query the database\n";
