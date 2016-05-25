@@ -21,11 +21,11 @@
 		<script type="text/javascript" language="javascript" src="js/map.js"></script>
 		<script>
 				$('#mobile-nav').click(function(event) {
-				$('nav').toggleClass('active');
+					$('nav').toggleClass('active');
 				});
 		
 				$('#sch-btn').click(function(event) {
-				$('nav').toggleClass('active');
+					$('nav').toggleClass('active');
 				});
 		</script>
 		<style> 
@@ -53,7 +53,7 @@
 	
 	
 	<nav>
-		<div id="txtRegion" class="leftContent"><?php include('regionC.php'); ?></div>
+		<div id="txtRegion" class="leftContent"><?php require('regionC.php'); ?></div>
 		<div id="txtDistrict" class="leftContent"></div>									
 		<div id="txtArea" class="leftContent"></div>							
 		<div id="txtLocation" class="leftContent"></div>						

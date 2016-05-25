@@ -3,12 +3,12 @@
 	
 	function parseToXML($htmlStr)
 	{
-	$xmlStr=str_replace('<','&lt;',$htmlStr);
-	$xmlStr=str_replace('>','&gt;',$xmlStr);
-	$xmlStr=str_replace('"','&quot;',$xmlStr);
-	$xmlStr=str_replace("'",'&#39;',$xmlStr);
-	$xmlStr=str_replace("&",'&amp;',$xmlStr);
-	return $xmlStr;
+		$xmlStr=str_replace('<','&lt;',$htmlStr);
+		$xmlStr=str_replace('>','&gt;',$xmlStr);
+		$xmlStr=str_replace('"','&quot;',$xmlStr);
+		$xmlStr=str_replace("'",'&#39;',$xmlStr);
+		$xmlStr=str_replace("&",'&amp;',$xmlStr);
+		return $xmlStr;
 	}
 	
 	$sql = 'SELECT * FROM location';
@@ -25,14 +25,14 @@
 	
 	while ($row = @mysqli_fetch_assoc($result)){
   // ADD TO XML DOCUMENT NODE
-  echo '<marker ';
-  echo 'id="' . parseToXML($row['id']) . '" ';
-  echo 'loc_c="' . parseToXML($row['loc_c']) . '" ';
-  echo 'loc_e="' . parseToXML($row['loc_e']) . '" ';
-  echo 'lat="' . $row['lat'] . '" ';
-  echo 'lng="' . $row['lng'] . '" ';
-  echo 'qty="' . $row['qty'] . '" ';
-  echo '/>';}
-
-echo '</markers>';
+	  echo '<marker ';
+	  echo 'id="' . parseToXML($row['id']) . '" ';
+	  echo 'loc_c="' . parseToXML($row['loc_c']) . '" ';
+	  echo 'loc_e="' . parseToXML($row['loc_e']) . '" ';
+	  echo 'lat="' . $row['lat'] . '" ';
+	  echo 'lng="' . $row['lng'] . '" ';
+	  echo 'qty="' . $row['qty'] . '" ';
+	  echo '/>';
+	  }	
+	echo '</markers>';
 ?>

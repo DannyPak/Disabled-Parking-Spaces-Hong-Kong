@@ -9,17 +9,32 @@ $(document).ready(function() {
     $("div#labelQty").removeClass("hidden");
  	$('#en').click(function() {
             window.location.href = 'index_e.php';         
-        });    
-    
+        });   
     $('#tc').click(function() {
-            window.location.href = 'index.php';
-           
-        });
-     
+            window.location.href = 'index.php';           
+        });     
 	});
+	
+	
+function XMLConnect(placeHolder,URL,str){
 
-function showDistrictC(str) {
+	if (str.length == 0) {
+        document.getElementById(placeHolder).innerHTML = "";
+        return;
+   		} else {
+        xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById(placeHolder).innerHTML = xmlhttp.responseText;
+            }
+        };
+        xmlhttp.open("GET", URL + str, true);
+        xmlhttp.send();
+    }	
+}
+	
 
+function showDistrict(str,URL) {
 	$('#Cbo_Area').val('0');
 	$('#Cbo_Location').val('0');
 	$('#gobutton').hide();
@@ -27,21 +42,60 @@ function showDistrictC(str) {
 	$('#strbutton').hide();
 	$('#schbutton').hide();
 	$('#txtQty').hide();
-    if (str.length == 0) {
-        document.getElementById("txtDistrict").innerHTML = "";
-        return;
-   		} else {
-        xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                document.getElementById("txtDistrict").innerHTML = xmlhttp.responseText;
-            }
-        };
+	XMLConnect("txtDistrict",URL,str);   
+	document.getElementById("Cbo_Area").disabled = true;
+	document.getElementById("Cbo_Location").disabled = true;
 
-        xmlhttp.open("GET", "districtC.php?q=" + str, true);
-        xmlhttp.send();
-    }
-    
+}
+
+function showArea(str, URL) {
+	$('#Cbo_Location').val('0');
+	$('#gobutton').hide();
+	$('#mapbutton').hide();
+	$('#strbutton').hide();
+	$('#schbutton').hide();
+	$('#txtQty').hide();
+	XMLConnect("txtArea",URL,str);
+    document.getElementById("Cbo_Location").disabled = true;
+}
+
+function showLocation(str,URL) {
+	$('#gobutton').hide();
+	$('#mapbutton').hide();
+	$('#strbutton').hide();
+	$('#schbutton').hide();
+	$('#txtQty').hide();
+	XMLConnect("txtLocation",URL,str);
+}
+
+
+function showQty(str,URL)
+{
+	$('#schbutton').show();
+	$('#txtQty').show();
+	XMLConnect("txtQty",URL,str);
+   
+}
+
+function doNothing() {}
+
+
+
+
+
+
+
+
+/*function showDistrictC(str) {
+
+	$('#Cbo_Area').val('0');
+	$('#Cbo_Location').val('0');
+	$('#gobutton').hide();
+	$('#mapbutton').hide();
+	$('#strbutton').hide();
+	$('#schbutton').hide();
+	$('#txtQty').hide();	
+	XMLConnect("txtDistrict","districtC.php?q=",str);   
 	document.getElementById("Cbo_Area").disabled = true;
 	document.getElementById("Cbo_Location").disabled = true;
 
@@ -57,33 +111,20 @@ function showDistrictE(str) {
 	$('#strbutton').hide();
 	$('#schbutton').hide();
 	$('#txtQty').hide();
-
-
-
-
-    if (str.length == 0) {
-        document.getElementById("txtDistrict").innerHTML = "";
-        return;
-   		} else {
-        xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                document.getElementById("txtDistrict").innerHTML = xmlhttp.responseText;
-            }
-        };
-
-        xmlhttp.open("GET", "districtE.php?q=" + str, true);
-        xmlhttp.send();
-    }
-    
+	XMLConnect("txtDistrict","districtE.php?q=",str);   
 	document.getElementById("Cbo_Area").disabled = true;
 	document.getElementById("Cbo_Location").disabled = true;
 
 }
+*/
 
 
 
-function showAreaC(str) {
+
+
+
+
+/*function showAreaC(str) {
 
 	$('#Cbo_Location').val('0');
 	$('#gobutton').hide();
@@ -91,22 +132,7 @@ function showAreaC(str) {
 	$('#strbutton').hide();
 	$('#schbutton').hide();
 	$('#txtQty').hide();
-
-
-    if (str.length == 0) {
-        document.getElementById("txtArea").innerHTML = "";
-        return;
-   		} else {
-        xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                document.getElementById("txtArea").innerHTML = xmlhttp.responseText;
-            }
-        };
-
-        xmlhttp.open("GET", "areaC.php?q=" + str, true);
-        xmlhttp.send();
-    }
+	XMLConnect("txtArea","areaC.php?q=",str);
     document.getElementById("Cbo_Location").disabled = true;
 }
 
@@ -119,26 +145,12 @@ function showAreaE(str) {
 	$('#strbutton').hide();
 	$('#schbutton').hide();
 	$('#txtQty').hide();
-
-
-    if (str.length == 0) {
-        document.getElementById("txtArea").innerHTML = "";
-        return;
-   		} else {
-        xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                document.getElementById("txtArea").innerHTML = xmlhttp.responseText;
-            }
-        };
-
-        xmlhttp.open("GET", "areaE.php?q=" + str, true);
-        xmlhttp.send();
-    }
-    document.getElementById("Cbo_Location").disabled = true;
+	XMLConnect("txtArea","areaE.php?q=",str);
+   document.getElementById("Cbo_Location").disabled = true;
 }
+*/
 
-
+/*
 function showLocationC(str) {
 
 	$('#gobutton').hide();
@@ -146,25 +158,7 @@ function showLocationC(str) {
 	$('#strbutton').hide();
 	$('#schbutton').hide();
 	$('#txtQty').hide();
-
-    if (str.length == 0) 
-    {
-        document.getElementById("txtLocation").innerHTML = "";
-        return;
-   	} else
-   	{
-        xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() 
-        {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
-            {
-                document.getElementById("txtLocation").innerHTML = xmlhttp.responseText;
-            }
-        };
-		
-        xmlhttp.open("GET", "locationC.php?q=" + str, true);
-        xmlhttp.send();
-    }
+	XMLConnect("txtLocation","locationC.php?q=",str);
 }
 
 
@@ -177,51 +171,17 @@ function showLocationE(str) {
 	$('#strbutton').hide();
 	$('#schbutton').hide();
 	$('#txtQty').hide();
-
-    if (str.length == 0) 
-    {
-        document.getElementById("txtLocation").innerHTML = "";
-        return;
-   	} else
-   	{
-        xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() 
-        {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
-            {
-                document.getElementById("txtLocation").innerHTML = xmlhttp.responseText;
-            }
-        };
-		
-        xmlhttp.open("GET", "locationE.php?q=" + str, true);
-        xmlhttp.send();
-    }
+	XMLConnect("txtLocation","locationE.php?q=",str);
 }
+*/
 
-function showQtyC(str)
+
+
+/*function showQtyC(str)
 {
 	$('#schbutton').show();
 	$('#txtQty').show();
-	
-	
- 	if (str.length == 0) 
-  {
-        document.getElementById("txtQty").innerHTML = "";
-        return;
-  } else 
-  {
-        xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() 
-	        {
-	            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
-	            {
-	                document.getElementById("txtQty").innerHTML = xmlhttp.responseText;
-	            }
-	        };
-
-	 	xmlhttp.open("GET", "parkingC.php?q=" + str, true);
-	  	xmlhttp.send();
-    };
+	XMLConnect("txtQty","parkingC.php?q=",str);
    
 }
 
@@ -229,44 +189,12 @@ function showQtyE(str)
 {
 	$('#schbutton').show();
 	$('#txtQty').show();
- 	if (str.length == 0) 
-  {
-        document.getElementById("txtQty").innerHTML = "";
-        return;
-  } else 
-  {
-        xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() 
-	        {
-	            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
-	            {
-	                document.getElementById("txtQty").innerHTML = xmlhttp.responseText;
-	            }
-	        };
-
-	 	xmlhttp.open("GET", "parkingE.php?q=" + str, true);
-	  	xmlhttp.send();
-    };
-   
+	XMLConnect("txtQty","parkingE.php?q=",str);
+  
 }
+*/
 
-function downloadUrl(url,callback) {
- var request = window.ActiveXObject ?
-     new ActiveXObject('Microsoft.XMLHTTP') :
-     new XMLHttpRequest;
 
- request.onreadystatechange = function() {
-   if (request.readyState == 4) {
-     request.onreadystatechange = doNothing;
-     callback(request, request.status);
-   }
- };
-
- request.open('GET', url, true);
- request.send(null);
-};
-
-function doNothing() {}
 
 
 

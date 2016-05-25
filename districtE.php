@@ -9,10 +9,10 @@
 	    echo 'MySQL Error: ' . mysqli_error();
 	    exit;
 	}
-	
-	echo '<select name="Cbo_District" id="Cbo_District" class="select" onchange="showAreaE(this.value)">';
-	echo '<option value="0" selected disabled>Please Select District...</option>'; 
-
+?>	
+	<select name="Cbo_District" id="Cbo_District" class="select" onchange="showArea(this.value,'areaE.php?q=')">
+	<option value="0" selected disabled>Please Select District...</option>
+<?php
 	while ($row = mysqli_fetch_assoc($result)) {
 	    echo '<option value="'.$row['dis_id'].'">'.$row['dis_e'].'</option>';
 	}

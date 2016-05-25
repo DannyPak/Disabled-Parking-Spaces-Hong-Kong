@@ -57,7 +57,7 @@
 	
 	
 	<nav>
-		<div id="txtRegion" class="leftContent"><?php include('regionE.php'); ?></div>
+		<div id="txtRegion" class="leftContent"><?php require('regionE.php'); ?></div>
 		<div id="txtDistrict" class="leftContent"></div>									
 		<div id="txtArea" class="leftContent"></div>							
 		<div id="txtLocation" class="leftContent"></div>						

@@ -11,8 +11,10 @@
 		    echo 'MySQL Error: ' . mysqli_error();
 		    exit;
 		}
-		echo '<select id="Cbo_Region" class="select" onchange="showDistrictE(this.value)">';
-		echo '<option value="0" selected disabled>Please Select Region...</option>';
+		?>
+		<select id="Cbo_Region" class="select" onchange="showDistrict(this.value , 'districtE.php?q=')">
+		<option value="0" selected disabled>Please Select Region...</option>
+		<?php
 		while ($row = mysqli_fetch_assoc($result)) {
 		    echo '<option class="CboRegion" value="'.$row['reg_id'].'">'.$row['reg_e'].'</option>';
 		}
