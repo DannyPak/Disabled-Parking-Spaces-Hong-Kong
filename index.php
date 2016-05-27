@@ -74,17 +74,15 @@
 				</div>	
 			</div>
 		</div>
-		</div>
-		<div>
-		
-		
-			<div id="map_canvas"></div>	
-			<div id="mobile-nav" ></div>	
-			<div id="go-btn"><button type="button" id="gobutton" class="hidden btn" onclick="gotomap()">在 GOOGLE MAPS 開啓</button></div>
-			<div id="str-btn"><button type="button" id="strbutton" class="hidden btn" onclick="panoview()">街景服務</button></div>
-			<div id="map-btn"><button type="button" id="mapbutton" class="hidden btn" onclick="geocode()">返回地圖</button></div>
-		</div>
-		<div id="footer">(C)Copyright</div>
+	</div>
+	<div>		
+		<div id="map_canvas"></div>	
+		<div id="mobile-nav" ></div>	
+		<div id="go-btn"><button type="button" id="gobutton" class="hidden btn" onclick="gotomap()">在 GOOGLE MAPS 開啓</button></div>
+		<div id="str-btn"><button type="button" id="strbutton" class="hidden btn" onclick="panoview()">街景服務</button></div>
+		<div id="map-btn"><button type="button" id="mapbutton" class="hidden btn" onclick="geocode()">返回地圖</button></div>
+	</div>
+	<div id="footer">(C)Copyright</div>
 		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
   		<script src="js/mostrar_nav.js"></script>
   		

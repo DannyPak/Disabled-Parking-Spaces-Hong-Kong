@@ -74,7 +74,7 @@
 			// cover: the open levels will be on top of any previous open level
 			type : 'cover', // overlap || cover
 			// space between each overlaped level
-			levelSpacing : 40,
+			levelSpacing : 20,
 			// classname for the element (if any) that when clicked closes the current level
 			backClass : 'mp-back'
 		},

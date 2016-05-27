@@ -18,7 +18,7 @@ function initialize()
 	
 	var map = new google.maps.Map(document.getElementById("map_canvas"),{
 	center: new google.maps.LatLng(22.3038046,114.1807333),
-	zoom: 11,
+	zoom: 14,
 	mapTypeId: google.maps.MapTypeId.ROADMAP,
 	zoomControl:false,
 	mapTypeControl:false,
@@ -79,14 +79,16 @@ function bindInfoWindow(marker, map, infoWindow, html) {
 }
 
 
-function geocode(){
+function geocode(lat,lng,qty){
 	initialize();
+
 	$('#gobutton').show();
 	$('#strbutton').show();
-	$('#mapbutton').hide();
-	$('#schbutton').show();
-	var lat = $('#lat').val();
-	var lng = $('#lng').val();	
+	$('#mapbutton').hide();	
+	window.lat = lat;
+	window.lng = lng;
+//	var lat = $('#lat').val();
+//	var lng = $('#lng').val();	
 	var address = new google.maps.LatLng(lat,lng); 	
 	var mapDiv = document.getElementById("map_canvas");
 	var myOptions = {
@@ -107,7 +109,7 @@ function geocode(){
 	});
 	
 	
-	var txtQty = document.getElementById("txtQty");
+	//var txtQty = document.getElementById("txtQty");
 	
 	marker.setMap(map);
 	
@@ -116,7 +118,7 @@ function geocode(){
   			'<div id="iw-icon"><img src="img/parking.png"></div>'+  	
   			//'<div id="iw-icon"><span class="map-icon map-icon-parking"></span></div>'+  	
   			'<div class="iw-title">'+
-  			txtQty.innerHTML+'</div></div>'
+  			qty +'</div></div>'
   	});
 
 	google.maps.event.addListener(marker, 'click', function() {
@@ -125,13 +127,13 @@ function geocode(){
   	infowindow.open(map,marker);  	
   	google.maps.event.addListener(infowindow, 'domready', function() {
 
-   	// Reference to the DIV which receives the contents of the infowindow using jQuery
+   		// Reference to the DIV which receives the contents of the infowindow using jQuery
    		var iwOuter = $('.gm-style-iw');
 
-   /* The DIV we want to change is above the .gm-style-iw DIV.
-    * So, we use jQuery and create a iwBackground variable,
-    * and took advantage of the existing reference to .gm-style-iw for the previous DIV with .prev().
-    */
+	   /* The DIV we want to change is above the .gm-style-iw DIV.
+	    * So, we use jQuery and create a iwBackground variable,
+	    * and took advantage of the existing reference to .gm-style-iw for the previous DIV with .prev().
+	    */
    		var iwBackground = iwOuter.prev();
 
    		// Remove the background shadow DIV
@@ -172,22 +174,24 @@ function geocode(){
 			$(this).css({opacity: '1'});
 		});
 	});
+	$('#schbutton').show();
+
 }
 
 
 function gotomap(){
 	
 	var zoom = map.getZoom();
-	var lat = $('#lat').val();
-	var lng = $('#lng').val();	
+	//var lat = $('#lat').val();
+	//var lng = $('#lng').val();	
     window.open('http://maps.google.com/maps?z='+ zoom +'&q=loc:' + lat + '+' + lng);
     
 }
 
 function panoview(){
 	
-	var lat = $('#lat').val();
-	var lng = $('#lng').val();	
+	//var lat = $('#lat').val();
+	//var lng = $('#lng').val();	
 	var address = new google.maps.LatLng(lat,lng); 
 	var panorama = new google.maps.StreetViewPanorama(
 		      	document.getElementById("map_canvas"), {

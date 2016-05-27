@@ -12,7 +12,7 @@ html, body, #map_canvas{
 
 #map_canvas{
 	position:relative;
-	top:65px;
+	top:40px;
 	z-index:1
 	}
 
