@@ -6,13 +6,16 @@ $(document).ready(function() {
     $("div#strbutton").removeClass("hidden");
     $("div#mapbutton").removeClass("hidden");
     $("div#gobutton").removeClass("hidden");
- 	$('#en').click(function() {
+    
+    $('#en').click(function() {
             window.location.href = 'index_e.php';         
         });   
     $('#tc').click(function() {
             window.location.href = 'index.php';           
-        });     
-	});
+        });       $('locLink').click(function(){
+                        window.alert("fdfdafda");
+                    });
+    });
 	
 	
 function XMLConnect(placeHolder,URL,str){
