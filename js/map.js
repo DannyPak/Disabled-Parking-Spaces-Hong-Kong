@@ -2,66 +2,78 @@
 
 var map;
 var marker;
+var loc_c;
+var loc_e;
+var lat;
+var lng;
+var qty;
+
 
 
 
 function trace(message) 
 {
-	if (typeof console != 'undefined') 
-	{
-		console.log(message);
-	}
+    if (typeof console != 'undefined') 
+        {
+        console.log(message);
+        }
 }
 
-function initialize()
-{	
-	$('#gobutton').hide();
-	$('#mapbutton').hide();
-	$('#strbutton').hide();
-	$('#schbutton').hide();
-        
-	
-	var map = new google.maps.Map(document.getElementById("map_canvas"),{
-	center: new google.maps.LatLng(22.3038046,114.1807333),
-	zoom: 14,
-	mapTypeId: google.maps.MapTypeId.ROADMAP,
-	zoomControl:false,
-	mapTypeControl:false,
-	streetViewControl:false
-	});
+function initialize(){	
+    $('#gobutton').hide();
+    $('#mapbutton').hide();
+    $('#strbutton').hide();
+    $('#schbutton').hide();
 
-	var infoWindow = new google.maps.InfoWindow;
-	
-	downloadUrl("XMLDOM.php", function(data) {
-  		var xml = data.responseXML;
-  		var markers = xml.documentElement.getElementsByTagName("marker");
-  		for (var i = 0; i < markers.length; i++) {
-                        var id = markers[i].getAttribute("id");
-                        var loc_c = markers[i].getAttribute("loc_c");
-                        var loc_e = markers[i].getAttribute("loc_e");
-                        var qty = markers[i].getAttribute("qty");
-                        var point = new google.maps.LatLng(
-                            parseFloat(markers[i].getAttribute("lat")),
-                            parseFloat(markers[i].getAttribute("lng")));
-                        var html = '<div id="iw-container">' + 
-                                   '<div class = "iw-title">'+
-                                    loc_c + 
-                                    '<br>'+ 
-                                    loc_e +
-                                    '</div></div>';
+    var map = new google.maps.Map(document.getElementById("map_canvas"),{
+        center: new google.maps.LatLng(22.3038046,114.1807333),
+        zoom: 14,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        zoomControl:false,
+        mapTypeControl:false,
+        streetViewControl:false
+    });
+    
+    var infoWindow = new google.maps.InfoWindow;
 
+    downloadUrl("XMLDOM.php", function(data) {
+    var xml = data.responseXML;
+    var markers = xml.documentElement.getElementsByTagName("marker");
+    for (var i = 0; i < markers.length; i++) {
+       var id = markers[i].getAttribute("id");
+       var loc_c = markers[i].getAttribute("loc_c");
+       var loc_e = markers[i].getAttribute("loc_e");
+       var qty = markers[i].getAttribute("qty");
+       var lat = markers[i].getAttribute("lat");
+       var lng = markers[i].getAttribute("lng");
+       var point = new google.maps.LatLng(parseFloat(lat),parseFloat(lng));
+       var html ='<div id="iw-container">' + 
+                        '<div class = "iw-right-content">' + 
+                            '<input type="image" src="img/direction-2.png" alt="View in Google Maps" onclick="goMap('+lat+','+lng+')">'+
+                        '</div>' +
+                        '<div class = "iw-title"><p class ="iw-title-p1">'+
+                            loc_c + 
+                            '<br>'+ 
+                            loc_e +
+                            '<br>車位數量 : '+ qty + 
+                            '<br><span>*非實時</span></p>' + 
+                        '</div>'+
+                    '</div>'                                
+      
+      var marker = new google.maps.Marker({
+        map: map,
+        position: point,
+        icon: 'img/parking.png'  
+    });            
+    bindInfoWindow(marker, map, infoWindow, html);
 
-                        var marker = new google.maps.Marker({
-                                map: map,
-                                position: point,
-                                icon: 'img/parking.png'  
-    	  		
-    		});
-    		bindInfoWindow(marker, map, infoWindow, html);
-  		}
-	});
 	
+    }
+    });
+
 }
+
+
 
 function downloadUrl(url,callback) {
     var request = window.ActiveXObject ?
@@ -78,6 +90,117 @@ function downloadUrl(url,callback) {
 	request.open('GET', url, true);
 	request.send(null);
 };
+
+function bindInfoWindow(marker, map, infoWindow, html) {
+    google.maps.event.addListener(marker, 'click', function() {
+    infoWindow.setContent(html);
+    infoWindow.open(map, marker);
+    iwStyle();
+  });
+}
+
+function geocode(lat,lng,qty,loc_c,loc_e){
+	initialize();       
+//	$('#gobutton').show();
+	$('#strbutton').show();
+	$('#mapbutton').hide();	
+	window.lat = lat;
+	window.lng = lng;
+
+//	var lat = $('#lat').val();
+//	var lng = $('#lng').val();	
+	var address = new google.maps.LatLng(lat,lng); 	
+	var mapDiv = document.getElementById("map_canvas");
+	var myOptions = {
+		zoom: 18,
+		center: address,
+		animation:google.maps.Animation.DROP,
+		mapTypeId: google.maps.MapTypeId.ROADMAP,
+		zoomControl:false,
+		mapTypeControl:false,
+		streetViewControl:false
+
+	};
+	
+	map = new google.maps.Map(mapDiv, myOptions);
+	marker =new google.maps.Marker({
+		position:address,
+		animation:google.maps.Animation.BOUNCE,
+	});
+	
+	
+
+	
+	marker.setMap(map);
+	
+	var infoWindow = new google.maps.InfoWindow({
+                //content:iwHtml;
+  	content: '<div id="iw-container">' + 
+                        '<div class = "iw-right-content">' + 
+                        '<input type="image" src="img/direction-2.png" alt="View in Google Maps" onclick="goMap('+lat+','+lng+')">'+
+                        '</div>' +
+                        '<div class = "iw-title"><p>'+
+                            loc_c + 
+                            '<br>'+ 
+                            loc_e +
+                            '<br>車位數量 : '+ qty + 
+                            '<br><span>*非實時</span></p>' + 
+                        '</div>'+
+                    '</div>'
+  	});
+
+	google.maps.event.addListener(marker, 'click', function() {
+ 		infoWindow.open(map,marker);
+                
+  	});	
+  	infoWindow.open(map,marker);  	
+        
+        
+  	google.maps.event.addListener(infoWindow, 'domready', function() {   
+            iwStyle();
+	});
+	$('#schbutton').show();
+       
+
+}
+
+function gotomap(){
+	
+	var zoom = map.getZoom();
+	//var lat = $('#lat').val();
+	//var lng = $('#lng').val();	
+    window.open('http://maps.google.com/maps?z='+ zoom +'&q=loc:' + lat + '+' + lng);
+    
+}
+
+function panoview(){
+	
+	//var lat = $('#lat').val();
+	//var lng = $('#lng').val();	
+	var address = new google.maps.LatLng(lat,lng); 
+	var panorama = new google.maps.StreetViewPanorama(
+		      	document.getElementById("map_canvas"), {
+		        position:address,
+		          pov: {
+		          heading: 90,
+		          pitch: -20
+		        }
+		      });
+	map.setStreetView(panorama);
+	$('#strbutton').hide();
+	$('#mapbutton').show();
+	
+}
+
+function goMap(lat,lng){
+    
+    	//var zoom = map.getZoom();
+	//var lat = $('#lat').val();
+	//var lng = $('#lng').val();	
+
+    window.open('http://maps.google.com/maps?q=loc:' + lat + '+' + lng);
+}
+
 
 function iwStyle(){
             
@@ -121,114 +244,7 @@ function iwStyle(){
 	iwCloseBtn.mouseout(function(){
             $(this).css({opacity: '1'});
 	});
-    }
-
-
-function bindInfoWindow(marker, map, infoWindow, html) {
-  	google.maps.event.addListener(marker, 'click', function() {
-            infoWindow.setContent(html);
-            infoWindow.open(map, marker);
-            iwStyle();
-            
-            
-  });
-}
-
-
-
-
-function geocode(lat,lng,qty,locc,loce){
-	initialize();
-        
-        
-        
-	$('#gobutton').show();
-	$('#strbutton').show();
-	$('#mapbutton').hide();	
-	window.lat = lat;
-	window.lng = lng;
-
-//	var lat = $('#lat').val();
-//	var lng = $('#lng').val();	
-	var address = new google.maps.LatLng(lat,lng); 	
-	var mapDiv = document.getElementById("map_canvas");
-	var myOptions = {
-		zoom: 18,
-		center: address,
-		animation:google.maps.Animation.DROP,
-		mapTypeId: google.maps.MapTypeId.ROADMAP,
-		zoomControl:false,
-		mapTypeControl:false,
-		streetViewControl:false
-
-	};
-	
-	map = new google.maps.Map(mapDiv, myOptions);
-	marker =new google.maps.Marker({
-		position:address,
-		animation:google.maps.Animation.BOUNCE,
-	});
-	
-	
-
-	
-	marker.setMap(map);
-	
-	var infowindow = new google.maps.InfoWindow({
-  	content:'<div id="iw-container">'+
-                //'<div id="iw-icon"><img src="img/parking.png"></div>'+  	
-  		'<div class="iw-title">'+
-  		locc+ '<br>' +
-                loce +'<br>車位數量: '+ 
-                qty +
-                '</div></div>'
-  	});
-
-	google.maps.event.addListener(marker, 'click', function() {
- 		infowindow.open(map,marker);
-                
-  	});	
-  	infowindow.open(map,marker);  	
-        
-        
-  	google.maps.event.addListener(infowindow, 'domready', function() {   
-            iwStyle();
-	});
-	$('#schbutton').show();
-       
-
-}
-
-function gotomap(){
-	
-	var zoom = map.getZoom();
-	//var lat = $('#lat').val();
-	//var lng = $('#lng').val();	
-    window.open('http://maps.google.com/maps?z='+ zoom +'&q=loc:' + lat + '+' + lng);
-    
-}
-
-function panoview(){
-	
-	//var lat = $('#lat').val();
-	//var lng = $('#lng').val();	
-	var address = new google.maps.LatLng(lat,lng); 
-	var panorama = new google.maps.StreetViewPanorama(
-		      	document.getElementById("map_canvas"), {
-		        position:address,
-		          pov: {
-		          heading: 90,
-		          pitch: -20
-		        }
-		      });
-	map.setStreetView(panorama);
-	$('#strbutton').hide();
-	$('#mapbutton').show();
-	
-}
-
-
-	
+    }	
 
 		
 		

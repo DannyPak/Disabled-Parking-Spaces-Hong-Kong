@@ -10,7 +10,7 @@
     			
 		<title>Disabled Parking Spaces Hong Kong</title>
 		
-		<link rel="icon" type="image/png" href="img/favicon.png">
+		<link rel="icon" type="image/png" href="img/disabled_disable_wheelchair-512.png">
 		<link rel="stylesheet" type="text/css" href="css/style_m.css">	
 		<link rel="stylesheet" type="text/css" href="css/estilos.css">
 		<link rel="stylesheet" type="text/css" href="css/map-icons.css">
@@ -28,19 +28,7 @@
 		<script src="js/modernizr.custom.js"></script>
 		<script type="text/javascript" src="js/map-icons.js"></script>
 
-		<script>
-				$('#mobile-nav').click(function(event) {
-					$('nav').toggleClass('active');
-				});
-		
-				$('#sch-btn').click(function(event) {
-					$('nav').toggleClass('active');
-				});
-                                
-                                $('#locLink').click(function(event){
-                                    toggleClass('_resetMenu');
-                                })
-		</script>
+
 		<style> 
 		@font-face {
 		   font-family: myFont;
@@ -78,14 +66,15 @@
 				<div class="scroller"><!-- this is for emulating position fixed of the nav -->
 					<div class="block block-40 clearfix">
 						<p><a href="#" id="trigger" class="menu-trigger"><img id="logo" alt="logo" src="img/logo.png" ></a></p>
-					</div>														
+					</div>	
+                                    
 				<div id="map_canvas"></div>
 				</div><!-- /scroller -->
-				<div>					
+                                <div>				
 <!--					<div id="sch-btn"><button type="button" id="schbutton" class="hidden schbtn" onclick="geocode()">搜尋</button></div>-->
-					<div id="go-btn"><button type="button" id="gobutton" class="hidden btn" onclick="gotomap()">在 GOOGLE MAPS 開啓</button></div>
+					<div id="go-btn"><button type="button" id="gobutton" class="hidden btn" onclick="gotomap()">在Google Maps開啓</button></div>
 					<div id="str-btn"><button type="button" id="strbutton" class="hidden btn" onclick="panoview()">街景服務</button></div>
-					<div id="map-btn"><button type="button" id="mapbutton" class="hidden btn" onclick="geocode()">返回地圖</button></div>
+					<div id="map-btn"><button type="button" id="mapbutton" class="hidden btn" onclick="geocode(lat,lng,qty,loc_c,loc_e)">返回地圖</button></div>
 				</div>
 				<div id="footer">(C)Copyright</div>
 			</div><!-- /pusher -->

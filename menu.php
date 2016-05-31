@@ -73,7 +73,7 @@ for ($r = 0; $r < count($regs); $r++) {
 
                     echo '<ul>';
                     echo '<li class="icon icon-arrow-left">';
-                    echo '<a class="icon" href="#" onclick="document.getElementById("locTitle").innerHTML = \''. $ares[$d]['are_c'] .'\'">' . $ares[$a]['are_c'] . '</a>';
+                    echo '<a class="icon" href="#" onclick="window.alert("this is ")">' . $ares[$a]['are_c'] . '</a>';
                     echo '<div class="mp-level">';
                     echo '<h2 class="icon" id="locTitle">地點</h2>';
                     echo '<a class="mp-back" href="#">返回</a>';

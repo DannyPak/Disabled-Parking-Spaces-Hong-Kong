@@ -1,4 +1,4 @@
-﻿var xmlhttp;
+var xmlhttp;
 
 
 $(document).ready(function() {
@@ -12,11 +12,13 @@ $(document).ready(function() {
         });   
     $('#tc').click(function() {
             window.location.href = 'index.php';           
-        });       $('locLink').click(function(){
-                        window.alert("fdfdafda");
-                    });
+        });   
     });
-	
+
+function locTitle(){
+    window.alert("this is aler");
+    document.getElementById("locTitle").innerHTML = "hahahha";
+}
 	
 function XMLConnect(placeHolder,URL,str){
 

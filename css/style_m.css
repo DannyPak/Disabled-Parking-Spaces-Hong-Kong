@@ -7,14 +7,14 @@
 html, body, #map_canvas{
   width: 100%;
   height: 100%;
-    overflow-x: hidden;
+  overflow-x: hidden;
   overflow-y: hidden;
 }
 
 
 #map_canvas{
 	position:relative;
-	top:65px;
+	top: 35px;
 	z-index:1
 	}
 
@@ -83,16 +83,16 @@ img {
 }
 
 .btn {		
-	margin-top:0.5em;
-	margin-right:10px;
-	height:2.75em;
-	width:130px;
-	border:1px solid white; 
-	color:white;
-	font-size:x-small;
-	background-color: #F1A80D;
-	cursor: pointer;
-	font-family:"Microsoft JhengHei","Trebuchet MS"
+    margin-top:0.5em;
+    margin-right:10px;
+    height:2.75em;
+    width:135px;
+    border:1px solid white; 
+    color:white;
+    font-size:x-small;
+    background-color: #F1A80D;
+    cursor: pointer;
+    font-family:"Microsoft JhengHei","Trebuchet MS"
 	
    	}
 
@@ -196,38 +196,78 @@ img {
   
 }
 
+.gm-style-iw {
+   width: 220px !important;
+   top: 15px !important;
+   left: 0 !important;
+   background-color: #fff;
+   box-shadow: 0 1px 6px #48b5e9;
+   border: 1px solid #48b5e9;
+   border-radius: 5px 5px 5px 5px; 
+   
+   }
 	
 #iw-container, .iw-title {
 	
    font-family: "Microsoft JhengHei","Trebuchet MS";
-   font-size: 14px;
-   font-weight: 100;	
-   color: white;
-   background-color: #48b5e9;
-   
-   	margin: 1px 1px 1px 1px;
-	padding:5px 1px 5px 1px;  
+   font-size: 12px;
+   font-weight: 100;        
+   margin: 1px 1px 1px 1px;   
    text-align:center;
    border-radius: 5px 5px 5px 5px; 
+   min-height: 80px;
+   overflow: hidden;
 }
 
-#iw-container{
-	width:216px;
+#iw-container{     
+    background-color: #48b5e9;     
+    width:216px;
+    
+}
+
+.iw-right-content{
+    min-height: 50px;
+    position:absolute; 
+    margin:0;
+    padding:5px 5px 5px 5px;
+    width:55px;
+    right:0;    
+    float:right;
+    background-color: #48b5e9;  
+    top:50%;
+    transform:translate(0,-50%);
+
+}
+
+.iw-title p{
+    margin:0;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-right:-50%;
+    transform: translate(-50%,-50%);
+    
+}
+
+.iw-title p span{
+    font-size: 10px;
+    
 }
 
 
-.iw-title {
-	width:210px;
-	min-height:40px;
+.iw-title {    
+    position:relative;
+    border-radius: 5px 0px 0px 5px; 
+    background-color: white; 
+    color:#48b5e9;
+    width:161px;    
+    overflow-wrap: break-word;
+    
 }
 
 
-#iw-icon{
 
-	float:left;
-	padding:2px 0px 1px 0px;
-		
-}
+
 
 .map-icon-parking{
 	font-size: 24px;
@@ -237,16 +277,11 @@ img {
 
 }
 
+.mp-level ul li{
+    font-size: 14px;
+    
+}
 
-.gm-style-iw {
-   width: 220px !important;
-   top: 15px !important;
-   left: 0 !important;
-   background-color: #fff;
-   box-shadow: 0 1px 6px #48b5e9;
-   border: 1px solid #48b5e9;
-   border-radius: 5px 5px 5px 5px; 
-   }
 
 	
 	
