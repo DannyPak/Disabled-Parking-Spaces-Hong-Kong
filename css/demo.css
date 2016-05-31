@@ -145,8 +145,7 @@ a:hover, a:focus {
 }
 
 .block {
-	float: left;
-	padding: 1em 3em;
+	float: left;           
 }
 
 .block-40 {

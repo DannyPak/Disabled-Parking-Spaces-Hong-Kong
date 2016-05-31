@@ -1,4 +1,4 @@
-/* global mlpushmenu, mlPushMenu */
+/* gobal mlpushmenu, mlPushMenu */
 
 var map;
 var marker;
@@ -8,9 +8,6 @@ var lat;
 var lng;
 var qty;
 
-
-
-
 function trace(message) 
 {
     if (typeof console != 'undefined') 
@@ -19,13 +16,15 @@ function trace(message)
         }
 }
 
+
+
 function initialize(){	
-    $('#gobutton').hide();
+   // $('#gobutton').hide();    //$('#schbutton').hide();
     $('#mapbutton').hide();
     $('#strbutton').hide();
-    $('#schbutton').hide();
 
-    var map = new google.maps.Map(document.getElementById("map_canvas"),{
+
+    var map = new google.maps.Map(document.getElementById("map_canvas"), {
         center: new google.maps.LatLng(22.3038046,114.1807333),
         zoom: 14,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -33,53 +32,77 @@ function initialize(){
         mapTypeControl:false,
         streetViewControl:false
     });
+    window.map = map;
+    
+ var remove_featureType = [
+    {
+      "featureType": "poi",
+      "elementType":"labels",
+      "stylers": [
+        { "visibility": "off" }
+      ]
+    },{
+      "featureType": "transit.station.bus",     
+      "elementType":"all",
+      "stylers": [
+        { "visibility": "off" }
+      ]
+  },{
+      "featureType": "transit.station.rail",     
+      "elementType":"labels",
+      "stylers": [
+        { "visibility": "off" }
+      ]
+  }
+ ]; 
+  
+  map.setOptions({styles: remove_featureType});
+  
+
     
     var infoWindow = new google.maps.InfoWindow;
+    
 
-    downloadUrl("XMLDOM.php", function(data) {
-    var xml = data.responseXML;
-    var markers = xml.documentElement.getElementsByTagName("marker");
-    for (var i = 0; i < markers.length; i++) {
-       var id = markers[i].getAttribute("id");
-       var loc_c = markers[i].getAttribute("loc_c");
-       var loc_e = markers[i].getAttribute("loc_e");
-       var qty = markers[i].getAttribute("qty");
-       var lat = markers[i].getAttribute("lat");
-       var lng = markers[i].getAttribute("lng");
-       var point = new google.maps.LatLng(parseFloat(lat),parseFloat(lng));
-       var html ='<div id="iw-container">' + 
-                        '<div class = "iw-right-content">' + 
-                            '<input type="image" src="img/direction-2.png" alt="View in Google Maps" onclick="goMap('+lat+','+lng+')">'+
-                        '</div>' +
-                        '<div class = "iw-title"><p class ="iw-title-p1">'+
-                            loc_c + 
-                            '<br>'+ 
-                            loc_e +
-                            '<br>車位數量 : '+ qty + 
-                            '<br><span>*非實時</span></p>' + 
-                        '</div>'+
-                    '</div>'                                
-      
-      var marker = new google.maps.Marker({
-        map: map,
-        position: point,
-        icon: 'img/parking.png'  
-    });            
-    bindInfoWindow(marker, map, infoWindow, html);
+    downloadUrl("XMLDOM.php", function(data){
+        var xml = data.responseXML;
+        var markers = xml.documentElement.getElementsByTagName("marker");
+        for (var i = 0; i < markers.length; i++) {
+            var id = markers[i].getAttribute("id");
+            var loc_c = markers[i].getAttribute("loc_c");
+            var loc_e = markers[i].getAttribute("loc_e");
+            var qty = markers[i].getAttribute("qty");
+            var lat = markers[i].getAttribute("lat");
+            var lng = markers[i].getAttribute("lng");
+            var point = new google.maps.LatLng(parseFloat(lat),parseFloat(lng));
+            var iwContent = '<div id="iw-container">\n\
+                                    <div class = "iw-right-content">\n\
+                                            <input type="image" src="img/direction-2.png" alt="View in Google Maps" onclick="goMap('+ lat + ',' + lng + ')">\n\
+                                    </div>\n\
+                                <div class = "iw-title">\n\
+                                        <p class ="iw-title-p1">'+ 
+                                        loc_c + 
+                                        '<br>'+ loc_e + 
+                                        '<br>車位數量 : '+ 
+                                        qty + 
+                                        '<br><span>  *非實時</span>\n\
+                                        </p>\n\
+                                    </div>\n\
+                                </div>';     
+            var marker = new google.maps.Marker({
+             map: map,
+             position: point,
+             icon: 'img/parking.png'  
+             });   
 
-	
-    }
+         bindInfoWindow(marker, map, infoWindow, iwContent);
+         }
     });
-
-}
-
-
+    }
 
 function downloadUrl(url,callback) {
     var request = window.ActiveXObject ?
     new ActiveXObject('Microsoft.XMLHTTP') :
     new XMLHttpRequest;
-
 	request.onreadystatechange = function() {
 		if (request.readyState == 4) {
 			request.onreadystatechange = doNothing;
@@ -100,17 +123,21 @@ function bindInfoWindow(marker, map, infoWindow, html) {
 }
 
 function geocode(lat,lng,qty,loc_c,loc_e){
+            $('#trigger').get(0).click();
 	initialize();       
 //	$('#gobutton').show();
 	$('#strbutton').show();
 	$('#mapbutton').hide();	
 	window.lat = lat;
 	window.lng = lng;
+        window.qty = qty;
+        window.loc_c = loc_c;
+        window.loc_e = loc_e;
 
 //	var lat = $('#lat').val();
 //	var lng = $('#lng').val();	
 	var address = new google.maps.LatLng(lat,lng); 	
-	var mapDiv = document.getElementById("map_canvas");
+	var map = document.getElementById("map_canvas");
 	var myOptions = {
 		zoom: 18,
 		center: address,
@@ -122,7 +149,33 @@ function geocode(lat,lng,qty,loc_c,loc_e){
 
 	};
 	
-	map = new google.maps.Map(mapDiv, myOptions);
+	map = new google.maps.Map(map, myOptions);
+              var remove_featureType = [
+               {
+                 "featureType": "poi",
+                 "elementType":"labels",
+                 "stylers": [
+                   { "visibility": "off" }
+                 ]
+               },{
+                 "featureType": "transit.station.bus",     
+                 "elementType":"all",
+                 "stylers": [
+                   { "visibility": "off" }
+                 ]
+             },{
+                 "featureType": "transit.station.rail",     
+                 "elementType":"labels",
+                 "stylers": [
+                   { "visibility": "off" }
+                 ]
+             }
+            ]; 
+
+             map.setOptions({styles: remove_featureType});
+        
+
+        
 	marker =new google.maps.Marker({
 		position:address,
 		animation:google.maps.Animation.BOUNCE,
@@ -131,22 +184,24 @@ function geocode(lat,lng,qty,loc_c,loc_e){
 	
 
 	
-	marker.setMap(map);
-	
-	var infoWindow = new google.maps.InfoWindow({
-                //content:iwHtml;
-  	content: '<div id="iw-container">' + 
-                        '<div class = "iw-right-content">' + 
-                        '<input type="image" src="img/direction-2.png" alt="View in Google Maps" onclick="goMap('+lat+','+lng+')">'+
-                        '</div>' +
-                        '<div class = "iw-title"><p>'+
-                            loc_c + 
-                            '<br>'+ 
-                            loc_e +
-                            '<br>車位數量 : '+ qty + 
-                            '<br><span>*非實時</span></p>' + 
-                        '</div>'+
-                    '</div>'
+	marker.setMap(map);     
+            var iwContent = '<div id="iw-container">\n\
+                                    <div class = "iw-right-content">\n\
+                                            <input type="image" src="img/direction-2.png" alt="View in Google Maps" onclick="goMap('+ lat + ',' + lng + ')">\n\
+                                    </div>\n\
+                                <div class = "iw-title">\n\
+                                        <p class ="iw-title-p1">'+ 
+                                        loc_c + 
+                                        '<br>'+ loc_e + 
+                                        '<br>車位數量 : '+ 
+                                        qty + 
+                                        '<br><span>  *非實時</span>\n\
+                                        </p>\n\
+                                    </div>\n\
+                                </div>';  
+            var infoWindow = new google.maps.InfoWindow({            
+                content:iwContent
+
   	});
 
 	google.maps.event.addListener(marker, 'click', function() {
@@ -157,29 +212,16 @@ function geocode(lat,lng,qty,loc_c,loc_e){
         
         
   	google.maps.event.addListener(infoWindow, 'domready', function() {   
-            iwStyle();
+                iwStyle();
 	});
-	$('#schbutton').show();
-       
+        }
 
-}
-
-function gotomap(){
-	
-	var zoom = map.getZoom();
-	//var lat = $('#lat').val();
-	//var lng = $('#lng').val();	
-    window.open('http://maps.google.com/maps?z='+ zoom +'&q=loc:' + lat + '+' + lng);
-    
-}
+//
 
 function panoview(){
-	
-	//var lat = $('#lat').val();
-	//var lng = $('#lng').val();	
 	var address = new google.maps.LatLng(lat,lng); 
 	var panorama = new google.maps.StreetViewPanorama(
-		      	document.getElementById("map_canvas"), {
+                document.getElementById("map_canvas"), {
 		        position:address,
 		          pov: {
 		          heading: 90,
@@ -191,6 +233,8 @@ function panoview(){
 	$('#mapbutton').show();
 	
 }
+
+
 
 function goMap(lat,lng){
     
@@ -244,7 +288,15 @@ function iwStyle(){
 	iwCloseBtn.mouseout(function(){
             $(this).css({opacity: '1'});
 	});
-    }	
+    }
+    
+// function gotomap(){
+////var zoom = map.getZoom();
+////
+////    window.open('http://maps.google.com/maps?z='+ zoom +'&q=loc:' + lat + '+' + lng);
+////    
+////}   
+
 
 		
 		

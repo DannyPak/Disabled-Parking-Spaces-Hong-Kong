@@ -5,31 +5,19 @@ require('dbconfig.php');
 
 $reg = "select reg_c, reg_e from region";
 $re_reg = mysqli_query($link, $reg);
-if (!$re_reg) {
-    echo 'MySQL Error: ' . mysqli_error();
-    exit;
-}
+if (!$re_reg) {echo 'MySQL Error: ' . mysqli_error();exit;}
 
 $dis = "select reg_id,  dis_c, dis_e from district";
 $re_dis = mysqli_query($link, $dis);
-if (!$re_dis) {
-    echo 'MySQL Error: ' . mysqli_error();
-    exit;
-}
+if (!$re_dis) {echo 'MySQL Error: ' . mysqli_error();exit;}
 
 $are = "select dis_id,  are_c , are_e from area";
 $re_are = mysqli_query($link, $are);
-if (!$re_are) {
-    echo 'MySQL Error: ' . mysqli_error();
-    exit;
-}
+if (!$re_are) {echo 'MySQL Error: ' . mysqli_error();exit;}
 
 $loc = "select are_id, id, loc_c, loc_e, lat, lng, qty from location";
 $re_loc = mysqli_query($link, $loc);
-if (!$re_loc) {
-    echo 'MySQL Error: ' . mysqli_error();
-    exit;
-}
+if (!$re_loc) {echo 'MySQL Error: ' . mysqli_error();exit;}
 
 while ($row_reg = mysqli_fetch_assoc($re_reg)) {
     $regs[] = $row_reg;
@@ -73,9 +61,9 @@ for ($r = 0; $r < count($regs); $r++) {
 
                     echo '<ul>';
                     echo '<li class="icon icon-arrow-left">';
-                    echo '<a class="icon" href="#" onclick="window.alert("this is ")">' . $ares[$a]['are_c'] . '</a>';
+                    echo '<a class="icon" href="#" >' . $ares[$a]['are_c'] . '</a>';
                     echo '<div class="mp-level">';
-                    echo '<h2 class="icon" id="locTitle">地點</h2>';
+                    echo '<h2 class="icon">地點</h2>';
                     echo '<a class="mp-back" href="#">返回</a>';
 
                     for ($l = 0; $l < count($locs); $l++) {

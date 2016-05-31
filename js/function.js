@@ -2,10 +2,10 @@ var xmlhttp;
 
 
 $(document).ready(function() {
-    $("div#schbutton").removeClass("hidden");
+   // $("div#schbutton").removeClass("hidden");
     $("div#strbutton").removeClass("hidden");
     $("div#mapbutton").removeClass("hidden");
-    $("div#gobutton").removeClass("hidden");
+    //$("div#gobutton").removeClass("hidden");
     
     $('#en').click(function() {
             window.location.href = 'index_e.php';         
@@ -15,11 +15,6 @@ $(document).ready(function() {
         });   
     });
 
-function locTitle(){
-    window.alert("this is aler");
-    document.getElementById("locTitle").innerHTML = "hahahha";
-}
-	
 function XMLConnect(placeHolder,URL,str){
 
 	if (str.length == 0) {

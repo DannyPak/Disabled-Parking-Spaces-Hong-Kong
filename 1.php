@@ -49,34 +49,20 @@
     </head>
 
     <body onload="initialize()">
-            <div class="container">
-                    <!-- Push Wrapper -->
-                    <div class="mp-pusher" id="mp-pusher">
 
-                            <!-- mp-menu -->
-                            <nav id="mp-menu" class="mp-menu">
-                                    <div class="mp-level">
-                                            <?php require('menu.php'); ?>							
-                                    </div>
-                            </nav>
-                            <!-- /mp-menu -->
-
-                            <div class="scroller"><!-- this is for emulating position fixed of the nav -->
-                                    <div class="header block block-40 clearfix">
-                                        <a href="#" id="trigger" class="menu-trigger"><img id="logo" src="img/logo.png"></a> 
-                                    </div>	
-
-                            <div id="map_canvas"></div>
-                            </div><!-- /scroller -->
-                            <div>		
-<!--                                    <div id="go-btn"><button type="button" id="gobutton" class="hidden btn" onclick="gotomap()">在Google Maps開啓</button></div>-->
-                                    <div id="str-btn"><button id="strbutton" type="button" class="hidden btn" onclick="panoview()"><img src="img/street.png" title="Street View" width="32"></button></div>
-                                    <div id="map-btn"><button id="mapbutton" type="button" class="hidden btn" onclick="geocode(lat,lng,qty,loc_c,loc_e)"><img src="img/map.png" title="Map Marker" width="32"></button></div>
-                            </div>
-                            <div id="footer">(C)Copyright</div>
-                            <a href="https://icons8.com"></a>
-                    </div><!-- /pusher -->
-            </div><!-- /container -->
+          <div id="iw-container">
+              <div class = "iw-right-content">
+                  <input type="image" src="img/direction-2.png" alt="View in Google Maps" >
+              </div>
+              <div class = "iw-title">
+                  <p class ="iw-title-p1">
+                      +loc_c+<br>
+                      +loc_e+<br>
+                      車位數量 : 1
+                      <span>  *非實時</span>
+                  </p>
+              </div>
+          </div>
             <script src="js/classie.js"></script>
             <script src="js/mlpushmenu.js"></script>
             <script>

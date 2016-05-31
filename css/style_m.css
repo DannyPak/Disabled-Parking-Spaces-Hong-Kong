@@ -1,7 +1,21 @@
-﻿#strbutton.hidden{display:none}
+/*
 #schbutton.hidden{display:none}
-#mapbutton.hidden{display:none}
-#gobutton.hidden{display:none}
+
+#gobutton.hidden{display:none}*/
+.hidden{display:none}
+
+
+
+* {
+  outline: none;
+}
+:focus {
+  -moz-outline-style: none;
+}
+
+:-moz-any-link:focus {
+  outline: none;
+}
 
 
 html, body, #map_canvas{
@@ -61,16 +75,9 @@ body {
 
 
 img {
-    border: 0;
+    border: none;
 }	
 
-#logo{
-	z-index:99;
-	position:absolute;
-	 left: 1.25em;
-	 margin-left: -55px;
-	
-}
 
 #en, #tc{
 	position:absolute;
@@ -83,22 +90,22 @@ img {
 }
 
 .btn {		
-    margin-top:0.5em;
-    margin-right:10px;
-    height:2.75em;
-    width:135px;
-    border:1px solid white; 
-    color:white;
-    font-size:x-small;
+
+  
     background-color: #F1A80D;
+    color:white;
+    border: none;
     cursor: pointer;
-    font-family:"Microsoft JhengHei","Trebuchet MS"
+
 	
    	}
 
-#go-btn, #str-btn, #map-btn{
-	top:65px;	
-	position:absolute;
+#str-btn, #map-btn{
+            top:20px;	
+            position:absolute;
+            cursor: pointer;
+            right:20px;
+
 	
 }
 
@@ -107,24 +114,7 @@ img {
 }
 
 
-#str-btn, #map-btn{
-	
 
-	right:152px;
-}
-
-.schbtn {
-	margin-top:0.5em;
-	margin-left:0.3em;
-	max-width:95%;
-	height:2.5em;
-	width:100%;
-	border:2px solid white; 
-	color:white;
-	background-color: rgba(41,128,185,1);
-	cursor: pointer;
-	font-family:"Microsoft JhengHei","Trebuchet MS"
-}
 
 	
 .select {
@@ -267,8 +257,6 @@ img {
 
 
 
-
-
 .map-icon-parking{
 	font-size: 24px;
 	color: #FFFFFF;	
@@ -278,8 +266,7 @@ img {
 }
 
 .mp-level ul li{
-    font-size: 14px;
-    
+    font-size: 12px;    
 }
 
 
