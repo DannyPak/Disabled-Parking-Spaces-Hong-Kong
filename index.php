@@ -28,7 +28,12 @@
             <script src="js/modernizr.custom.js"></script>
             <script type="text/javascript" src="js/map-icons.js"></script>
 
-
+            <script>				
+                $('#sch-btn').click(function(event) {
+                $('nav2').toggleClass('active');
+                });
+            </script>
+            
             <style> 
             @font-face {
                font-family: myFont;
@@ -59,24 +64,57 @@
                                             <?php require('menu.php'); ?>							
                                     </div>
                             </nav>
+                        
                             <!-- /mp-menu -->
 
                             <div class="scroller"><!-- this is for emulating position fixed of the nav -->
                                     <div class="header block block-40 clearfix">
                                         <a href="#" id="trigger" class="menu-trigger"><img id="logo" src="img/logo.png"></a> 
-                                    </div>	
-
-                            <div id="map_canvas"></div>
+                                    </div>              
+                                    <div id="map_canvas"></div>
+                           
                             </div><!-- /scroller -->
-                            <div>		
-<!--                                    <div id="go-btn"><button type="button" id="gobutton" class="hidden btn" onclick="gotomap()">在Google Maps開啓</button></div>-->
-                                    <div id="str-btn"><button id="strbutton" type="button" class="hidden btn" onclick="panoview()"><img src="img/street.png" title="Street View" width="32"></button></div>
-                                    <div id="map-btn"><button id="mapbutton" type="button" class="hidden btn" onclick="geocode(lat,lng,qty,loc_c,loc_e)"><img src="img/map.png" title="Map Marker" width="32"></button></div>
+                            <!-- The Modal -->
+                            <div id="myModal" class="modal">
+
+                                      <!-- Modal content -->
+                                  <div class="modal-content">
+                                      <div class="modal-header">
+                                            <span class="close">×</span>
+                                            <h2>Modal Header</h2>
+                                      </div>
+                                      <div class="modal-body">
+                                            <p>Some text in the Modal Body</p>
+                                            <p>Some other text...</p>
+                                      </div>
+                                      <div class="modal-footer">
+                                            <h3>Modal Footer</h3>
+                                      </div>
+                                </div>
+                            </div><!-- The Modal -->
+                            <div> 
+                                <div id="sch-btn">
+                                    <button id="schbutton" type="button" class="btn">
+                                        <img id="logo" src="img/search.png" title="Search" width="40px">
+                                    </button>
+                                </div>
+                                <div id="str-btn">
+                                    <button id="strbutton" type="button" class="hidden btn" onclick="panoview()">
+                                        <img src="img/sv.png" title="Street View" width="40px">
+                                    </button>
+                                </div>
+                                <div id="map-btn">
+                                    <button id="mapbutton" type="button" class="hidden btn" onclick="geocode(lat,lng,qty,loc_c,loc_e)">
+                                        <img src="img/mp.png" title="Map Marker" width="40px">
+                                    </button>
+                                </div>
                             </div>
                             <div id="footer">(C)Copyright</div>
                             <a href="https://icons8.com"></a>
                     </div><!-- /pusher -->
             </div><!-- /container -->
+            <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+            <script src="js/mostrar_nav.js"></script>
             <script src="js/classie.js"></script>
             <script src="js/mlpushmenu.js"></script>
             <script>

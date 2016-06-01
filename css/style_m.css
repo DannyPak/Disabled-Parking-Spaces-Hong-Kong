@@ -1,9 +1,5 @@
-/*
-#schbutton.hidden{display:none}
 
-#gobutton.hidden{display:none}*/
 .hidden{display:none}
-
 
 
 * {
@@ -39,42 +35,8 @@ body {
 
 }
 
-#splash, #masthead{
-	padding:5px 0;
-	color:#F1A80D;
-	border-bottom:1px solid #F1A80D;
-	background: #F1A80D;
-	background: webkit linear gradient( 45deg, #4c88ef 0%, #17e4d9 100%);
-};
 
-@media (max-width: 768px)
-#splash, .inner{
-    width: auto;
-    margin: 0 1rem;
-}
-
-
-@media (max-width: 980px)
-.inner{
-	width:600px;
-	margin: 0 auto;
-}
-
-#splash, .inner {
-    width: 100%;
-    margin: 0 auto;
-}
-
-#splash, #masthead, #header, inner {
-    position: relative;
-}
-
-#splash, #masthead, #header {
-    margin-left: -6px;
-}
-
-
-img {
+img{
     border: none;
 }	
 
@@ -89,90 +51,40 @@ img {
 	height:40px
 }
 
-.btn {		
+.btn{
+     background-color: #F1A80D;
+     border: none;
+    
+}
 
-  
-    background-color: #F1A80D;
-    color:white;
-    border: none;
-    cursor: pointer;
+#str-btn, #map-btn, #sch-btn{
 
-	
-   	}
-
-#str-btn, #map-btn{
             top:20px;	
             position:absolute;
             cursor: pointer;
-            right:20px;
+}
 
+#str-btn, #map-btn{
+right:65px
 	
 }
 
-#go-btn{
-	right: 20px;
+#sch-btn{
+    right:20px;
+    margin-top:-5px;
+       
 }
-
-
-
-
 	
-.select {
 
-	  padding-left:.5em;
-	  cursor: pointer;
-	  position: relative;
-	  font-size: 16px;
-	  width:100%;
-	  color: #fff;
-	  display: inline-block;
-	  border:0px;
-	  background-color:#F1A80D;
-	  width:20em;
-	  height: 2.5em;
-	  vertical-align: bottom;	  
-	  word-wrap: break-word;
-	  border-color:transparent;	  
-	  -webkit-appearance: none;
-	  -moz-appearance: none;
-	  -webkit-border-radius: 0px;
-	  -moz-border-radius: 0px;
-	  font-family:"Microsoft JhengHei","Trebuchet MS"
-}
 
-.select:focus {
-   outline: 0;
- }
 
-.leftContent{
-	margin-bottom:1px;
-	align:center;
-	
-}
 
-#txtRegion{
-	margin-top:20px;
 
-}
-
-#txtLocation{
-	margin-bottom:5px;
-}
-
-#txtQty{
-	position:relative;
-	float:left;
-	padding-left:.5em;	
-	font-size:1em;
-	color:white;
-	margin-top:5px;
-	font-family: "Microsoft JhengHei","Trebuchet MS"
-}
 
 #footer{
 	background-color:#F1A80D;
 	width:100%;
-	font-size: 0.6em;  
+	font-size: 0.8em;  
 	padding-left:0.5em;
 	border-top: 1px solid rgba(52,152,219,.1);
 	text-align: left;
@@ -186,8 +98,82 @@ img {
   
 }
 
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top:200px;
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Header */
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+/* Modal Body */
+.modal-body {padding: 2px 16px;}
+
+/* Modal Footer */
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top: -300px; opacity: 0} 
+    to {top: 0; opacity: 1}
+}
+
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
 .gm-style-iw {
-   width: 220px !important;
+   width: 250px !important;
    top: 15px !important;
    left: 0 !important;
    background-color: #fff;
@@ -211,7 +197,7 @@ img {
 
 #iw-container{     
     background-color: #48b5e9;     
-    width:216px;
+    width:246px;
     
 }
 
@@ -220,7 +206,7 @@ img {
     position:absolute; 
     margin:0;
     padding:5px 5px 5px 5px;
-    width:55px;
+    width:50px;
     right:0;    
     float:right;
     background-color: #48b5e9;  
@@ -240,7 +226,7 @@ img {
 }
 
 .iw-title p span{
-    font-size: 10px;
+    font-size: 1em;
     
 }
 
@@ -250,12 +236,10 @@ img {
     border-radius: 5px 0px 0px 5px; 
     background-color: white; 
     color:#48b5e9;
-    width:161px;    
+    width:196px;    
     overflow-wrap: break-word;
     
 }
-
-
 
 .map-icon-parking{
 	font-size: 24px;
@@ -266,7 +250,7 @@ img {
 }
 
 .mp-level ul li{
-    font-size: 12px;    
+    font-size: 1em;    
 }
 
 

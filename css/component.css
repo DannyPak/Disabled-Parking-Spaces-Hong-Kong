@@ -282,10 +282,12 @@
 .mp-back::after {
 	font-family: 'linecons';
 	position: absolute;
+        
 	content: "\e037";
 	right: 10px;
 	font-size: 1.3em;
-	color: rgba(0,0,0,0.3);
+        color: white;
+/*	color: rgba(0,0,0,0.3);*/
 }
 
 .mp-menu .mp-level.mp-level-overlay > .mp-back,

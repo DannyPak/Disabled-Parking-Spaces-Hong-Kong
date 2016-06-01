@@ -1,16 +1,12 @@
-﻿#strbutton.hidden{display:none}
-
-#schbutton.hidden{display:none}
+#strbutton.hidden{display:none}
 
 #mapbutton.hidden{display:none}
 
-#gobutton.hidden{display:none}
-
-#labelQty.hidden{display:none}
 
 
 
-body {
+
+body{
   height:100%;
   width:100%;
   padding: 0;
@@ -158,33 +154,6 @@ body {
 margin-top:20px;
 
 }
-
-.txtQty{
-	position:fixed;
-	top:480px;
-	font-size:24px;
-	color:white;
-	padding-left:30px;
-	padding-top:10px;
-	font-family: "Trebuchet MS";
-	
-	
-}
-
-#txtBtn{
-
-	width:100%
-
-}
-
-
-.btn {
-	margin-top:10px;
-	height:30px;
-	width:300px;
-	}
-	
-	
 
 #footer{
 	background:#F1A80D;

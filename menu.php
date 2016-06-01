@@ -34,15 +34,18 @@ while ($row_are = mysqli_fetch_assoc($re_are)) {
 while ($row_loc = mysqli_fetch_assoc($re_loc)) {
     $locs[] = $row_loc;
 }
+
 echo '<h2 class="icon">地域</h2>';
 for ($r = 0; $r < count($regs); $r++) {
 
     echo '<ul>';
-    echo '<li class="icon icon-arrow-left">';
+    echo '<li class="icon icon-arrow-left-4">';
     echo '<a class="icon" href="#">' . $regs[$r]['reg_c'] . '</a>';
     echo '<div class="mp-level">';
     echo '<h2 class="icon">區域</h2>';
     echo '<a class="mp-back" href="#">返回</a>';
+    
+    
 
 
 
@@ -50,7 +53,7 @@ for ($r = 0; $r < count($regs); $r++) {
         if ($diss[$d]['reg_id'] == $r + 1) {
 
             echo '<ul>';
-            echo '<li class="icon icon-arrow-left">';
+            echo '<li class="icon icon-circle-right-5">';
             echo '<a class="icon" href="#">' . $diss[$d]['dis_c'] . '</a>';
             echo '<div class="mp-level">';
             echo '<h2 class="icon">地區</h2>';
@@ -74,7 +77,7 @@ for ($r = 0; $r < count($regs); $r++) {
                             $lng = $locs[$l]['lng'];
                             $locc = $locs[$l]['loc_c'];
                             $loce = $locs[$l]['loc_e'];
-                            echo '<ul><li><a href="#" onclick="geocode('.$lat.','.$lng.','.$qty.',\''.$locc.'\',\''.$loce.'\')">'. $locc .'</a></li></ul>';
+                            echo '<ul><li><a href="#" class="my_link" onclick="geocode('.$lat.','.$lng.','.$qty.',\''.$locc.'\',\''.$loce.'\')">'. $locc .'</a></li></ul>';
                         }
                     }
                     

@@ -122,8 +122,12 @@ function bindInfoWindow(marker, map, infoWindow, html) {
   });
 }
 
+
+
+
 function geocode(lat,lng,qty,loc_c,loc_e){
-            $('#trigger').get(0).click();
+    $('#trigger').get(0).click();
+
 	initialize();       
 //	$('#gobutton').show();
 	$('#strbutton').show();

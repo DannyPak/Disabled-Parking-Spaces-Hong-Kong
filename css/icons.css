@@ -196,3 +196,8 @@
 .icon-world:before {
 	content: "\e02f";
 }
+
+.icon-arrow-right-5:after{
+    
+    background-image: url("img/right-circle-arrow.png");
+}

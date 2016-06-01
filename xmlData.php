@@ -14,8 +14,7 @@ require('dbconfig.php');
 	}
 
 
-
-	
+                clearstatcache();
 	$reg = "select * from region";
 	$re_reg = mysqli_query($link,$reg);	
 	if (!$re_reg) {echo 'MySQL Error: ' . mysqli_error();exit;}
@@ -24,7 +23,7 @@ require('dbconfig.php');
 	$re_dis = mysqli_query($link,$dis);	
 	if (!$re_dis) {echo 'MySQL Error: ' . mysqli_error();exit;}
 	
-	$are = "select * from area";
+	$are = "select dis_id, are_id, are_c, are_e from area";
 	$re_are = mysqli_query($link,$are);	
 	if (!$re_are) {echo 'MySQL Error: ' . mysqli_error();exit;}
 	
@@ -56,6 +55,7 @@ require('dbconfig.php');
 		}
 		echo 'no of are:';
 		echo count($ares);
+               
 		echo '<br>';
 
 
@@ -68,7 +68,11 @@ require('dbconfig.php');
 		echo '<br>';
 		echo '<p>';
 
-
+for($i=0;$i<count($ares);$i++){
+    echo $ares[$i]['are_id'].'  '.$ares[$i]['are_c'];
+    echo '<br>';  
+    
+}
 
 	$xml = new DomDocument("1.0","UTF-8");
 	$spaces = $xml-> createElement("spaces");
@@ -123,6 +127,7 @@ for($r=0;$r<count($regs);$r++){
 						$are_e = $area -> appendChild($are_e);
 						for($l=0;$l<count($locs);$l++){
 							if($locs[$l]['are_id']==$a+1){
+            
 							
 							
 								$location = $xml -> createElement("location");
