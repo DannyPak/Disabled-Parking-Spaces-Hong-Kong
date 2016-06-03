@@ -1,4 +1,8 @@
 var xmlhttp;
+var reg_c;
+var dis_c;
+var are_c;
+
 
 
 $(document).ready(function() {
@@ -30,9 +34,27 @@ $(document).ready(function() {
              if (event.target == modal) {
                  modal.style.display = "none";
                  }
-            }
+            };
+            
+
         
     });
+    
+    
+    function disTitle(reg_c){        
+        document.getElementById("disTitle").innerHTML = reg_c;
+        
+    }
+    
+        function areTitle(dis_c){        
+        document.getElementById("areTitle").innerHTML = dis_c;
+        
+    }
+    
+        function locTitle(are_c){        
+        document.getElementById("locTitle").innerHTML = are_c;
+        
+    }
     
     
 // Get the modal

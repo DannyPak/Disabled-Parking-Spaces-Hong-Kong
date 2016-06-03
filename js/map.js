@@ -4,6 +4,7 @@ var map;
 var marker;
 var loc_c;
 var loc_e;
+var id;
 var lat;
 var lng;
 var qty;
@@ -73,7 +74,11 @@ function initialize(){
             var qty = markers[i].getAttribute("qty");
             var lat = markers[i].getAttribute("lat");
             var lng = markers[i].getAttribute("lng");
-            var point = new google.maps.LatLng(parseFloat(lat),parseFloat(lng));
+            var point = new google.maps.LatLng(parseFloat(lat),parseFloat(lng));  
+            
+             loc_e=checkLoc_e(loc_e);              
+            
+            
             var iwContent = '<div id="iw-container">\n\
                                     <div class = "iw-right-content">\n\
                                             <input type="image" src="img/direction-2.png" alt="View in Google Maps" onclick="goMap('+ lat + ',' + lng + ')">\n\
@@ -125,21 +130,26 @@ function bindInfoWindow(marker, map, infoWindow, html) {
 
 
 
-function geocode(lat,lng,qty,loc_c,loc_e){
+function geocode(id, lat, lng, qty, loc_c, loc_e){
+
     $('#trigger').get(0).click();
 
+
 	initialize();       
-//	$('#gobutton').show();
 	$('#strbutton').show();
-	$('#mapbutton').hide();	
+	$('#mapbutton').hide(); 
+    
 	window.lat = lat;
 	window.lng = lng;
-        window.qty = qty;
-        window.loc_c = loc_c;
-        window.loc_e = loc_e;
+             window.qty = qty;
+             window.id = id;
+             window.loc_c = loc_c;
+             //window.loc_e = loc_e;
 
-//	var lat = $('#lat').val();
-//	var lng = $('#lng').val();	
+              loc_e = checkLoc_e(loc_e);     
+             window.loc_e = loc_e;
+               
+     
 	var address = new google.maps.LatLng(lat,lng); 	
 	var map = document.getElementById("map_canvas");
 	var myOptions = {
@@ -188,7 +198,7 @@ function geocode(lat,lng,qty,loc_c,loc_e){
 	
 
 	
-	marker.setMap(map);     
+            marker.setMap(map);     
             var iwContent = '<div id="iw-container">\n\
                                     <div class = "iw-right-content">\n\
                                             <input type="image" src="img/direction-2.png" alt="View in Google Maps" onclick="goMap('+ lat + ',' + lng + ')">\n\
@@ -250,6 +260,30 @@ function goMap(lat,lng){
 }
 
 
+function checkLoc_e(loc_e){
+    
+    if(loc_e === "Lower Albert Rd near St. Johns Building"){
+       var loc_e = "Lower Albert Rd near St. John's Building";
+       return loc_e;                
+       }else if(loc_e === "Plunketts Rd"){
+           var loc_e = "Plunkett's Rd";
+           return loc_e;                  
+       }else if(loc_e === "Lockhart Rd w/o OBrien Rd"){
+               var loc_e = "Lockhart Rd w/o O'Brien Rd";
+               return loc_e; 
+       }else if(loc_e==="Thomson Rd e/o OBrien Rd"){
+               var loc_e = "Thomson Rd e/o O'Brien Rd";
+               return loc_e; 
+       }else if(loc_e==="Tung Lo Wan Rd near Queens College"){
+               var loc_e = "Tung Lo Wan Rd near Queen's College";
+               return loc_e; 
+       }else{
+           return loc_e;
+       }
+    
+}
+
+
 function iwStyle(){
             
     // Reference to the DIV which receives the contents of the infowindow using jQuery
@@ -294,12 +328,7 @@ function iwStyle(){
 	});
     }
     
-// function gotomap(){
-////var zoom = map.getZoom();
-////
-////    window.open('http://maps.google.com/maps?z='+ zoom +'&q=loc:' + lat + '+' + lng);
-////    
-////}   
+
 
 
 		

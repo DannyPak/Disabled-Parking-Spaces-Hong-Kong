@@ -19,6 +19,7 @@
             <link rel="stylesheet" type="text/css" href="css/demo.css" />
             <link rel="stylesheet" type="text/css" href="css/icons.css" />
             <link rel="stylesheet" type="text/css" href="css/component.css" />
+            <link href='https://fonts.googleapis.com/css?family=Cabin:400,500' rel='stylesheet' type='text/css'>
 
     <!-- Google Maps and Places API -->
             <script async defer src="https://maps.googleapis.com/maps/api/js?v=3.23&key=AIzaSyAtIgD391Vv6rhDJJ_56AWADgTHXqcZNG4" type="text/javascript"></script>		
@@ -49,6 +50,21 @@
             div {
                font-family: myFont;
             }
+            
+            
+            @font-face {
+                    font-family: 'cwTeXHei';
+                    font-style: normal;
+                    font-weight: 500;
+                    src: url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.eot);
+                    src: url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.eot?#iefix) format('embedded-opentype'),
+                         url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.woff2) format('woff2'),
+                         url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.woff) format('woff'),
+                         url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.ttf) format('truetype');
+                  }
+            
+            
+            
             </style>
 
     </head>
@@ -104,7 +120,8 @@
                                     </button>
                                 </div>
                                 <div id="map-btn">
-                                    <button id="mapbutton" type="button" class="hidden btn" onclick="geocode(lat,lng,qty,loc_c,loc_e)">
+<!--                                    <button id="mapbutton" type="button" class="hidden btn" onclick="geocode(id,lat,lng,qty)">-->
+                                    <button id="mapbutton" type="button" class="hidden btn" onclick="geocode(id,lat,lng,qty,loc_c,loc_e)">
                                         <img src="img/mp.png" title="Map Marker" width="40px">
                                     </button>
                                 </div>
