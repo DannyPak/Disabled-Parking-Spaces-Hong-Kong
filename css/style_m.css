@@ -14,27 +14,19 @@
 }
 
 
-html, body, #map_canvas{
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
 
 
-#map_canvas{
-	position:relative;
-	top: 10px;
-	z-index:1
-	}
+    .loader{
+    margin:0;
+    position:absolute;
+    top:30%;
+    left:50%;
+    margin-right:-50%;
+    transform: translate(-50%,-50%);
+        }
+        
+        
 
-body {
-  padding: 0;
-  margin: 0;
-  background-color: #FFAC00
-/*  background-color: #F1A80D;	*/
-
-}
 
 
 img{
@@ -63,6 +55,8 @@ img{
             top:15px;	
             position:absolute;
             cursor: pointer;
+            background-color: #FFAC00;
+     border: none;
 }
 
 #str-btn, #map-btn{
@@ -72,15 +66,17 @@ right:65px
 
 #sch-btn{
     right:20px;
-    margin-top:-5px;
+
        
 }
-	
 
-
-
-
-
+#all-btn{
+    right:20px;
+    top:100px;
+    z-index: 2;
+    position: absolute;
+    border:none;
+}
 
 #footer{
 	background-color:#FFAC00;
@@ -95,7 +91,7 @@ right:65px
 	padding-bottom: 0.5em;
 	position:fixed;
 	bottom:0;
-	z-index:18
+	z-index:2
   
 }
 
@@ -104,8 +100,8 @@ right:65px
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top:200px;
+    z-index: 3; /* Sit on top */
+    padding-top:50px;
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -113,54 +109,154 @@ right:65px
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    
+    
 }
 
-/* Modal Header */
-.modal-header {
-    padding: 2px 16px;
-    background-color: #5cb85c;
-    color: white;
-}
-
-/* Modal Body */
-.modal-body {padding: 2px 16px;}
-
-/* Modal Footer */
-.modal-footer {
-    padding: 2px 16px;
-    background-color: #5cb85c;
-    color: white;
-}
 
 /* Modal Content/Box */
-.modal-content {
+
+
+.modal-content{
     position: relative;
-    background-color: #fefefe;
+    background-color: #48b5e9;    
     margin: auto;
-    padding: 0;
-    border: 1px solid #888;
+    margin-bottom: 20px;
+    padding: 5px 5px 5px 5px;
     width: 80%;
+    max-width: 500px;
+    min-height:2px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
-    animation-duration: 0.4s
+    animation-duration: 0.4s;
+    border-radius: 10px;
+    
+    
+
+}
+
+.modal-wrapper{
+    border: 2px solid #fff;
+    border-radius:10px;
+    background-color: #48b5e9;
+    padding: 10px 5px 5px 0px;    
+}
+
+@media screen and (max-width: 25em) {
+    .modal{
+        padding-top: 20px;
+    }
+    .modal-content{
+        width:100%;
+    }
+    
+    #country_list_id li{
+        font-size:1.5em;
+    }
+    
+    #country_id{
+        height:2em
+    }
+
+}
+
+/*wrapper the search input box*/
+.modal-header {
+    padding: 10px 10px 0px 10px;
+    background-color: #48b5e9;
+    color: black;
+    height:100%;
+    min-height:10px;
+    max-width:100%;
+}
+
+.search_container{
+    padding:0px 5px 0px 5px;
+}
+
+#searchIcon{
+    color:white;
+    float:left;
+    margin-right: 10px;
+    margin-top: 2px;
+}
+/*#country_id: search input box*/
+
+#country_id{
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    border-radius: 5px 5px 5px 5px;
+    border-style: none;
+    padding: 10px 10px 10px 10px;
+    height:100%;
+    color: #111111;
+    width: 40%;
+    max-width: 75%;
+    font-family:"cwTeXHei", "cabin","微軟正黑體";
+    
+    background-image: url(s.png);
+    
+
+}
+
+#country_id:focus {
+    width: 75%;
+}
+
+/* result list body */
+
+.modal-body {
+    
+    padding: 0px 0px 5px -500px; 
+    height:100%;
+    min-height: 0px;
+    width:100%;
+    margin: 0;
+    background-color: #48b5e9;
+    overflow:auto;  
+    
+}
+
+
+/*  #country_list_id:  search result list*/
+
+#country_list_id li, #searchResult{
+    
+    font-family:"cwTeXHei","微軟正黑體","cabin";
+    background-color: #48b5e9;    
+    color: #fff;
+    
+}
+
+#searchResult:hover, #country_list_id li:hover{   
+
+    color: yellow;  
+    
+}
+
+#country_list_id li{
+    margin:10px 0 10px 0;
 }
 
 /* The Close Button */
 .close {
-    color: #aaa;
+    color: #fff;
     float: right;
     font-size: 28px;
     font-weight: bold;
+    margin-top:-5px;
 }
 
 .close:hover,
 .close:focus {
-    color: black;
-    text-decoration: none;
+
     cursor: pointer;
 }
+
+
+
 
 /* Add Animation */
 @-webkit-keyframes animatetop {
@@ -247,12 +343,17 @@ right:65px
 
 
 
-.mp-level ul li{
-     
+.mp-level ul li{    
     
     font-family:"cwTeXHei","微軟正黑體","cabin";
-
 }
+
+.subMenu:hover, .subMenu:focus{
+    
+    color:yellow;
+}
+
+
 
 
 #disTitle, #locTitle, #areTitle, #regTitle{
