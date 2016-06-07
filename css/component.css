@@ -14,19 +14,12 @@
 	overflow-y: hidden; 
 }
 
-#logo{
-            z-index:99;
-            position:relative;            
-            float:left;
-            margin-left:-30px;
-            margin-top:5px; 
-            cursor: pointer;
 
-}
 
 .scroller,
 .scroller-inner {
 	position: relative;
+
         
 }
 
@@ -36,22 +29,43 @@
 
 }
 
+
 .menu-trigger {    
 	position: relative;
 	padding-left: 0px;
 	font-size: 0.6em;
+                font-weight: 200;
         
 }
 
 .menu-trigger:before {
 	position: absolute;
 	top: 20px;
-	left: 10px  ;
+	left: 0px  ;
 	width: 25px;
 	height: 4px;
-	background: #fff;
-	box-shadow: 0 4px #F1A80D, 0 8px #fff, 0 12px #F1A80D, 0 16px #fff;
+	background: #ffacoo;
+/*	box-shadow: 0 4px #FFAC00, 0 8px #fff, 0 12px #FFAC00, 0 16px #fff;*/
+	box-shadow: 0 4px #FFAC00, 0 8px #ffac00, 0 12px #FFAC00, 0 16px #ffac00;
 	content: '';
+}
+.header{
+    position: fixed;
+    top:0px;
+    left:0px;
+    float:left ; 
+        cursor: pointer;
+    
+}
+
+.logo{
+            z-index:2;
+            position: relative;     
+            top: 10px;      
+            left: 70px;
+            float:left;                
+            cursor: pointer;
+
 }
 
 .mp-pusher {
@@ -65,11 +79,12 @@
 	top: 0;
 	left: 0;
 	z-index: 1;
-	width: 300px;
+	width: 320px;
 	height: 100%;
 	-webkit-transform: translate3d(-100%, 0, 0);
 	-moz-transform: translate3d(-100%, 0, 0);
 	transform: translate3d(-100%, 0, 0);
+ 
 }
 
 .mp-level {
@@ -80,7 +95,7 @@
 	height: 100%;
 /*	background: #336ca6;*/
              background:#48b5e9;
-	font-family:"Microsoft JhengHei","trebuchet MS";
+	font-family:"cwTeXHei", "cabin","微軟正黑體";
 	-webkit-transform: translate3d(-100%, 0, 0);
 	-moz-transform: translate3d(-100%, 0, 0);
 	transform: translate3d(-100%, 0, 0);

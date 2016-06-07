@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 12.0.0, SVG Export Plug-In  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
+	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
+]>
+<svg  version="1.1" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 width="52" height="52" viewBox="34.75 13 52 52" enable-background="new 34.75 13 52 52" xml:space="preserve">
+<defs>
+</defs>
+<rect x="0.5" y="0.5" display="none" fill="#FFAC00" stroke="#FFFFFF" width="118.5" height="68.75"/>
+<circle fill="#FFAC00" stroke="#FFFFFF" stroke-width="3" cx="60.821" cy="39.084" r="24"/>
+<path fill="#FFFFFF" d="M62.127,59.544c-0.719,0.719-1.895,0.719-2.612,0L40.36,40.389c-0.719-0.718-0.719-1.895,0-2.612
+	l19.155-19.154c0.718-0.718,1.894-0.718,2.612,0l19.156,19.154c0.717,0.718,0.717,1.895,0,2.613L62.127,59.544z"/>
+<ellipse fill="#FFFFFF" stroke="#FFAC00" stroke-width="2" cx="60.571" cy="44.806" rx="12" ry="4.027"/>
+<circle fill="#FFAC00" cx="60.75" cy="29.055" r="7"/>
+<circle fill="#FFFFFF" cx="60.75" cy="29.055" r="2.333"/>
+<polygon fill="#FFFFFF" points="67.135,34.791 60.75,46.75 54.366,34.791 "/>
+<polygon fill="#FFAC00" points="67.135,31.875 60.75,43.834 54.366,31.875 "/>
+<ellipse display="none" fill="#FFFFFF" stroke="#FFAC00" stroke-width="2" cx="60.821" cy="45.056" rx="12" ry="4.027"/>
+<rect x="54.713" y="37.368" display="none" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2" width="12.216" height="5.228"/>
+<ellipse display="none" fill="#FFFFFF" stroke="#FFAC00" stroke-width="2" cx="60.885" cy="28.012" rx="2.875" ry="2.929"/>
+<g display="none">
+	<g display="inline">
+		<path fill="#FFFFFF" d="M65.556,35.832c0-2.63-2.092-4.759-4.671-4.759c-2.58,0-4.671,2.129-4.671,4.759
+			c0,0.125,0.027,0.242,0.036,0.365h-0.036v5.227h2.194v3.853h4.954v-3.853h2.194v-5.227H65.52
+			C65.529,36.074,65.556,35.957,65.556,35.832z"/>
+	</g>
+	<g display="inline">
+		<path fill="none" stroke="#FFAC00" stroke-width="2" d="M65.556,35.832c0-2.63-2.092-4.759-4.671-4.759
+			c-2.58,0-4.671,2.129-4.671,4.759c0,0.125,0.027,0.242,0.036,0.365h-0.036v5.227h2.194v3.853h4.954v-3.853h2.194v-5.227H65.52
+			C65.529,36.074,65.556,35.957,65.556,35.832z"/>
+	</g>
+</g>
+</svg>

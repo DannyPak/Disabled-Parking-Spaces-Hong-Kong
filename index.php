@@ -8,6 +8,15 @@
             <meta http-equiv="x-ua-compatible" content="ie=edge">
             <meta name="description" content="">
             
+            <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+            <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+            <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+            <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+            <link rel="manifest" href="/manifest.json">
+            <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+            <meta name="msapplication-TileColor" content="#da532c">
+            <meta name="theme-color" content="#ffffff">
+            
             
             <style> 
                 
@@ -28,7 +37,7 @@
 
             #map{
 	position:relative;
-	top: 10px;
+	top: 20px;
 	z-index:1
 	}
             @font-face {
@@ -64,27 +73,24 @@
 
             <title>Disabled Parking Spaces Hong Kong</title>
 
-            <link rel="icon" type="image/png" href="img/favicon.png">
+
+            
             <link rel="stylesheet" type="text/css" href="css/style_m.css">	
             <link rel="stylesheet" type="text/css" href="css/estilos.css">
-            <link rel="stylesheet" type="text/css" href="css/map-icons.css">
-            <link rel="stylesheet" type="text/css" href="css/map-icons.min.css">
-            <link rel="stylesheet" type="text/css" href="css/normalize.css" />
             <link rel="stylesheet" type="text/css" href="css/demo.css" />
             <link rel="stylesheet" type="text/css" href="css/icons.css" />
             <link rel="stylesheet" type="text/css" href="css/component.css" />
-            <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">            
-            <link href='https://fonts.googleapis.com/css?family=Cabin:400,500' rel='stylesheet' type='text/css'>
+            <link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">        
+            <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Cabin:400,500' >
 
     <!-- Google Maps and Places API -->
             <script async defer src="https://maps.googleapis.com/maps/api/js?v=3.23&key=AIzaSyAtIgD391Vv6rhDJJ_56AWADgTHXqcZNG4" type="text/javascript"></script>	
-            <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-            <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-            <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-            <script type="text/javascript" language="JavaScript" src="js/function.js"></script>
-            <script type="text/javascript" language="javascript" src="js/map.js"></script>
+<!--            <script src="//code.jquery.com/jquery-1.10.2.js"></script>-->
+            <script async defer src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+            <script async defer src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js" type="text/javascript" ></script>
+            <script src="js/map.js" type="text/javascript" ></script>
             <script src="js/modernizr.custom.js"></script>
-            <script type="text/javascript" src="js/map-icons.js"></script>
+<!--            <script type="text/javascript" src="js/map-icons.js"></script>-->
 
 
             <script>
@@ -130,8 +136,13 @@
                     <div class="mp-pusher" id="mp-pusher">
                         <div class="scroller"><!-- this is for emulating position fixed of the nav -->
                                 <div class="header block block-40 clearfix">
-                                    <a href="#" id="trigger" class="menu-trigger"><img id="logo" src="img/logo.png"></a> 
-                                </div>              
+                                    <a href="#" id="trigger" class="menu-trigger">                                        
+                                        <img id="spacer" src='img/menu-icon.svg'></a>
+                                </div>  
+                            <div class="logo">
+                                <a href="index.php">
+                                    <img  id="logo" src="img/logo.svg"></a>
+                            </div>
                                 <div id="map">
                                     <div class="loader"><img src="img/loader.gif">
                                     </div>
@@ -153,12 +164,12 @@
                                   <div class="modal-content">
                                       <div class="modal-wrapper">
                                           <div class="search_container">
-                                              <img id="searchIcon" src="img/s.png" >
+                                              <img id="searchIcon" src="img/sc_white.svg" >
                                               
                                                   <input type="text" id="country_id" onkeyup="autocomplet()" placeholder="黃大仙, Wong Tai Sin...." onblur="if (this.placeholder == '') {this.placeholder = '黃大仙, Wong Tai Sin....';}" onfocus="if (this.placeholder == '黃大仙, Wong Tai Sin....') {this.placeholder = '';}" >
                                                 
                                               
-                                              <span class="close"><img src="img/upArrow.png" id="upArrow"></span>
+                                              <span class="close"><img src="img/upArrow.svg" id="upArrow"></span>
                                               
                                             </div>
                                       
@@ -178,25 +189,25 @@
                             <div> 
                                 <div id="sch-btn">
                                     <button id="schbutton" type="button" class="btn">
-                                        <img src="img/search.png" title="Search" width="40px">
+                                        <img src="img/sc.svg" title="Search" class="imageBtn">
                                     </button>
                                 </div>
                                 <div id="str-btn">
                                     <button id="strbutton" type="button" class="hidden btn" onclick="panoview()">
-                                        <img src="img/sv.png" title="Street View" width="48px">
+                                        <img src="img/sv.svg" title="Street View" class="imageBtn">
                                     </button>
                                 </div>
                                 <div id="map-btn">
 <!--                                    <button id="mapbutton" type="button" class="hidden btn" onclick="geocode(id,lat,lng,qty)">-->
                                     <button id="mapbutton" type="button" class="hidden btn" onclick="geocode(id,lat,lng,qty,loc_c,loc_e)">
-                                        <img src="img/mp.png" title="Map Marker" width="48px">
+                                        <img src="img/mp.svg" title="Map Marker" class="imageBtn">
                                     </button>
                                 </div>
-                                <div id="all-btn">
+<!--                                <div id="all-btn">
                                     <button id="allbutton" type="button"  onclick="userLocation()">
-                                        <img src="img/map.png" title="Show All" width="48px">
+                                        <img src="img/map.png" title="Show All" >
                                     </button>
-                                </div>
+                                </div>-->
                             </div>
                             <div id="footer">(C)Copyright</div>
                             
