@@ -11,7 +11,7 @@
 		return $xmlStr;
 	}
 	
-	$sql = 'SELECT * FROM location';
+	$sql = 'SELECT loc_c, loc_e, lat, lng, qty, id FROM location';
 	$result = mysqli_query($link,$sql);
 	
 	if (!$result) {

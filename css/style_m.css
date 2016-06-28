@@ -1,31 +1,35 @@
 
 .hidden{display:none}
 
+::-webkit-scrollbar { 
+    display: none; 
+}
+
 
 * {
-  outline: none;
+    outline: none;
 }
 :focus {
-  -moz-outline-style: none;
+    -moz-outline-style: none;
 }
 
 :-moz-any-link:focus {
-  outline: none;
+    outline: none;
 }
 
 
 
 
-    .loader{
+.loader{
     margin:0;
     position:absolute;
     top:30%;
     left:50%;
     margin-right:-50%;
     transform: translate(-50%,-50%);
-        }
-        
-        
+}
+
+
 
 
 
@@ -35,30 +39,24 @@ img{
 
 
 #en, #tc{
-	position:absolute;
-	right:0;
-	margin-right:20px;
-	top:5px;
-	cursor:pointer;
-	width:40px;
-	height:40px
+    position:absolute;
+    right:0;
+    margin-right:20px;
+    top:5px;
+    width:40px;
+    height:40px
 }
 
 .btn{
-     background-color: #FFAC00;
-     border: none;
-     cursor:pointer
-    
+
+    cursor:pointer
+
 }
 
 #str-btn, #map-btn, #sch-btn{
 
-            top:10px;	
-            position:absolute;
-            cursor: pointer;
-            background-color: #FFAC00;
-            border: none;
-            
+    top:10px;	
+    position:absolute;
 
 }
 
@@ -67,37 +65,116 @@ img{
 }
 
 #str-btn, #map-btn{
-right:65px
-	
+    right:65px
+
 }
 
 #sch-btn{
     right:10px;       
 }
 
-#all-btn{
-    right:20px;
-    top:100px;
-    z-index: 2;
+#shw-btn, #hid-btn{
+    top:80px;
     position: absolute;
-    border:none;
+    right:10px;
+    z-index: 2;
+    background-color: orange
+
+}
+
+#shw-checkbox{
+    top:90px;
+    width: 85px;
+    height:30px;
+    border: 2px;
+    border-color: white;
+    position: absolute;
+    right:10px;
+    z-index: 2;
+    background-color: orange;
+    border-style: solid;
+    box-shadow: 0 0 2px #888;
+    border-radius: 5px 5px 5px 5px;
+    padding: 2px 2px 2px 2px;
+    opacity: 1
+}
+
+#ul-btn{
+    
+    bottom:50px;
+    right: 10px;
+    position: absolute;
+    z-index: 2;
+}
+
+
+
+input[type="checkbox"] {
+    display:none;
+}
+
+#drawMarkerChk{
+/*input[type="checkbox"] + label span {*/
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-1px 2px 0 0;
+    vertical-align:middle;
+    background:url(../img/check_radio_sheet.png) left top no-repeat;
+    cursor:pointer;
+}
+
+#drawMarkerChk:checked{
+/*input[type="checkbox"]:checked + label span {*/
+    background:url(../img/check_radio_sheet.png) -19px top no-repeat;
+}
+
+#ctext{
+    color: white;
+    font-size: 0.8em;
+     font-family: "Noto Sans TC", cabin;
+}
+
+
+@media screen and (max-width: 340px) {
+
+    .imageBtn{
+        width:40px
+
+
+    }
+
+    #sch-btn{
+        right:2px;
+    }
+
+    #str-btn, #map-btn{
+        right: 50px
+    }
+
+    #logo{
+        height: 40px;
+
+    }
+
+
 }
 
 #footer{
-	background-color:#FFAC00;
-	width:100%;
-	font-size: 0.8em;  
-	padding-left:0.5em;
-	border-top: 1px solid rgba(52,152,219,.1);
-	text-align: left;
-	color:white;
-	font-family:"cabin";
-	padding-top: 0.5em;
-	padding-bottom: 0.5em;
-	position:fixed;
-	bottom:0;
-	z-index:2
-  
+    background-color:#FFAC00;
+    width:100%;
+    font-size: 0.8em;  
+    padding-left:0.5em;
+    border-top: 1px solid rgba(52,152,219,.1);
+    text-align: left;
+    color:white;
+    font-family: "Noto Sans TC", cabin;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    position:fixed;
+    bottom:0;
+    z-index:2
+
 }
 
 
@@ -106,7 +183,7 @@ right:65px
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 3; /* Sit on top */
-    padding-top:50px;
+    padding-top:0px;
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -114,8 +191,8 @@ right:65px
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    
-    
+
+
 }
 
 
@@ -128,64 +205,44 @@ right:65px
     margin: auto;
     margin-bottom: 20px;
     padding: 5px 5px 5px 5px;
-    width: 80%;
-    max-width: 500px;
+    width: 100%;
+/*    max-width: 500px;*/
     min-height:2px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
     animation-duration: 0.4s;
-    border-radius: 10px;
-    
-    
+    border-radius: 0px 0px 10px 10px;
+
 
 }
 
 .modal-wrapper{
     border: 2px solid #fff;
-    border-radius:10px;
+    border-radius: 0px 0px 10px 10px;
     background-color: #48b5e9;
     padding: 10px 5px 5px 0px;    
 }
 
-@media screen and (max-width: 25em) {
+@media screen and (max-width: 20em) {
     .modal{
-        padding-top: 20px;
+        padding-top: 0px;
+        
     }
     .modal-content{
         width:100%;
     }
-    
-    #country_list_id li{
+
+    #searchResult li{
         font-size:1.5em;
+
     }
-    
-    #country_id{
+
+    #searchInput{
         height:2em
     }
     
-}@media screen and (max-width: 340px) {
-    
-.imageBtn{
-    width:40px
-        
-        
-}
-
-#sch-btn{
-    right:2px;
-}
-
-#str-btn, #map-btn{
-            right: 48px
-    }
-    
-    #logo{
-height: 40px;
-
-        
-    }
 
 
 }
@@ -210,33 +267,38 @@ height: 40px;
     margin-right: 10px;
     margin-top: 2px;
 }
-/*#country_id: search input box*/
+/*#searchInput: search input box*/
 
-#country_id{
+#searchInput{
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
     border-radius: 5px 5px 5px 5px;
     border-style: none;
-    padding: 10px 10px 10px 10px;
+    padding: 10px 5px 10px 10px;
     height:100%;
-    color: #111111;
-    width: 40%;
-    max-width: 75%;
-    font-family:"cwTeXHei", "cabin","微軟正黑體";
-    
-    background-image: url(s.png);
-    
+    color: black;
+    width: 30%;
+    max-width: 65%  ;
+    font-family: "Noto Sans TC", cabin;
 
 }
 
-#country_id:focus {
-    width: 75%;
+#searchInput:focus {
+    width: 65%;
+}
+
+.clear{
+
+    border-style: none;
+    padding: 0;
+    margin-left: -5px;
+
 }
 
 /* result list body */
 
 .modal-body {
-    
+
     padding: 0px 0px 5px -500px; 
     height:100%;
     min-height: 0px;
@@ -244,28 +306,26 @@ height: 40px;
     margin: 0;
     background-color: #48b5e9;
     overflow:auto;  
-    
+
 }
 
 
-/*  #country_list_id:  search result list*/
+/*  #searchResult:  search result list*/
 
-#country_list_id li, #searchResult{
-    
-    font-family:"cwTeXHei","微軟正黑體","cabin";
+#searchResult li, #searchResult{
+
+    font-family: "Noto Sans TC", cabin;
     background-color: #48b5e9;    
     color: #fff;
-    
+
 }
 
-#searchResult:hover, #country_list_id li:hover{   
-
+#searchResult:hover, #searchResult li:hover{   
     color: yellow;  
-    
 }
 
-#country_list_id li{
-    margin:10px 0 10px 0;
+#searchResult li{
+    margin:10px 0px 0px 0px;
 }
 
 /* The Close Button */
@@ -276,15 +336,6 @@ height: 40px;
     font-weight: bold;
     margin-top:-5px;
 }
-
-.close:hover,
-.close:focus {
-
-    cursor: pointer;
-}
-
-
-
 
 /* Add Animation */
 @-webkit-keyframes animatetop {
@@ -298,39 +349,35 @@ height: 40px;
 }
 
 .gm-style-iw {
-   width: 250px !important;
-   top: 15px !important;
-   left: 0 !important;
-   background-color: #fff;
-   box-shadow: 0 1px 6px #48b5e9;
-   border: 1px solid #48b5e9;
-   border-radius: 5px 5px 5px 5px; 
-   
-   }
-	
+    width: 250px !important;
+    top: 15px !important;
+    left: 0 !important;
+    background-color: white;
+    box-shadow: 0px 1px 6px #48b5e9;
+    border: 1px solid #48b5e9;
+    border-radius: 5px 5px 5px 5px; 
+
+}
+
 #iw-container, .iw-title {
-	
-   font-family: 'cwTeXHei', "cabin";
-   font-size: 1em;
-       
-   margin: 1px 1px 1px 1px;   
-   text-align:center;
-   border-radius: 5px 5px 5px 5px; 
-   min-height: 80px;
-   overflow: hidden;
+    font-family: "Noto Sans TC", cabin;
+    font-size: 1em;       
+    margin: 1px 1px 1px 1px;   
+    text-align:center;
+    border-radius: 5px 5px 5px 5px; 
+    min-height: 90px;
+    overflow: hidden;
 }
 
 #iw-container{     
     background-color: #48b5e9;     
     width:246px;
-    
 }
 
 .iw-right-content{
-    min-height: 50px;
-    position:absolute; 
-    margin:0;
-    padding:5px 5px 5px 5px;
+    min-height: 85px;
+    position: absolute; 
+    margin:0px 1px 1px 0px;    
     width:50px;
     right:0;    
     float:right;
@@ -340,7 +387,7 @@ height: 40px;
 
 }
 
-.iw-title p{
+.iw-title-p1{
     margin:0;
     position:absolute;
     top:50%;
@@ -348,14 +395,16 @@ height: 40px;
     margin-right:-50%;
     transform: translate(-50%,-50%);
     font-size: 0.9em;
-    
+    font-weight:lighter;
+    font-family: "Noto Sans TC", cabin;
+    overflow: hidden;
+
 }
 
-.iw-title p span{
+
+.iw-title-p1 span{
     font-size: 0.8em;
-    font-weight:lighter;
-    font-family:"cwTeXHei", "serif","微軟正黑體";
-    
+
 }
 
 
@@ -366,18 +415,18 @@ height: 40px;
     color:#48b5e9;
     width:196px;    
     overflow-wrap: break-word;
-    
+
 }
 
 
 
 .mp-level ul li{    
-    
-    font-family:"cwTeXHei","微軟正黑體","cabin";
+
+    font-family: "Noto Sans TC", cabin;
 }
 
 .subMenu:hover, .subMenu:focus{
-    
+
     color:yellow;
 }
 
@@ -387,9 +436,9 @@ height: 40px;
 #disTitle, #locTitle, #areTitle, #regTitle{
     font-size: 1.5em;    
     font-weight:100;
-    font-family:"cwTeXHei", "cabin","微軟正黑體";
-    
-    
+    font-family: "Noto Sans TC", cabin;
+
+
 }
-	
-	
+
+

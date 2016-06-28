@@ -1,5 +1,14 @@
 <?php 
 
+
+//byethost
+//$servername = "sql311.byethost18.com";
+//$username = "b18_18324019";
+//$password = "";
+//$dbname = "b18_18324019_dpshk";
+//
+
+
 $servername = "localhost";
 $username = "root";
 $password = "";

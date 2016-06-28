@@ -62,7 +62,7 @@
             z-index:2;
             position: relative;     
             top: 10px;      
-            left: 70px;
+            left: 80px;
             float:left;                
             cursor: pointer;
 
@@ -95,7 +95,7 @@
 	height: 100%;
 /*	background: #336ca6;*/
              background:#48b5e9;
-	font-family:"cwTeXHei", "cabin","微軟正黑體";
+	font-family: "Noto Sans TC", cabin;
 	-webkit-transform: translate3d(-100%, 0, 0);
 	-moz-transform: translate3d(-100%, 0, 0);
 	transform: translate3d(-100%, 0, 0);
@@ -294,7 +294,7 @@
 .mp-back::after {
 	font-family: 'linecons';
 	position: absolute;   
-/*                background-image: url('img/mp.png');*/
+
 	content: "\e037";
 	right: 10px;
 	font-size: 1.3em;
