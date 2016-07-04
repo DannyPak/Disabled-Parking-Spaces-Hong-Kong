@@ -1,6 +1,7 @@
 var searchFlat;
 var markers = [];
 var mapOptions = [];
+var browerSupportFlag = new Boolean();
 var infoWindow = new google.maps.InfoWindow;
 var remove_featureType = [
     {
@@ -24,9 +25,23 @@ var remove_featureType = [
     }
 ];
 
+
+
+
 $(document).ready(function () {
 
+    document.getElementById("drawMarkerChk").addEventListener("click", function () {
+        if ($(this).is(':checked')) {
 
+            drawMarker(map);
+
+        } else {
+            for (i = 0; i < markers.length; i++) {
+                markers[i].setMap(null);
+            }
+        }
+
+    });
 
     $('#en').click(function () {
         window.location.href = 'index_e.php';
@@ -38,7 +53,7 @@ $(document).ready(function () {
     // Get the modal
     var modal = document.getElementById('myModal');
     // Get the button that opens the modal
-    var btn = document.getElementById('schbutton');
+    var btn = document.getElementById('schButton');
     // When the user clicks on the button, open the modal 
 
     $(btn).click(function () {
@@ -53,7 +68,7 @@ $(document).ready(function () {
         }
 
     });
-
+//search clear button
     var clear = document.getElementsByClassName("clear")[0];
     $(clear).click(function () {
         $('#searchInput').val('');
@@ -68,12 +83,14 @@ $(document).ready(function () {
         searchFlat = 1;
     });
 
-
+//user location button
     var ul = document.getElementById("usrLocButton");
     $(ul).click(function () {
-        getUsrLocation();
+document.getElementById("drawMarkerChk").checked = true;
+        displayUsrLocation();
     });
-    var mp = document.getElementById("mapbutton");
+    
+    var mp = document.getElementById("mapViewButton");
     $(mp).click(function () {
         geocode(id, lat, lng, qty, loc_c, loc_e);
     });
@@ -86,24 +103,39 @@ $(document).ready(function () {
             window.searchFlat = searchFlat;
         }
     };
-
-    $(window).keydown(function (event) {
+//avoid user press [enter] to 
+/*    $(window).keydown(function (event) {
         if (event.keyCode === 13) {
             event.preventDefault();
             return false;
         }
     });
 
-
+*/
 });
 
 
 function showAllMarker() {
 
+    drawMarker(map);
 
-if (document.getElementById("drawMarkerChk").checked === true) {
+}
+
+
+function chkDrawMarker() {
+    if ($(document.getElementById("drawMarkerChk")).is(':checked')) {
+
         drawMarker(map);
-    } 
+        
+        
+
+    } else {
+        
+        for (i = 0; i < markers.length; i++) {
+            markers[i].setMap(null);
+        }
+        
+    }
 }
 ;
 
@@ -133,7 +165,7 @@ function drawMarker(map) {
                     position: point,
                     icon: 'img/parking.svg'
                 });
-
+//                var infoWindow = new google.maps.InfoWindow;
                 bindInfoWindow(infoWindow, marker, map, iwContent(id, lat, lng, loc_c, loc_e, qty));
 
                 marker.setMap(map);
@@ -142,6 +174,12 @@ function drawMarker(map) {
             }
             ;
         }
+
+        $('#schButton').show();
+        $('#usrLocButton').show();
+        $('#spacer').show();
+
+
         ;
     });
 
@@ -189,14 +227,16 @@ function iwContent(id, lat, lng, loc_c, loc_e, qty) {
 }
 
 function geocode(id, lat, lng, qty, loc_c, loc_e) {
-    document.getElementById("drawMarkerChk").checked = true;
+
+
+
     myPushMenu = new mlPushMenu(document.getElementById('mp-menu'), document.getElementById('trigger'));
     myPushMenu._resetMenu();
     var modal = document.getElementById('myModal');
     modal.style.display = "none";
     searchFlat = 1;
-    $('#strbutton').show();
-    $('#mapbutton').hide();
+    $('#strViewButton').show();
+    $('#mapViewButton').hide();
     $("#shw-checkbox").show();
     $("#usrLocButton").show();
     window.lat = lat;
@@ -206,10 +246,11 @@ function geocode(id, lat, lng, qty, loc_c, loc_e) {
     window.loc_c = loc_c;
     loc_e = checkLoc_e(loc_e);
     window.loc_e = loc_e;
-    setMap();
+    mapSetting();
+
 }
 
-function setMap() {
+function mapSetting() {
 
     var address = new google.maps.LatLng(lat, lng);
     var map = document.getElementById("map");
@@ -226,7 +267,7 @@ function setMap() {
     mapOptions.push(mapOption);
     map = new google.maps.Map(map, mapOption);
     map.setOptions({styles: remove_featureType});
-    google.maps.event.addListener(map, 'idle', showAllMarker);
+    google.maps.event.addListener(map, 'idle', chkDrawMarker);
     marker = new google.maps.Marker({
         position: address,
         icon: 'img/parking.svg'
@@ -243,60 +284,14 @@ function setMap() {
         iwStyle();
     });
     window.infoWindow = infoWindow;
-    document.getElementById("drawMarkerChk").addEventListener("click", function () {
-        if ($(this).is(':checked')) {
 
-            drawMarker(map);
-
-        } else {
-            for (i = 0; i < markers.length; i++) {
-                markers[i].setMap(null);
-            }
-        }
-
-    });
     window.map = map;
+    getUsrLocation();
+    document.getElementById("drawMarkerChk").checked = false;
 }
 
-function getUsrLocation() {
-     
-
-    if (navigator.geolocation) {
-
-        navigator.geolocation.getCurrentPosition(function (position) {
-
-            var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-
-            // Create a marker and center map on user location
-            google.maps.event.trigger(map, 'resize');
-            marker = new google.maps.Marker({
-                position: pos,
-                draggable: true,
-                icon: 'img/u_tc.svg',
-                title: "閣下在此",
-                map: map
-            });
 
 
-            map.setCenter(pos);
-            map.setZoom(16);
-        });
-    }
-    document.getElementById("drawMarkerChk").addEventListener("click", function () {
-        if ($(this).is(':checked')) {
-
-            drawMarker(map);
-
-        } else {
-            for (i = 0; i < markers.length; i++) {
-                markers[i].setMap(null);
-            }
-        }
-
-    });
-    document.getElementById("drawMarkerChk").checked = true;
-    $("#shw-checkbox").show();
-}
 
 function panoview(id, lat, lng, qty, loc_c, loc_e) {
     $("#shw-checkbox").hide();
@@ -315,8 +310,8 @@ function panoview(id, lat, lng, qty, loc_c, loc_e) {
 
 
     map.setStreetView(panorama);
-    $('#strbutton').hide();
-    $('#mapbutton').show();
+    $('#strViewButton').hide();
+    $('#mapViewButton').show();
     $("#shw-checkbox").hide();
 
     window.id = id;

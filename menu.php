@@ -3,29 +3,29 @@
 require('dbconfig.php');
 
 
-$q = "select reg_c, reg_e from region";
-$result_r = mysqli_query($link, $q);
+$qr = "select reg_c, reg_e from region";
+$result_r = mysqli_query($link, $qr);
 if (!$result_r) {
     echo 'MySQL Error: ' . mysqli_error();
     exit;
 }
 
-$q = "select reg_id,  dis_c, dis_e from district";
-$result_d = mysqli_query($link, $q);
+$qd = "select reg_id,  dis_c, dis_e from district";
+$result_d = mysqli_query($link, $qd);
 if (!$result_d) {
     echo 'MySQL Error: ' . mysqli_error();
     exit;
 }
 
-$q = "select dis_id,  are_c , are_e from area";
-$result_a = mysqli_query($link, $q);
+$qa = "select dis_id,  are_c , are_e from area";
+$result_a = mysqli_query($link, $qa);
 if (!$result_a) {
     echo 'MySQL Error: ' . mysqli_error();
     exit;
 }
 
-$q = "select are_id, id, loc_c, loc_e, lat, lng, qty from location";
-$result_l = mysqli_query($link, $q);
+$ql = "select are_id, id, loc_c, loc_e, lat, lng, qty from location";
+$result_l = mysqli_query($link, $ql);
 if (!$result_l) {
     echo 'MySQL Error: ' . mysqli_error();
     exit;
@@ -83,7 +83,7 @@ for ($r = 0; $r < count($regs); $r++) {
                     echo '<h2 class="icon">' . $are_c . '</h2>';
                     echo '<a class="mp-back" href="#">返回</a>';
 
-                    for ($l = 0; $l < count($locs); $l++) {
+                        for ($l = 0; $l < count($locs); $l++) {
                         if ($locs[$l]['are_id'] == $a + 1) {
 
                             $qty = $locs[$l]['qty'];
