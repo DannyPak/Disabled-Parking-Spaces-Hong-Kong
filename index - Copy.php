@@ -17,7 +17,7 @@
             function initialize() {
 
                 /* lang = 1: Chinese, 2: English  */
-                var lang = 2;
+                var lang = 1;
                 window.lang = lang;
                 $("#mapViewButton").removeClass('hidden');
                 $("#showChkBox").removeClass('hidden');
@@ -48,16 +48,15 @@
             }
             function getUsrLocation() {
                 if (navigator.geolocation) {
-
-                    browerSuppotFlag = true;
+                    browerSupportFlag = true;
                     navigator.geolocation.getCurrentPosition(function (position) {
                         pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
                         // Create a marker and center map on user location
                         usrMarker = new google.maps.Marker({
                             position: pos,
                             draggable: true,
-                            icon: 'img/u_en.svg',
-                            title: "You're Here",
+                            icon: 'img/u_tc.svg',
+                            title: "閣下在此",
                             map: map
                         });
                     });
@@ -136,7 +135,7 @@
                 var keyword = $('#searchInput').val();
                 if (keyword.length >= min_length) {
                     $.ajax({
-                        url: 'search_e.php',
+                        url: 'search.php',
                         type: 'POST',
                         data: {keyword: keyword},
                         success: function (data) {
@@ -166,7 +165,7 @@
                             <img class="hidden" id="spacer" src='img/menu-icon.svg'></a>
                     </div>  
                     <div class="logo">
-                        <a href="index_e.php">
+                        <a href="index.php">
                             <img  id="logo" src="img/logo.svg"></a>
                     </div>    
                     <div id="map">
@@ -176,7 +175,7 @@
                 <!-- mp-menu -->
                 <nav id="mp-menu" class="mp-menu">
                     <div class="mp-level">
-                        <?php require('menu_e.php'); ?>							
+                        <?php require('menu.php'); ?>							
                     </div>
                 </nav>
                 <div id="myModal" class="modal">
@@ -199,7 +198,7 @@
 
                             </div>
 
-                            <div class="modal-body">                                           
+                            <div class="modal-body">                                        
 
                                 <form>                                                                                      
                                     <ul id="searchResult" style="background-color:#48b5e9; color: white"></ul>
@@ -223,7 +222,7 @@
                     <div id="showChkBox" class="hidden">
 
                         <input type="checkbox" value="None" id="drawMarkerChk" name="check" checked="checked" style="display:inline-block; width:19px; height:19px; margin:0px 2px 10px; vertical-align: middle; cursor: pointer;"/>
-                        <label id="ctext" for="drawMarkerChk" style="color:white;font-size: 0.8em;font-family: 'Noto Sans TC',sans-serif;" >Show Nearby</label>
+                        <label id="ctext" for="drawMarkerChk" style="color:white;font-size: 0.8em;font-family: 'Noto Sans TC',sans-serif;" >顯示附近</label>
 
                     </div>
                 </div>

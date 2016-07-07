@@ -16,8 +16,11 @@
         <script>
             function initialize() {
 
+                /* lang = 1: Chinese, 2: English  */
+                var lang = 1;
+                window.lang = lang;
                 $("#mapViewButton").removeClass('hidden');
-                $("#shw-checkbox").removeClass('hidden');
+                $("#showChkBox").removeClass('hidden');
                 $('#schButton').removeClass('hidden');
                 $('#usrLocButton').removeClass('hidden');
                 $('#usrLocButton').hide();
@@ -26,9 +29,8 @@
                 $('#mapViewButton').hide();
                 $('#strViewButton').hide();
                 $('#schButton').hide();
-                $('#shw-checkbox').hide();
-
-
+                $('#showChkBox').hide();
+                
                 var latlng = new google.maps.LatLng(22.2926589, 114.1745586);
                 var myOptions = {
                     center: latlng,
@@ -38,31 +40,18 @@
                     mapTypeControl: false,
                     streetViewControl: false
                 };
-
                 map = new google.maps.Map(document.getElementById("map"), myOptions);
                 window.map = map;
                 map.setOptions({styles: remove_featureType});
-                google.maps.event.addListener(map, 'idle', showAllMarker);
+                google.maps.event.addListener(map, 'idle', chkDrawMarker);
                 window.map = map;
-                getUsrLocation();
-
-
-
+                getUsrLocation();       
             }
-
-
             function getUsrLocation() {
-
-
                 if (navigator.geolocation) {
-                    browerSuppotFlag = true;
-
+                    browerSupportFlag = true;
                     navigator.geolocation.getCurrentPosition(function (position) {
-
-                        pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-
-
-
+                        pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);                        
                         // Create a marker and center map on user location
                         usrMarker = new google.maps.Marker({
                             position: pos,
@@ -71,36 +60,19 @@
                             title: "閣下在此",
                             map: map
                         });
-
-
-
-
-//                        map.setCenter(pos);
-//                        map.setZoom(16);
                     });
                 } else {
                     browserSupportFlag = false;
                     alert("Your browser doesn't support geolocation.");
-
                 }
-
-
-
             }
-
             function displayUsrLocation() {
                 chkDrawMarker();
                 map.setCenter(pos);
                 map.setZoom(16);
-                $("#shw-checkbox").show();
-                
+                $("#showChkBox").show();
             }
-
-
-
-
         </script>
-
         <script src="//ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" type="text/javascript" ></script>
         <script src="js/pace.min.js" type="text/javascript" />
         <script async defer src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
@@ -110,7 +82,6 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
         <script async defer src="js/map.js" type="text/javascript" ></script>
         <script src="js/modernizr.custom.js" type="text/javascript"></script>
-
         <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
         <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
@@ -129,18 +100,13 @@
                 overflow-y: hidden;
             }
             body {
-
                 background-color: #FFAC00;
-                /*  background-color: #F1A80D;	*/
-
             }
-
             #map{
                 position:relative;
                 top:20px;
                 z-index:1
             }
-
 
             @font-face {
                 font-family: myFont;
@@ -156,35 +122,16 @@
                 font-family: myFont;
             }
 
-
-            /*                        @font-face {
-                                        font-family: 'cwTeXHei';
-                                        font-style: normal;
-                                        font-weight: 500;      
-                                        src: url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.eot);
-                                        src: url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.woff2) format('woff2'),                                                            
-                                            url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.woff) format('woff'),
-                                            url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.eot?#iefix) format('embedded-opentype'),    
-                                            url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.ttf) format('truetype');
-                                        
-                                    }  */
-
-
-
         </style>
         <title>Disabled Parking Spaces Hong Kong</title>            
         <link rel="stylesheet" type="text/css" href="css/style_m.css">	
-
         <link rel="stylesheet" type="text/css" href="css/demo.css" />
         <link rel="stylesheet" type="text/css" href="css/icons.css" />
         <link rel="stylesheet" type="text/css" href="css/component.css" />
-        <link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">     
-        <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Cabin:400,500' >
-
-
-
+        <link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">     
+        <!--<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Cabin:400,500' >-->
         <script>
-                function autocomplet() {
+            function autocomplet() {
                 var min_length = 1; // min caracters to display the autocomplete
                 var keyword = $('#searchInput').val();
                 if (keyword.length >= min_length) {
@@ -201,7 +148,6 @@
                     $('#searchResult').hide();
                 }
             }
-
             // set_item : this function will be executed when we select an item
             function set_item(item) {
                 // change input value
@@ -209,21 +155,12 @@
                 // hide proposition list
                 $('#searchResult').hide();
             }
-
-
-
-
         </script>
     </head>
     <body onload="initialize()">
-        <!--        <div class="se-pre-con">
-                    <img src="img/Preloader_1.gif" alt="loading" />
-                    Initializing...
-                </div>-->
         <div class="container">
             <div class="mp-pusher" id="mp-pusher">
                 <div class="scroller">
-
                     <div class="header block block-40 clearfix">
                         <a href="#" id="trigger" class="menu-trigger">                                        
                             <img class="hidden" id="spacer" src='img/menu-icon.svg'></a>
@@ -239,31 +176,35 @@
                 <!-- mp-menu -->
                 <nav id="mp-menu" class="mp-menu">
                     <div class="mp-level">
-<?php require('menu.php'); ?>							
+                        <?php require('menu.php'); ?>							
                     </div>
                 </nav>
-
                 <div id="myModal" class="modal">
                     <!-- Modal content -->
                     <div class="modal-content">
                         <div class="modal-wrapper">
-                            <div class="search_container">
-                                <img id="searchIcon" src="img/sc_white.svg" >                                              
+                            <div class="search_container" style="padding:0px 5px 0px 5px;">
+                                <img id="searchIcon" src="img/sc_white.svg" style="color:white; float:left; margin: 2px 10px 0px 0px;">                                              
                                 <input type="text" id="searchInput" onkeyup="autocomplet()" placeholder="黃大仙, Wong Tai Sin...." onblur="if (this.placeholder === '') {
                                             this.placeholder = '黃大仙, Wong Tai Sin....';
                                         }" onfocus="if (this.placeholder === '黃大仙, Wong Tai Sin....') {
                                                     this.placeholder = '';
                                                 }" >
-                                <span class="clear btn"><img src="img/cb.svg" id="clearButton" title="Clear" alt="Clear"></span>                                         
-                                <span class="close btn"><img src="img/upArrow.svg" id="upArrow" title="Close" alt="Close"></span>
+                                <span class="clrSchBtn btn" style="border-style:none; padding: 0; margin-left: -5px;">
+                                    <img src="img/cb.svg" id="clearButton" title="Clear" alt="Clear">
+                                </span>                                         
+                                <span class="cloSchBtn btn" style="color: #fff; float: right; margin-top: 10px;">
+                                    <img src="img/upArrow.svg" id="upArrow" title="Close" alt="Close">
+                                </span>
 
                             </div>
 
-                            <div class="modal-body">                                           
+                            <div class="modal-body">                                        
 
                                 <form>                                                                                      
-                                    <ul id="searchResult"></ul>
+                                    <ul id="searchResult" style="background-color:#48b5e9; color: white"></ul>
                                 </form>
+
 
                             </div>
                             <div class="modal-footer">
@@ -273,33 +214,26 @@
                     </div>
                 </div><!-- The Modal -->
                 <div>
-                    <span id="ul-btn" class="btn"><img src="img/ul.svg" class="hidden" id="usrLocButton" alt="Current Location" title="Current Location"></span>
+                    <span id="ul-btn" class="btn" style="bottom:50px;right:10px;position:absolute;z-index: 2;"><img src="img/ul.svg" class="image Btn hidden" id="usrLocButton" alt="Current Location" title="Current Location"></span>
                 </div>
                 <div> 
-                    <span id="sch-btn" class="btn"><img src="img/sc.svg" class="imageBtn hidden" id="schButton" alt="Search" title="Search"></span>
+                    <span id="sch-btn" class="btn" style="right:10px; "><img src="img/sc.svg" class="imageBtn hidden" id="schButton" alt="Search" title="Search"></span>
 
                     <span id="map-btn" class="btn"><img src="img/mp.svg"  class="imageBtn hidden" id="mapViewButton" alt="Map View" title="Map View"></span>                   
-                    <div id="shw-checkbox" class="hidden">
-                        <div>
-                            <input type="checkbox" value="None" id="drawMarkerChk" name="check" /><label id="ctext" for="drawMarkerChk" >顯示附近</label>
-                        </div>
+                    <div id="showChkBox" class="hidden">
+
+                        <input type="checkbox" value="None" id="drawMarkerChk" name="check" checked="checked" style="display:inline-block; width:19px; height:19px; margin:0px 2px 10px; vertical-align: middle; cursor: pointer;"/>
+                        <label id="ctext" for="drawMarkerChk" style="color:white;font-size: 0.8em;font-family: 'Noto Sans TC',sans-serif;" >顯示附近</label>
 
                     </div>
-
-
-
                 </div>
                 <div id="footer">(C)Copyright</div>
-
             </div><!-- /pusher -->
         </div><!-- /container -->
-
-<!--        <script src="js/mostrar_nav.js"></script>-->
-        <script src="js/classie.js"></script>
-        <script src="js/mlpushmenu.js"></script>
+        <script src="js/classie.js" type="text/javascript"></script>
+        <script src="js/mlpushmenu.js" type="text/javascript"></script>
         <script>
                                             new mlPushMenu(document.getElementById('mp-menu'), document.getElementById('trigger'));
-
         </script>
     </body>
 </html>

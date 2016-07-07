@@ -1,4 +1,7 @@
-var searchFlat, markers = [], mapOptions = [], browerSupportFlag = new Boolean();
+var searchFlat;
+var markers = [];
+var mapOptions = [];
+var browerSupportFlag = new Boolean();
 var infoWindow = new google.maps.InfoWindow;
 var remove_featureType = [
     {
@@ -26,7 +29,7 @@ $(document).ready(function () {
         if ($(this).is(':checked')) {
             drawMarker(map);
         } else {
-            for (i in markers) {
+            for (i = 0; i < markers.length; i++) {
                 markers[i].setMap(null);
             }
         }
@@ -72,7 +75,7 @@ $(document).ready(function () {
     });
     var mp = document.getElementById("mapViewButton");
     $(mp).click(function () {
-        goToLocation(id, lat, lng, qty, loc);
+        goToLocation(id, lat, lng, qty, loc_c, loc_e);
     });
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function (event) {
@@ -83,12 +86,14 @@ $(document).ready(function () {
         }
     };
 });
-function showAllMarker() {drawMarker(map);}
+function showAllMarker() {
+    drawMarker(map);
+}
 function chkDrawMarker() {
     if ($(document.getElementById("drawMarkerChk")).is(':checked')) {
         drawMarker(map);
     } else {
-        for (i in markers) {
+        for (i = 0; i < markers.length; i++) {
             markers[i].setMap(null);
         }
     }
@@ -96,25 +101,29 @@ function chkDrawMarker() {
 ;
 function drawMarker(map) {
     bounds = map.getBounds();
-    var url = (lang === 1) ? "xmldom.php" : "xmldom_e.php";
-    downloadUrl(url, function (data) {
+    
+//    var url = lang===1?"xmldom.php":"xmldom_e.php";   
+    
+    downloadUrl("xmldom.php", function (data) {
         var xml = data.responseXML;
         var m = xml.documentElement.getElementsByTagName("marker");
         for (var i = 0; i < m.length; i++) {
             var id = m[i].getAttribute("id");
-            var loc = m[i].getAttribute("loc");
+            var loc_c = m[i].getAttribute("loc_c");
+            var loc_e = m[i].getAttribute("loc_e");
             var qty = m[i].getAttribute("qty");
             var lat = m[i].getAttribute("lat");
             var lng = m[i].getAttribute("lng");
             var point = new google.maps.LatLng(parseFloat(lat), parseFloat(lng));
-            var loc_iw = (lang === 2) ? checkLoc_e(loc) : loc;
+            loc_e = checkLoc_e(loc_e);
             if (bounds.contains(new google.maps.LatLng(lat, lng)) === true) {
                 var marker = new google.maps.Marker({
                     map: map,
                     position: point,
                     icon: 'img/parking.svg'
                 });
-                bindInfoWindow(infoWindow, marker, map, iwContent(id, lat, lng, loc, loc_iw, qty));
+//                var infoWindow = new google.maps.InfoWindow;
+                bindInfoWindow(infoWindow, marker, map, iwContent(id, lat, lng, loc_c, loc_e, qty));
                 marker.setMap(map);
                 markers.push(marker);
             }
@@ -133,8 +142,8 @@ function downloadUrl(url, callback) {
             request.onreadystatechange = doNothing;
             callback(request, request.status);
         }
-    };
-    request.open('GET', url, true);
+    };      
+    request.open('GET', url,true);
     request.send();
 }
 ;
@@ -145,24 +154,38 @@ function bindInfoWindow(infoWindow, marker, map, html) {
         iwStyle();
     });
 }
-function iwContent(id, lat, lng, loc, loc_iw, qty) {
-    return (lang === 1) ? iwHTML(id, lat, lng, loc, loc_iw, qty, "車位數量", "*非實時") : iwHTML(id, lat, lng, loc, loc_iw, qty, "Quantity", "  *Non-Real Time");
-}
-function iwHTML(id, lat, lng, loc, loc_iw, qty, qtext1, qtext2) {
-    return '<div id="iw-container" style="background-color: #48b5e9; width:246px;">\n\
+
+function iwContent(id, lat, lng, loc_c, loc_e, qty) {
+
+    if (lang === 1) {
+        return '<div id="iw-container" style="background-color: #48b5e9; width:246px;">\n\
                 <div class = "iw-right-content">\n\
                     <input type="image" alt="Direction" title="Direction" src="img/direction.svg" alt="View in Google Maps" onclick="goMap(' + lat + ',' + lng + ')">\n\
-    <input type="image" src="img/sv.svg" alt="Street View" title="Street View" id="strButton" onclick="panoview(' + id + ',' + lat + ',' + lng + ',' + qty + ',\'' + loc + '\')">\n\
+    <input type="image" src="img/sv.svg" alt="Street View" title="Street View" id="strButton" onclick="panoview(' + id + ',' + lat + ',' + lng + ',' + qty + ',\'' + loc_c + '\',\'' + loc_e + '\')">\n\
 </div>\n\
                 <div class = "iw-title" >\n\
-                    <p class ="iw-title-p1">' + loc_iw +
-            '<br>' + qtext1 + ': ' + qty +
-            '<br><span style="font-size:0.9em;">  ' + qtext2 + '</span>\n\
+                    <p class ="iw-title-p1">' + loc_c +
+                '<br>車位數量 : ' + qty +
+                '<br><span style="font-size:0.9em;">  *非實時</span>\n\
                     </p>\n\n\
                 </div>\n\
             </div>';
+    } else {
+        return '<div id="iw-container" style="background-color: #48b5e9; width:246px;">\n\
+                <div class = "iw-right-content">\n\
+                    <input type="image" alt="Direction" title="Direction" src="img/direction.svg" alt="View in Google Maps" onclick="goMap(' + lat + ',' + lng + ')">\n\
+    <input type="image" src="img/sv.svg" alt="Street View" title="Street View" id="strButton" onclick="panoview(' + id + ',' + lat + ',' + lng + ',' + qty + ',\'' + loc_c + '\',\'' + loc_e + '\')">\n\
+</div>\n\
+                <div class = "iw-title" >\n\
+                    <p class ="iw-title-p1">' + loc_e +
+                '<br>Quantity : ' + qty +
+                '<br><span style="font-size:0.9em;">  *Non-Real Time</span>\n\
+                    </p>\n\n\
+                </div>\n\
+            </div>';
+    }
 }
-function goToLocation(id, lat, lng, qty, loc) {
+function goToLocation(id, lat, lng, qty, loc_c, loc_e) {
     myPushMenu = new mlPushMenu(document.getElementById('mp-menu'), document.getElementById('trigger'));
     myPushMenu._resetMenu();
     var modal = document.getElementById('myModal');
@@ -176,9 +199,9 @@ function goToLocation(id, lat, lng, qty, loc) {
     window.lng = lng;
     window.qty = qty;
     window.id = id;
-    var loc_iw = (lang === 2) ? checkLoc_e(loc) : loc;
-    window.loc_iw = loc_iw;
-    window.loc = loc;
+    window.loc_c = loc_c;
+    loc_e = checkLoc_e(loc_e);
+    window.loc_e = loc_e;
     mapSetting();
 }
 function mapSetting() {
@@ -203,7 +226,7 @@ function mapSetting() {
     });
     marker.setMap(map);
     var infoWindow = new google.maps.InfoWindow({
-        content: iwContent(id, lat, lng, loc, loc_iw, qty)
+        content: iwContent(id, lat, lng, loc_c, loc_e, qty)
     });
     google.maps.event.addListener(marker, 'click', function () {
         infoWindow.open(map, marker);
@@ -217,7 +240,7 @@ function mapSetting() {
     getUsrLocation();
     document.getElementById("drawMarkerChk").checked = false;
 }
-function panoview(id, lat, lng, qty, loc) {
+function panoview(id, lat, lng, qty, loc_c, loc_e) {
     $("#showChkBox").hide();
     $("#usrLocButton").hide();
     var address = new google.maps.LatLng(lat, lng);
@@ -233,36 +256,34 @@ function panoview(id, lat, lng, qty, loc) {
     $('#strViewButton').hide();
     $('#mapViewButton').show();
     $("#showChkBox").hide();
-    $("#usrLocButton").hide();
     window.id = id;
     window.lat = lat;
     window.lng = lng;
-    window.loc = loc;
+    window.loc_c = loc_c;
+    window.loc_e = loc_e;
     window.qty = qty;
-
 }
 function goMap(lat, lng) {
     window.open('https://maps.google.com/?q=' + lat + ',' + lng + '&ll=' + lat + ',' + lng + '&z=18');
 }
-function checkLoc_e(loc_iw) {
-    switch (loc_iw) {
-        case "Lower Albert Rd near St. Johns Building":
-            return  "Lower Albert Rd near St. John's Building";
-            break;
-        case "Plunketts Rd":
-            return "Plunkett's Rd";
-            break;
-        case "Lockhart Rd w/o OBrien Rd":
-            return "Lockhart Rd w/o O'Brien Rd";
-            break;
-        case "Thomson Rd e/o OBrien Rd":
-            return "Thomson Rd e/o O'Brien Rd";
-            break;
-        case "Tung Lo Wan Rd near Queens College":
-            return "Tung Lo Wan Rd near Queen's College";
-            break;
-        default:
-            return loc_iw;
+function checkLoc_e(loc_e) {
+    if (loc_e === "Lower Albert Rd near St. Johns Building") {
+        var loc_e = "Lower Albert Rd near St. John's Building";
+        return loc_e;
+    } else if (loc_e === "Plunketts Rd") {
+        var loc_e = "Plunkett's Rd";
+        return loc_e;
+    } else if (loc_e === "Lockhart Rd w/o OBrien Rd") {
+        var loc_e = "Lockhart Rd w/o O'Brien Rd";
+        return loc_e;
+    } else if (loc_e === "Thomson Rd e/o OBrien Rd") {
+        var loc_e = "Thomson Rd e/o O'Brien Rd";
+        return loc_e;
+    } else if (loc_e === "Tung Lo Wan Rd near Queens College") {
+        var loc_e = "Tung Lo Wan Rd near Queen's College";
+        return loc_e;
+    } else {
+        return loc_e;
     }
 }
 function iwStyle() {
@@ -288,8 +309,10 @@ function iwStyle() {
     });
 }
 function doNothing() {}
-function trace(message) {
-    if (typeof console !== 'undefined') {
+function trace(message)
+{
+    if (typeof console !== 'undefined')
+    {
         console.log(message);
     }
 }

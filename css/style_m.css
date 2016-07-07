@@ -1,4 +1,3 @@
-    
 @font-face {
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -7,105 +6,89 @@
         url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.woff2) format('woff2'),
         url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.woff) format('woff'),
         url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.otf) format('opentype');
-    /*                            url(fonts/notosanstc/v1/NotoSansTC-Regular.woff2) format('woff2'),
-                                url(fonts/notosanstc/v1/NotoSansTC-Regular.woff) format('woff'),
-                                url(fonts/notosanstc/v1/NotoSansTC-Regular.otf) format('opentype');*/
 }
-
-/*.no-js #loader { display: none;  }
-.js #loader { display: block; position: absolute; left: 100px; top: 0; }
-.se-pre-con {
-    position: fixed;
-	left: 0px;
-	top: 0px;
-	width: 100%;
-	height: 100%;
-	z-index: 9999;
-        background: url(img/Preloader_1.gif) center no-repeat #fff;
-
-}*/
 
 /* Progress Bar Loader */
 .pace {
-  -webkit-pointer-events: none;
-  pointer-events: none;
+    -webkit-pointer-events: none;
+    pointer-events: none;
 
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
 
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  -o-box-sizing: border-box;
-  box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
 
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
 
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
 
-  z-index: 2000;
-  position: fixed;
-  margin: auto;
-  top: 12px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 200px;
-  height: 50px;
-  overflow: hidden;
+    z-index: 2000;
+    position: fixed;
+    margin: auto;
+    top: 12px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 200px;
+    height: 50px;
+    overflow: hidden;
 }
 
 .pace .pace-progress {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  -o-box-sizing: border-box;
-  box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
 
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
 
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
 
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 
-  display: block;
-  position: absolute;
-  right: 100%;
-  margin-right: -7px;
-  width: 93%;
-  top: 7px;
-  height: 14px;
-  font-size: 12px;
-  background: #f1a13e;
-  color: #f1a13e;
-  line-height: 60px;
-  font-weight: bold;
-  font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
+    display: block;
+    position: absolute;
+    right: 100%;
+    margin-right: -7px;
+    width: 93%;
+    top: 7px;
+    height: 14px;
+    font-size: 12px;
+    background: #f1a13e;
+    color: #f1a13e;
+    line-height: 60px;
+    font-weight: bold;
+    font-family: "Noto Sans TC", sans-serif;
 
-  -webkit-box-shadow: 120px 0 #fff, 240px 0 #fff;
-  -ms-box-shadow: 120px 0 #fff, 240px 0 #fff;
-  box-shadow: 120px 0 #fff, 240px 0 #fff;
+    -webkit-box-shadow: 120px 0 #fff, 240px 0 #fff;
+    -ms-box-shadow: 120px 0 #fff, 240px 0 #fff;
+    box-shadow: 120px 0 #fff, 240px 0 #fff;
 }
 
 .pace .pace-progress:after {
-  content: attr(data-progress-text);
-  display: inline-block;
-  position: fixed;
-  width: 45px;
-  text-align: right;
-  right: 0;
-  padding-right: 16px;
-  top: 4px;
+    content: attr(data-progress-text);
+    display: inline-block;
+    position: fixed;
+    width: 45px;
+    text-align: right;
+    right: 0;
+    padding-right: 16px;
+    top: 4px;
 }
 
 .pace .pace-progress[data-progress-text="0%"]:after { right: -200px }
@@ -212,55 +195,31 @@
 
 
 .pace .pace-activity {
-  position: absolute;
-  width: 100%;
-  height: 28px;
-  z-index: 2001;
-  box-shadow: inset 0 0 0 2px #f1a13e, inset 0 0 0 7px #FFF;
-  border-radius: 10px;
+    position: absolute;
+    width: 100%;
+    height: 28px;
+    z-index: 2001;
+    box-shadow: inset 0 0 0 2px #f1a13e, inset 0 0 0 7px #FFF;
+    border-radius: 10px;
 }
 
 .pace.pace-inactive {
-  display: none;
+    display: none;
 }
 /*---*/
-
-
-
-
 .hidden{display:none}
-
 ::-webkit-scrollbar { 
     display: none; 
 }
-
-
 * {
     outline: none;
 }
 :focus {
     -moz-outline-style: none;
 }
-
 :-moz-any-link:focus {
     outline: none;
 }
-
-
-
-/*
-.loader{
-    margin:0;
-    position:absolute;
-    top:30%;
-    left:50%;
-    margin-right:-50%;
-    transform: translate(-50%,-50%);
-}*/
-
-
-
-
 
 img{
     border: none;
@@ -269,126 +228,51 @@ img{
 
 #en, #tc{
     position:absolute;
-    right:0;
-    margin-right:20px;
-    top:5px;
-    width:40px;
-    height:40px
+    left:20px;
+    top:10px;
 }
+
 
 .btn{
-
     cursor:pointer
-
 }
-
 #str-btn, #map-btn, #sch-btn{
-
     top:10px;	
     position:absolute;
-
 }
-
 .imageBtn{
     width:48px
 }
-
 #str-btn, #map-btn{
     right:65px
-
 }
-
-#sch-btn{
-    right:10px;       
-}
-
-#shw-btn, #hid-btn{
-    top:80px;
+#showChkBox{
     position: absolute;
     right:10px;
-    z-index: 2;
-    background-color: orange
-
-}
-
-#shw-checkbox{
     top:90px;
-    width: 85px;
+    width: 120px;
     height:30px;
     border: 2px;
     border-color: white;
-    position: absolute;
-    right:10px;
-    z-index: 2;
-    background-color: orange;
+    border-radius: 5px;   
     border-style: solid;
+    z-index: 2;
+    background-color: #ffac00;    
     box-shadow: 0 0 2px #888;
-    border-radius: 5px 5px 5px 5px;
-    padding: 2px 2px 2px 2px;
+    padding: 2px;
     opacity: 1
 }
-
-#ul-btn{
-
-    bottom:50px;
-    right: 10px;
-    position: absolute;
-    z-index: 2;
-}
-
-
-
-input[type="checkbox"] {
-    display:none;
-}
-
-#drawMarkerChk{
-    /*input[type="checkbox"] + label span {*/
-    display:inline-block;
-    width:19px;
-    height:19px;
-    margin: 0px 2px 10px 0px;
-    vertical-align:middle;
-    /*background:url(../img/check_radio_sheet.png) left top no-repeat;*/
-    cursor:pointer;
-}
-
-#drawMarkerChk:checked{
-    /*input[type="checkbox"]:checked + label span {*/
-    /*background:url(../img/check_radio_sheet.png) -19px top no-repeat;*/
-}
-
-#ctext{
-    color: white;
-    font-size: 0.8em;
-    font-family: 'Noto Sans TC', sans-serif;
-}
-
-
 @media screen and (max-width: 340px) {
-
-    .imageBtn{
-        width:40px
-
-
-    }
-
     #sch-btn{
         right:2px;
     }
-
     #str-btn, #map-btn{
         right: 50px
     }
-
     #logo{
         height: 40px;
-
     }
-
-
 }
-
 #footer{
     background-color:#FFAC00;
     width:100%;
@@ -403,10 +287,7 @@ input[type="checkbox"] {
     position:fixed;
     bottom:0;
     z-index:2
-
 }
-
-
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
@@ -420,20 +301,14 @@ input[type="checkbox"] {
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-
-
 }
-
-
 /* Modal Content/Box */
-
-
 .modal-content{
     position: relative;
     background-color: #48b5e9;    
     margin: auto;
     margin-bottom: 20px;
-    padding: 5px 5px 5px 5px;
+    padding: 5px;
     width: 100%;
     /*    max-width: 500px;*/
     min-height:2px;
@@ -442,40 +317,28 @@ input[type="checkbox"] {
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
     animation-duration: 0.4s;
-    border-radius: 0px 0px 10px 10px;
-
-
+    border-radius: 0px;
 }
-
 .modal-wrapper{
     border: 2px solid #fff;
-    border-radius: 0px 0px 10px 10px;
+    border-radius: 10px;
     background-color: #48b5e9;
     padding: 10px 5px 5px 0px;    
 }
-
 @media screen and (max-width: 20em) {
     .modal{
         padding-top: 0px;
-
     }
     .modal-content{
         width:100%;
     }
-
     #searchResult li{
         font-size:1.5em;
-
     }
-
     #searchInput{
         height:2em
     }
-
-
-
 }
-
 /*wrapper the search input box*/
 .modal-header {
     padding: 10px 10px 0px 10px;
@@ -485,23 +348,11 @@ input[type="checkbox"] {
     min-height:10px;
     max-width:100%;
 }
-
-.search_container{
-    padding:0px 5px 0px 5px;
-}
-
-#searchIcon{
-    color:white;
-    float:left;
-    margin-right: 10px;
-    margin-top: 2px;
-}
 /*#searchInput: search input box*/
-
 #searchInput{
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
-    border-radius: 5px 5px 5px 5px;
+    border-radius: 5px;
     border-style: none;
     padding: 10px 5px 10px 10px;
     height:100%;
@@ -509,61 +360,27 @@ input[type="checkbox"] {
     width: 30%;
     max-width: 65%  ;
     font-family: 'Noto Sans TC', sans-serif;
-
 }
-
 #searchInput:focus {
     width: 65%;
 }
-
-.clear{
-
-    border-style: none;
-    padding: 0;
-    margin-left: -5px;
-
-}
-
 /* result list body */
-
 .modal-body {
-
     padding: 0px 0px 5px -500px; 
     height:100%;
     min-height: 0px;
     width:100%;
     margin: 0;
     background-color: #48b5e9;
-    overflow:auto;  
-
+    overflow: auto;  
 }
-
-
 /*  #searchResult:  search result list*/
-
-#searchResult li, #searchResult{
-
-    font-family: 'Noto Sans TC', sans-serif;
-    background-color: #48b5e9;    
+#searchResult li a{
+    font-family: 'Noto Sans TC', sans-serif;      
     color: #fff;
-
 }
-
-#searchResult:hover, #searchResult li:hover{   
+#searchResult:hover, #searchResult li a:hover{   
     color: yellow;  
-}
-
-#searchResult li{
-    margin:10px 0px 0px 0px;
-}
-
-/* The Close Button */
-.close {
-    color: #fff;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    margin-top:-5px;
 }
 
 /* Add Animation */
@@ -584,25 +401,16 @@ input[type="checkbox"] {
     background-color: white;
     box-shadow: 0px 1px 6px #48b5e9;
     border: 1px solid #48b5e9;
-    border-radius: 5px 5px 5px 5px; 
-
+    border-radius: 5px; 
 }
-
 #iw-container, .iw-title {
-    font-family: 'Noto Sans TC', sans-serif;
-    font-size: 1em;       
-    margin: 1px 1px 1px 1px;   
+
+    margin: 1px;   
     text-align:center;
-    border-radius: 5px 5px 5px 5px; 
+    border-radius: 5px; 
     min-height: 90px;
     overflow: hidden;
 }
-
-#iw-container{     
-    background-color: #48b5e9;     
-    width:246px;
-}
-
 .iw-right-content{
     min-height: 85px;
     position: absolute; 
@@ -613,9 +421,7 @@ input[type="checkbox"] {
     background-color: #48b5e9;  
     top:50%;
     transform:translate(0,-50%);
-
 }
-
 .iw-title-p1{
     margin:0;
     position:absolute;
@@ -623,20 +429,11 @@ input[type="checkbox"] {
     left:50%;
     margin-right:-50%;
     transform: translate(-50%,-50%);
-    font-size: 0.9em;
+    font-size: 1em;
     font-weight:lighter;
     font-family: 'Noto Sans TC', sans-serif;
     overflow: hidden;
-
 }
-
-
-.iw-title-p1 span{
-    font-size: 0.8em;
-
-}
-
-
 .iw-title {    
     position:relative;
     border-radius: 5px 0px 0px 5px; 
@@ -644,30 +441,13 @@ input[type="checkbox"] {
     color:#48b5e9;
     width:196px;    
     overflow-wrap: break-word;
-
 }
-
-
-
-.mp-level ul li{    
-
+.mp-level ul li{   
     font-family: 'Noto Sans TC', sans-serif;
 }
-
 .subMenu:hover, .subMenu:focus{
-
     color:yellow;
 }
 
-
-
-
-#disTitle, #locTitle, #areTitle, #regTitle{
-    font-size: 1.5em;    
-    font-weight:100;
-    font-family: 'Noto Sans TC', sans-serif;
-
-
-}
 
 

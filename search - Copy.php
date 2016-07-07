@@ -27,7 +27,7 @@ while ($row=  mysqli_fetch_assoc($result)){
     $loc_c = $row['loc_c'];
     $loc_e = $row['loc_e'];
  
-    echo '<li style="margin-top:10px;"><a href="#" onclick="goToLocation('. $id . ','.$lat.','.$lng.','.$qty.',\''.$loc_c.  '\')">'.$row['are_c'].'・'.$row['loc_c'].'・'.$row['dis_c'].'</a></li>';
+    echo '<li style="margin-top:10px;"><a href="#" onclick="goToLocation('. $id . ','.$lat.','.$lng.','.$qty.',\''.$loc_c.'\',\''.$loc_e.'\')">'.$row['are_c'].'・'.$row['loc_c'].'・'.$row['dis_c'].'</a></li>';
 }
 	mysqli_free_result($result);
 	mysqli_close($link);
