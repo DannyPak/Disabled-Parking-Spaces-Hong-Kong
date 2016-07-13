@@ -14,11 +14,12 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="#48b5e9">
         <script>
+
+
             function initialize() {
 
                 /* lang = 1: Chinese, 2: English  */
-                var lang = 2;
-                window.lang = lang;
+                lang = 2;
                 $("#mapViewButton").removeClass('hidden');
                 $("#showChkBox").removeClass('hidden');
                 $('#schButton').removeClass('hidden');
@@ -33,7 +34,7 @@
                 var latlng = new google.maps.LatLng(22.2926589, 114.1745586);
                 var myOptions = {
                     center: latlng,
-                    zoom: 14,
+                    zoom: 16,
                     mapTypeId: google.maps.MapTypeId.ROADMAP,
                     zoomControl: false,
                     mapTypeControl: false,
@@ -44,28 +45,42 @@
                 map.setOptions({styles: remove_featureType});
                 google.maps.event.addListener(map, 'idle', chkDrawMarker);
                 window.map = map;
+                init = 1;
                 getUsrLocation();
             }
-            function getUsrLocation() {
-                if (navigator.geolocation) {
 
-                    browerSuppotFlag = true;
-                    navigator.geolocation.getCurrentPosition(function (position) {
-                        pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-                        // Create a marker and center map on user location
-                        usrMarker = new google.maps.Marker({
-                            position: pos,
-                            draggable: true,
-                            icon: 'img/u_en.svg',
-                            title: "You're Here",
-                            map: map
-                        });
-                    });
-                } else {
-                    browserSupportFlag = false;
-                    alert("Your browser doesn't support geolocation.");
+            function getUsrLocation() {
+                n = navigator.geolocation;
+                n ? n.getCurrentPosition(locPosition, locError, locProp) : alert("Your brower doesn't support geolocation.");
+            }
+
+            function locPosition(position) {
+                pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                // Create a marker and center map on user location
+                usrMarker = new google.maps.Marker({
+                    position: pos,
+                    draggable: false,
+                    icon: 'img/u_en.svg',
+                    title: "You are Here",
+                    map: map
+                });
+                if (init === 1) {
+                    map.panTo(pos);
+                    init = 0;
                 }
             }
+            ;
+            function locError(error) {
+                // the current position could not be located
+                alert("The current position could not be found!");
+            }
+            var locProp = {
+                enableHighAccuracy: true,
+                timeout: 60000,
+                maximumAge: 0
+            };
+
+
             function displayUsrLocation() {
                 chkDrawMarker();
                 map.setCenter(pos);
@@ -99,7 +114,17 @@
                 overflow-x: hidden;
                 overflow-y: hidden;
             }
+
+
             body {
+                
+                font-family: sans-serif;
+
+
+            }
+            
+            
+            body{
                 background-color: #FFAC00;
             }
             #map{
@@ -108,7 +133,7 @@
                 z-index:1
             }
 
-            @font-face {
+/*            @font-face {
                 font-family: myFont;
                 src: url(fonts/map-icons.woff);
             }
@@ -120,7 +145,7 @@
             }
             div {
                 font-family: myFont;
-            }
+            }*/
 
         </style>
         <title>Disabled Parking Spaces Hong Kong</title>            
@@ -136,9 +161,10 @@
                 var keyword = $('#searchInput').val();
                 if (keyword.length >= min_length) {
                     $.ajax({
-                        url: 'search_e.php',
+                        url: 'search.php',
                         type: 'POST',
-                        data: {keyword: keyword},
+                        data: {keyword: keyword,
+                            lang: lang},
                         success: function (data) {
                             $('#searchResult').show();
                             $('#searchResult').html(data);
@@ -223,7 +249,7 @@
                     <div id="showChkBox" class="hidden">
 
                         <input type="checkbox" value="None" id="drawMarkerChk" name="check" checked="checked" style="display:inline-block; width:19px; height:19px; margin:0px 2px 10px; vertical-align: middle; cursor: pointer;"/>
-                        <label id="ctext" for="drawMarkerChk" style="color:white;font-size: 0.8em;font-family: 'Noto Sans TC',sans-serif;" >Show Nearby</label>
+                        <label id="ctext" for="drawMarkerChk" style="color:white;font-size: 0.8em;font-family: sans-serif;font-weight: 500" ></label>
 
                     </div>
                 </div>
@@ -232,7 +258,7 @@
         </div><!-- /container -->
         <script src="js/classie.js" type="text/javascript"></script>
         <script src="js/mlpushmenu.js" type="text/javascript"></script>
-        <script>
+        <script>document.getElementById("ctext").innerHTML = "NEARBY";
                                             new mlPushMenu(document.getElementById('mp-menu'), document.getElementById('trigger'));
         </script>
     </body>

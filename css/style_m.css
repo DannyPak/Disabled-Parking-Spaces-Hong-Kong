@@ -1,12 +1,4 @@
-@font-face {
-    font-family: 'Noto Sans TC';
-    font-style: normal;
-    font-weight: 400;
-    src:local('Noto Sans TC'), 
-        url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.woff2) format('woff2'),
-        url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.woff) format('woff'),
-        url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.otf) format('opentype');
-}
+
 
 /* Progress Bar Loader */
 .pace {
@@ -73,7 +65,7 @@
     color: #f1a13e;
     line-height: 60px;
     font-weight: bold;
-    font-family: "Noto Sans TC", sans-serif;
+    font-family: sans-serif;
 
     -webkit-box-shadow: 120px 0 #fff, 240px 0 #fff;
     -ms-box-shadow: 120px 0 #fff, 240px 0 #fff;
@@ -250,7 +242,7 @@ img{
     position: absolute;
     right:10px;
     top:90px;
-    width: 120px;
+    width: 100px;
     height:30px;
     border: 2px;
     border-color: white;
@@ -281,7 +273,7 @@ img{
     border-top: 1px solid rgba(52,152,219,.1);
     text-align: left;
     color:white;
-    font-family: 'Noto Sans TC', sans-serif;
+    font-family:  sans-serif;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     position:fixed;
@@ -359,7 +351,7 @@ img{
     color: black;
     width: 30%;
     max-width: 65%  ;
-    font-family: 'Noto Sans TC', sans-serif;
+    font-family: sans-serif;
 }
 #searchInput:focus {
     width: 65%;
@@ -376,7 +368,7 @@ img{
 }
 /*  #searchResult:  search result list*/
 #searchResult li a{
-    font-family: 'Noto Sans TC', sans-serif;      
+    font-family: 微軟正黑體, sans-serif;      
     color: #fff;
 }
 #searchResult:hover, #searchResult li a:hover{   
@@ -430,8 +422,8 @@ img{
     margin-right:-50%;
     transform: translate(-50%,-50%);
     font-size: 1em;
-    font-weight:lighter;
-    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 700;
+    font-family: 微軟正黑體 , sans-serif;
     overflow: hidden;
 }
 .iw-title {    
@@ -443,7 +435,8 @@ img{
     overflow-wrap: break-word;
 }
 .mp-level ul li{   
-    font-family: 'Noto Sans TC', sans-serif;
+    font-family:微軟正黑體, sans-serif;
+    font-weight: 700;
 }
 .subMenu:hover, .subMenu:focus{
     color:yellow;

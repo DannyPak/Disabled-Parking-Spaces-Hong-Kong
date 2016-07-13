@@ -48,19 +48,19 @@ while ($row = mysqli_fetch_assoc($result_l)) {
 }
 echo '<div style="height:60px"><img id="tc" class="btn" src="img/tc.svg"></div>';
 for ($r = 0; $r < count($regs); $r++) {
-    $reg_e = $regs[$r]['reg_e'];
-    echo '<ul><li class="icon icon-arrow-left-2"><a class="icon subMenu" href="#" >' . $reg_e . '</a><div class="mp-level"><h2 class="icon">' . $reg_e . '</h2><a class="mp-back" href="#">Back</a>';
+    $reg = $regs[$r]['reg_e'];
+    echo '<ul><li class="icon icon-arrow-left-2"><a class="icon subMenu" href="#" >' . $reg . '</a><div class="mp-level"><h2 class="icon">' . $reg . '</h2><a class="mp-back" href="#">Back</a>';
     for ($d = 0; $d < count($diss); $d++) {
         if ($diss[$d]['reg_id'] == $r + 1) {
 
-            $dis_e = $diss[$d]['dis_e'];
-            echo '<ul><li class="icon icon-arrow-left-2"><a class="icon subMenu" href="#">' . $dis_e . '</a><div class="mp-level"><h2 class="icon">' . $dis_e . '</h2><a class="mp-back" href="#">Back</a>';
+            $dis = $diss[$d]['dis_e'];
+            echo '<ul><li class="icon icon-arrow-left-2"><a class="icon subMenu" href="#">' . $dis . '</a><div class="mp-level"><h2 class="icon">' . $dis . '</h2><a class="mp-back" href="#">Back</a>';
 
             for ($a = 0; $a < count($ares); $a++) {
                 if ($ares[$a]['dis_id'] == $d + 1) {
-                    $are_e = $ares[$a]['are_e'];
+                    $are = $ares[$a]['are_e'];
 
-                    echo '<ul><li class="icon icon-arrow-left-2"><a class="icon subMenu" href="#" >' . $are_e . '</a><div class="mp-level"><h2 class="icon">' . $are_e . '</h2><a class="mp-back" href="#">Back</a>';
+                    echo '<ul><li class="icon icon-arrow-left-2"><a class="icon subMenu" href="#" >' . $are . '</a><div class="mp-level"><h2 class="icon">' . $are . '</h2><a class="mp-back" href="#">Back</a>';
 
                     for ($l = 0; $l < count($locs); $l++) {
                         if ($locs[$l]['are_id'] == $a + 1) {
@@ -69,30 +69,30 @@ for ($r = 0; $r < count($regs); $r++) {
                             $lat = $locs[$l]['lat'];
                             $lng = $locs[$l]['lng'];
 //                            $loc_c = $locs[$l]['loc_c'];
-                            $loc_e = $locs[$l]['loc_e'];
-                            $loc = $loc_e;
+                            $loc = $locs[$l]['loc_e'];
+
                             $id = $locs[$l]['id'];
-                            switch ($loc_e) {
+                            switch ($loc) {
                                 case "Lower Albert Rd near St. Johns Building":
-                                    $loc_e = "Lower Albert Rd near St. John's Building";
+                                    $loc = "Lower Albert Rd near St. John's Building";
                                     break;
                                 case "Plunketts Rd":
-                                    $loc_e = "Plunkett's Rd";
+                                    $loc = "Plunkett's Rd";
                                     break;
                                 case "Lockhart Rd w/o OBrien Rd":
-                                    $loc_e = "Lockhart Rd w/o O'Brien Rd";
+                                    $loc = "Lockhart Rd w/o O'Brien Rd";
                                     break;
                                 case "Thomson Rd e/o OBrien Rd":
-                                    $loc_e = "Thomson Rd e/o O'Brien Rd";
+                                    $loc = "Thomson Rd e/o O'Brien Rd";
                                     break;
                                 case "Tung Lo Wan Rd near Queens College":
-                                    $loc_e = "Tung Lo Wan Rd near Queen's College";
+                                    $loc = "Tung Lo Wan Rd near Queen's College";
                                     break;
                                 default:
-                                    $loc_e = $loc_e;
+                                    $loc = $loc;
                             }
 
-                            echo '<ul><li><a href="#" class="subMenu" onclick="goToLocation(' . $id . ',' . $lat . ',' . $lng . ',' . $qty . ',\'' . $loc . '\')">' . $loc_e . '</a></li></ul>';
+                            echo '<ul><li><a href="#" class="subMenu" onclick="goLocation(' . $id . ')">' . $loc . '</a></li></ul>';
                         }
                     }
 

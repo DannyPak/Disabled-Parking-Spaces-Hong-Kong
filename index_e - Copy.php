@@ -15,7 +15,6 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="#48b5e9">
         <script>
             function initialize() {
-
                 /* lang = 1: Chinese, 2: English  */
                 var lang = 2;
                 window.lang = lang;
@@ -49,22 +48,24 @@
             function getUsrLocation() {
                 if (navigator.geolocation) {
 
-                    browerSuppotFlag = true;
                     navigator.geolocation.getCurrentPosition(function (position) {
                         pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
                         // Create a marker and center map on user location
                         usrMarker = new google.maps.Marker({
                             position: pos,
-                            draggable: true,
+                            draggable: false,
                             icon: 'img/u_en.svg',
-                            title: "You're Here",
+                            title: "You are Here",
                             map: map
                         });
                     });
+
                 } else {
-                    browserSupportFlag = false;
+
                     alert("Your browser doesn't support geolocation.");
                 }
+
+
             }
             function displayUsrLocation() {
                 chkDrawMarker();
@@ -136,9 +137,10 @@
                 var keyword = $('#searchInput').val();
                 if (keyword.length >= min_length) {
                     $.ajax({
-                        url: 'search_e.php',
+                        url: 'search.php',
                         type: 'POST',
-                        data: {keyword: keyword},
+                        data: {keyword: keyword,
+                            lang: lang},
                         success: function (data) {
                             $('#searchResult').show();
                             $('#searchResult').html(data);

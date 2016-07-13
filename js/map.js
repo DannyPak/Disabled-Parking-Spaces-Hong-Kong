@@ -22,6 +22,7 @@ var remove_featureType = [
     }
 ];
 $(document).ready(function () {
+
     document.getElementById("drawMarkerChk").addEventListener("click", function () {
         if ($(this).is(':checked')) {
             drawMarker(map);
@@ -33,10 +34,27 @@ $(document).ready(function () {
     });
     $('#en').click(function () {
         window.location.href = 'index_e.php';
+        lang = 2;
     });
     $('#tc').click(function () {
         window.location.href = 'index.php';
+        lang = 1;
     });
+
+    $('#logo').click(function () {
+        if (lang === 1) {
+            window.location.href = 'index.php';
+            lang = 1;
+
+        } else {
+            window.location.href = 'index_e.php';
+            lang = 2;
+
+
+        }
+    });
+
+
     // Get the modal
     var modal = document.getElementById('myModal');
     // Get the button that opens the modal
@@ -72,7 +90,8 @@ $(document).ready(function () {
     });
     var mp = document.getElementById("mapViewButton");
     $(mp).click(function () {
-        goToLocation(id, lat, lng, qty, loc);
+//        goToLocation(id, lat, lng, qty, loc);
+        goLocation(id);
     });
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function (event) {
@@ -83,7 +102,9 @@ $(document).ready(function () {
         }
     };
 });
-function showAllMarker() {drawMarker(map);}
+function showAllMarker() {
+    drawMarker(map);
+}
 function chkDrawMarker() {
     if ($(document.getElementById("drawMarkerChk")).is(':checked')) {
         drawMarker(map);
@@ -123,6 +144,9 @@ function drawMarker(map) {
         $('#schButton').show();
         $('#usrLocButton').show();
         $('#spacer').show();
+        $('#showChkBox').show();
+        $('#footer').show();
+
         ;
     });
 }
@@ -134,8 +158,9 @@ function downloadUrl(url, callback) {
             callback(request, request.status);
         }
     };
+
     request.open('GET', url, true);
-    request.send();
+    request.send(null);
 }
 ;
 function bindInfoWindow(infoWindow, marker, map, html) {
@@ -152,7 +177,7 @@ function iwHTML(id, lat, lng, loc, loc_iw, qty, qtext1, qtext2) {
     return '<div id="iw-container" style="background-color: #48b5e9; width:246px;">\n\
                 <div class = "iw-right-content">\n\
                     <input type="image" alt="Direction" title="Direction" src="img/direction.svg" alt="View in Google Maps" onclick="goMap(' + lat + ',' + lng + ')">\n\
-    <input type="image" src="img/sv.svg" alt="Street View" title="Street View" id="strButton" onclick="panoview(' + id + ',' + lat + ',' + lng + ',' + qty + ',\'' + loc + '\')">\n\
+<input type="image" src="img/sv.svg" alt="Street View" title="Street View" id="strButton" onclick="panoview(' + id + ',' + lat + ',' + lng + ',' + qty + ',\'' + loc + '\')">\n\
 </div>\n\
                 <div class = "iw-title" >\n\
                     <p class ="iw-title-p1">' + loc_iw +
@@ -162,7 +187,30 @@ function iwHTML(id, lat, lng, loc, loc_iw, qty, qtext1, qtext2) {
                 </div>\n\
             </div>';
 }
-function goToLocation(id, lat, lng, qty, loc) {
+//    <input type="image" src="img/sv.svg" alt="Street View" title="Street View" id="strButton" onclick="panoView(' + id + ')">\n\
+//function goToLocation(id, lat, lng, qty, loc) {
+//    myPushMenu = new mlPushMenu(document.getElementById('mp-menu'), document.getElementById('trigger'));
+//    myPushMenu._resetMenu();
+//    var modal = document.getElementById('myModal');
+//    modal.style.display = "none";
+//    searchFlat = 1;
+//    $('#strViewButton').show();
+//    $('#mapViewButton').hide();
+//    $("#showChkBox").show();
+//    $("#usrLocButton").show();
+//    window.lat = lat;
+//    window.lng = lng;
+//    window.qty = qty;
+//    window.id = id;
+//    var loc_iw = (lang === 2) ? checkLoc_e(loc) : loc;
+//    window.loc_iw = loc_iw;
+//    window.loc = loc;
+//    mapSetting();
+//}
+
+
+
+function goLocation(id) {
     myPushMenu = new mlPushMenu(document.getElementById('mp-menu'), document.getElementById('trigger'));
     myPushMenu._resetMenu();
     var modal = document.getElementById('myModal');
@@ -172,51 +220,69 @@ function goToLocation(id, lat, lng, qty, loc) {
     $('#mapViewButton').hide();
     $("#showChkBox").show();
     $("#usrLocButton").show();
-    window.lat = lat;
-    window.lng = lng;
-    window.qty = qty;
-    window.id = id;
-    var loc_iw = (lang === 2) ? checkLoc_e(loc) : loc;
-    window.loc_iw = loc_iw;
-    window.loc = loc;
-    mapSetting();
+
+    $.ajax({
+        url: 'getlocation.php',
+        type: 'GET',
+        dataType: 'json',
+        data: {lang: lang, id: id},
+        success: function (data) {
+            lat = data[0];
+            lng = data[1];
+            qty = data[2];
+            loc = data[3];
+            var loc_iw = (lang === 2) ? checkLoc_e(loc) : loc;
+            window.lat = lat;
+            window.lng = lng;
+            window.qty = qty;
+            window.loc_iw = loc_iw;
+            window.loc = loc;
+            window.id = id;
+            mapSetting();
+        }
+    });
 }
-function mapSetting() {
-    var address = new google.maps.LatLng(lat, lng);
-    var map = document.getElementById("map");
-    var mapOption = {
-        zoom: 16,
-        center: address,
-        animation: google.maps.Animation.DROP,
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-        zoomControl: false,
-        mapTypeControl: false,
-        streetViewControl: false
-    };
-    mapOptions.push(mapOption);
-    map = new google.maps.Map(map, mapOption);
-    map.setOptions({styles: remove_featureType});
-    google.maps.event.addListener(map, 'idle', chkDrawMarker);
-    marker = new google.maps.Marker({
-        position: address,
-        icon: 'img/parking.svg'
-    });
-    marker.setMap(map);
-    var infoWindow = new google.maps.InfoWindow({
-        content: iwContent(id, lat, lng, loc, loc_iw, qty)
-    });
-    google.maps.event.addListener(marker, 'click', function () {
-        infoWindow.open(map, marker);
-    });
-    infoWindow.open(map, marker);
-    google.maps.event.addListener(infoWindow, 'domready', function () {
-        iwStyle();
-    });
-    window.infoWindow = infoWindow;
-    window.map = map;
-    getUsrLocation();
-    document.getElementById("drawMarkerChk").checked = false;
-}
+
+
+//function panoView(id) {
+//    $("#showChkBox").hide();
+//    $("#usrLocButton").hide();
+//    $.ajax({
+//        url: 'getlocation.php',
+//        type: 'GET',
+//        dataType: 'json',
+//        data: {lang: lang, id: id},
+//        success: function (data) {
+//            lat = data[0];
+//            lng = data[1];
+//            qty = data[2];
+//            loc = data[3];
+//            window.lat = lat;
+//            window.lng = lng;
+//            window.qty = qty;
+//            window.id = id;
+//            window.loc = loc;
+//        }
+//    });
+//
+//    var address = new google.maps.LatLng(lat, lng);
+//    var panorama = new google.maps.StreetViewPanorama(
+//            document.getElementById("map"), {
+//        position: address,
+//        pov: {
+//            heading: 90,
+//            pitch: -20
+//        }
+//    });
+//
+//    map.setStreetView(panorama);
+//    $('#strViewButton').hide();
+//    $('#mapViewButton').show();
+//    $("#showChkBox").hide();
+//    $("#usrLocButton").hide();
+//
+//}
+
 function panoview(id, lat, lng, qty, loc) {
     $("#showChkBox").hide();
     $("#usrLocButton").hide();
@@ -240,7 +306,51 @@ function panoview(id, lat, lng, qty, loc) {
     window.loc = loc;
     window.qty = qty;
 
+
+
 }
+
+
+function mapSetting() {
+    var address = new google.maps.LatLng(lat, lng);
+    var map = document.getElementById("map");
+    var mapOption = {
+        zoom: 16,
+        center: address,
+        animation: google.maps.Animation.DROP,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        zoomControl: false,
+        mapTypeControl: false,
+        streetViewControl: false
+    };
+    mapOptions.push(mapOption);
+    map = new google.maps.Map(map, mapOption);
+
+    map.setOptions({styles: remove_featureType});
+    google.maps.event.addListener(map, 'idle', chkDrawMarker);
+    marker = new google.maps.Marker({
+        position: address,
+        icon: 'img/parking.svg'
+    });
+    marker.setMap(map);
+    var infoWindow = new google.maps.InfoWindow({
+        content: iwContent(id, lat, lng, loc, loc_iw, qty)
+    });
+    google.maps.event.addListener(marker, 'click', function () {
+        infoWindow.open(map, marker);
+    });
+    infoWindow.open(map, marker);
+    google.maps.event.addListener(infoWindow, 'domready', function () {
+        iwStyle();
+    });
+    window.infoWindow = infoWindow;
+    window.map = map;
+    getUsrLocation();
+    document.getElementById("drawMarkerChk").checked = false;
+}
+
+
+
 function goMap(lat, lng) {
     window.open('https://maps.google.com/?q=' + lat + ',' + lng + '&ll=' + lat + ',' + lng + '&z=18');
 }
