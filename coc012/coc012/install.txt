@@ -1,0 +1,11 @@
+﻿Extension Name: Alipay Transfer Payment For OpenCart 2.0.x
+Agreement
+
+ Author: Yang Zhao Feng
+版权作者：杨兆锋
+E-mail: opencartchina@qq.com
+Skype: opencartchina
+QQ: 1487063622
+Website: http://www.chinaopencart.com
+
+Please visit: http://blog.chinaopencart.com/installation-tutorial-of-opencart-extension-alipay-transfer-payment-gateway/

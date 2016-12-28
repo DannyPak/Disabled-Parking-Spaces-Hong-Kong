@@ -1,0 +1,868 @@
+{
+  "settings": {
+    "currentPage": "index.html",
+    "versionFirst": "3.4.4",
+    "versionPublish": "3.4.4",
+    "name": "NewSite-08-09_0951",
+    "theme": {
+      "name": "mobirise3",
+      "title": "Mobirise 3"
+    },
+    "scrollAnimation": "true",
+    "publishType": "local",
+    "publishPath": "file:///C:/Users/ortdanny/Documents/AccessMap/gd",
+    "path": "file:///C:/Users/ortdanny/AppData/Local/Mobirise.com/Mobirise/projects/project-2016-08-09_095105",
+    "screenshot": "screenshot.png"
+  },
+  "pages": {
+    "index.htm": {
+      "settings": {
+        "main": true,
+        "title": "",
+        "meta_descr": "",
+        "header_custom": "",
+        "footer_custom": "",
+        "html_before": ""
+      },
+      "components": [
+        {
+          "_styles": {
+            ".hide-buttons .nav-btn": {
+              "display": "none !important"
+            },
+            ".navbar-caption": {
+              "color": "#ffffff"
+            },
+            ".navbar-toggler": {
+              "color": "#ffffff"
+            },
+            ".close-icon::before, .close-icon::after": {
+              "background-color": "#ffffff"
+            },
+            ".link, .dropdown-item": {
+              "color": "#ffffff"
+            },
+            ".link": {
+              "font-size": "0.75rem"
+            },
+            ".dropdown-item, .nav-dropdown-sm .link": {
+              "font-size": "0.812rem"
+            },
+            ".link:hover, .dropdown-item:hover, .link:focus, .dropdown-item:focus": {
+              "color": "#c0a375"
+            },
+            ".link[aria-expanded=\"true\"], .dropdown-menu": {
+              "background": "#0fa1b7"
+            },
+            ".nav-dropdown-sm .link:focus, .nav-dropdown-sm .link:hover, .nav-dropdown-sm .dropdown-item:focus, .nav-dropdown-sm .dropdown-item:hover": {
+              "background": "#12bfd8!important"
+            },
+            ".navbar, .nav-dropdown-sm, .nav-dropdown-sm .link[aria-expanded=\"true\"], .nav-dropdown-sm .dropdown-menu": {
+              "background": "#13cbe6"
+            },
+            ".bg-color.transparent .link": {
+              "color": "#ffffff",
+              "transition": "none"
+            },
+            ".bg-color.transparent.opened .link": {
+              "transition": "color .2s ease-in-out"
+            },
+            ".bg-color.transparent.opened .link:hover, .bg-color.transparent.opened .link:focus": {
+              "color": "#c0a375"
+            },
+            ".link[aria-expanded=\"true\"], .dropdown-item[aria-expanded=\"true\"]": {
+              "color": "#c0a375!important"
+            }
+          },
+          "_name": "menu",
+          "_anchor": "menu-0",
+          "_params": {
+            "bgColor": "#13cbe6",
+            "fontSize": 0.75,
+            "fontName": {},
+            "fontColor": "#ffffff",
+            "fontHoverColor": "#c0a375",
+            "transparent": false,
+            "sticky": true,
+            "logo": false,
+            "showBrand": false,
+            "collapsed": true,
+            "hideButtons": false
+          },
+          "logo": {
+            "image": {
+              "active": true,
+              "src": "@THEME_PATH@/components/_images/logo.png",
+              "height": 128,
+              "alt": "Mobirise",
+              "link": "https://mobirise.com"
+            },
+            "iconFont": {
+              "class": "mbr-iconfont mbr-iconfont-menu",
+              "link": "https://mobirise.com",
+              "size": 0
+            }
+          },
+          "brand": "<a class=\"navbar-caption\" data-app-btn=\"true\" data-app-selector=\".navbar-caption\" href=\"index.htm\" data-app-placeholder=\"Type Brand Name\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd,-mbrBtnRemove,mbrColor\">G. Dragon</a>",
+          "items": "<li class=\"nav-item\"><a data-app-btn=\"true\" class=\"nav-link link\" href=\"index.htm\">HOME</a></li><li class=\"nav-item\"><a data-app-btn=\"true\" class=\"nav-link link\" href=\"index.htm#header1-16\">ABOUT US</a></li><li class=\"nav-item dropdown\"><a data-app-btn=\"true\" class=\"nav-link link dropdown-toggle\" data-toggle=\"dropdown-submenu\" href=\"index.htm#header3-17\" aria-expanded=\"false\">REPELLENT</a><div class=\"dropdown-menu\"><div class=\"dropdown\"><a data-app-btn=\"true\" class=\"dropdown-item dropdown-toggle\" href=\"index.htm#features3-6\" data-toggle=\"dropdown-submenu\" aria-expanded=\"false\">Mosquito Repellent</a><div class=\"dropdown-menu dropdown-submenu\"><a data-app-btn=\"true\" class=\"dropdown-item\" href=\"index.htm#features3-6\">Patch</a><a data-app-btn=\"true\" class=\"dropdown-item\" href=\"index.htm#features3-6\">Bracelet</a><a data-app-btn=\"true\" class=\"dropdown-item\" href=\"index.htm#features3-6\">Incense</a><a data-app-btn=\"true\" class=\"dropdown-item\" href=\"index.htm#features3-6\">Sucker</a></div></div><a data-app-btn=\"true\" class=\"dropdown-item\" href=\"index.htm#msg-box5-9\">Flea &amp; Ticks Repellent</a><a data-app-btn=\"true\" class=\"dropdown-item\" href=\"index.htm#msg-box5-10\">Odor Repellent</a></div></li><li class=\"nav-item dropdown\"><a data-app-btn=\"true\" class=\"nav-link link\" href=\"index.htm#msg-box8-11\" aria-expanded=\"false\">REFERENCE</a></li><li class=\"nav-item\"><a data-app-btn=\"true\" class=\"nav-link link\" href=\"index.htm#contacts2-18\" aria-expanded=\"false\">CONTACT US</a></li><li class=\"nav-item\"><a data-app-btn=\"true\" class=\"nav-link link\" href=\"index.htm#contacts2-18\" aria-expanded=\"false\"></a></li><li class=\"nav-item nav-btn\"><a data-app-btn=\"true\" data-button=\"\" data-app-selector=\".btn\" class=\"nav-link btn btn-white btn-white-outline\" href=\"shop.htm\">SHOP</a></li>"
+        },
+        {
+          "_name": "header1",
+          "_styles": {
+            "H1": {
+              "color": "#3d8eb9"
+            },
+            "P": {
+              "color": "#2969b0",
+              "font-family": "'Roboto Condensed', sans-serif",
+              "googleLink": "https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700"
+            }
+          },
+          "_anchor": "header1-2",
+          "_params": {
+            "parallax": true,
+            "bgImageRadio": true,
+            "showArrow": true,
+            "bgImage": "@PROJECT_PATH@/assets/images/mountain-hiking-wallpaper-1600x900-2000x1125-11.jpg",
+            "bgColor": "#a07e49",
+            "bgColorRadio": false,
+            "bgVideo": {
+              "url": "https://www.youtube.com/watch?v=uNCr7NdOJgw"
+            },
+            "bgVideoRadio": false,
+            "overlay": false,
+            "overlayOpacity": 0.5,
+            "overlayColor": "#000",
+            "contentAlign": "center",
+            "showTitle": true,
+            "showText": true,
+            "showButtons": false
+          },
+          "title": "G. Dragon Company",
+          "text": "Manufacturer of Aroma Products",
+          "buttons": "<a data-app-btn=\"true\" class=\"btn btn-lg btn-primary\" href=\"https://mobirise.com\">DOWNLOAD FOR WINDOWS</a> <a data-app-btn=\"true\" class=\"btn btn-lg btn-white btn-white-outline\" href=\"https://mobirise.com\">DOWNLOAD FOR MAC</a>"
+        },
+        {
+          "_name": "header1",
+          "_styles": {
+            "P": {
+              "font-family": "'Roboto Condensed', sans-serif",
+              "googleLink": "https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700"
+            }
+          },
+          "_anchor": "header1-16",
+          "_params": {
+            "parallax": true,
+            "bgImageRadio": false,
+            "showArrow": true,
+            "bgImage": "@THEME_PATH@/components/_images/jumbotron.jpg",
+            "bgColor": "#13cbe6",
+            "bgColorRadio": true,
+            "bgVideo": {
+              "url": "https://www.youtube.com/watch?v=uNCr7NdOJgw"
+            },
+            "bgVideoRadio": false,
+            "overlay": false,
+            "overlayOpacity": 0.5,
+            "overlayColor": "#000",
+            "contentAlign": "center",
+            "showTitle": true,
+            "showText": true,
+            "showButtons": false
+          },
+          "title": "ABOUT US",
+          "text": "<span style=\"font-style: normal;\">Our company was established since 1993. We    are manufacturer of aromatic products. We mainly make use of different fragrance to produce functional items which are practical and safe, such as : Mosquito Repellent, Insect Repellent and Ticks &amp; Flea Repellent. Our products can also provide favourite scent to avoid bad s                                                                                                                                                                                                                                                                                                                                                                                        mell and make you feel refresh. In order to encourage the sales of our business partners, we offer exclusivity in their selling region. To fulfil our concept of social enterprise, we support the employment of rehabilitation centres and sheltered workshops. We also donate 10% of total profit to charitable organizations. We offer a cheaper price to our customers, so that they can sponsor another 10% to the disabled in their countries.</span><br>",
+          "buttons": "<a data-app-btn=\"true\" class=\"btn btn-lg btn-primary\" href=\"https://mobirise.com\">DOWNLOAD FOR WINDOWS</a> <a data-app-btn=\"true\" class=\"btn btn-lg btn-white btn-white-outline\" href=\"https://mobirise.com\">DOWNLOAD FOR MAC</a>"
+        },
+        {
+          "_styles": {
+            ".mbr-section-title, .mbr-section-subtitle": {
+              "text-align": "center"
+            },
+            "H3": {
+              "font-size": "48px",
+              "color": "#13cbe6"
+            }
+          },
+          "_name": "header3",
+          "_anchor": "header3-17",
+          "_params": {
+            "paddingTop": "2",
+            "paddingBottom": "0",
+            "bgColor": "#efefef",
+            "showMeta": false
+          },
+          "title": "Repellent",
+          "meta": "By John Smith posted July 20, 2016"
+        },
+        {
+          "_name": "features3",
+          "_styles": {
+            "H4": {
+              "color": "#13cbe6",
+              "font-family": "'Roboto Condensed', sans-serif",
+              "googleLink": "https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700"
+            }
+          },
+          "_anchor": "features3-4",
+          "_params": {
+            "paddingTop": "0",
+            "paddingBottom": 2,
+            "bgImageRadio": false,
+            "parallax": true,
+            "bgImage": "@THEME_PATH@/components/_images/jumbotron.jpg",
+            "bgColor": "#efefef",
+            "bgColorRadio": true,
+            "bgVideo": {
+              "url": "https://www.youtube.com/watch?v=uNCr7NdOJgw"
+            },
+            "bgVideoRadio": false,
+            "overlay": false,
+            "overlayOpacity": 0.5,
+            "overlayColor": "#222",
+            "columns": "3",
+            "showImages": false,
+            "showTitles": true,
+            "showSubtitles": false,
+            "ShowTexts": false,
+            "showButtons": true
+          },
+          "media1": {
+            "image": {
+              "src": "@THEME_PATH@/components/_images/gallery/table.jpg",
+              "class": "card-img-top",
+              "width": 600,
+              "active": true
+            }
+          },
+          "title1": "Mosquito Repellent",
+          "subtitle1": "Bootstrap 4 has been noted",
+          "caption1": "Bootstrap 4 has been noted as one of the most reliable and proven frameworks and Mobirise has been equipped to develop websites using this framework.",
+          "button1": "<a data-app-btn=\"true\" href=\"index.htm#features3-6\" class=\"btn btn-secondary\" data-toolbar=\"-mbrBtnMove\">MORE</a>",
+          "media2": {
+            "image": {
+              "src": "@THEME_PATH@/components/_images/gallery/desktop.jpg",
+              "class": "card-img-top",
+              "width": 600,
+              "active": true
+            }
+          },
+          "title2": "Flea &amp; Ticks Repellent",
+          "subtitle2": "One of Bootstrap 4's big points",
+          "caption2": "One of Bootstrap 4's big points is responsiveness and Mobirise makes effective use of this by generating highly responsive website for you.",
+          "button2": "<a data-app-btn=\"true\" href=\"index.htm#msg-box5-9\" class=\"btn btn-info\" data-toolbar=\"-mbrBtnMove\">MORE</a>",
+          "media3": {
+            "image": {
+              "src": "@THEME_PATH@/components/_images/gallery/coworkers.jpg",
+              "class": "card-img-top",
+              "width": 600,
+              "active": true
+            }
+          },
+          "title3": "Odor Repellent",
+          "subtitle3": "Google has a highly exhaustive list of fonts",
+          "caption3": "Google has a highly exhaustive list of fonts compiled into its web font platform and Mobirise makes it easy for you to use them on your website easily and freely.",
+          "button3": "<a data-app-btn=\"true\" href=\"index.htm#msg-box5-10\" class=\"btn btn-info\" data-toolbar=\"-mbrBtnMove\">MORE</a>",
+          "media4": {
+            "image": {
+              "src": "@THEME_PATH@/components/_images/gallery/code-man.jpg",
+              "class": "card-img-top",
+              "width": 600,
+              "active": true
+            }
+          },
+          "title4": "Unlimited Sites",
+          "subtitle4": "Mobirise gives you the freedom to develop",
+          "caption4": "Mobirise gives you the freedom to develop as many websites as you like given the fact that it is a desktop app.",
+          "button4": "<a data-app-btn=\"true\" href=\"https://mobirise.com\" class=\"btn btn-primary\">MORE</a>",
+          "media5": {
+            "image": {
+              "src": "@THEME_PATH@/components/_images/gallery/windows-books.jpg",
+              "class": "card-img-top",
+              "width": 600,
+              "active": true
+            }
+          },
+          "title5": "Trendy Website Blocks",
+          "subtitle5": "Choose from the large selection of blocks",
+          "caption5": "Choose from the large selection of latest pre-made blocks - jumbotrons, hero images, parallax scrolling, video backgrounds, hamburger menu, sticky header and more.",
+          "button5": "<a data-app-btn=\"true\" href=\"https://mobirise.com\" class=\"btn btn-primary\">MORE</a>",
+          "media6": {
+            "image": {
+              "src": "@THEME_PATH@/components/_images/gallery/room-laptop.jpg",
+              "class": "card-img-top",
+              "width": 600,
+              "active": true
+            }
+          },
+          "title6": "Host Anywhere",
+          "subtitle6": "Don't limit yourself to just one platform",
+          "caption6": "Publish your website to a local drive, FTP or host on Amazon S3, Google Drive, Github. Don't limit yourself to just one platform or service provider.",
+          "button6": "<a data-app-btn=\"true\" href=\"https://mobirise.com\" class=\"btn btn-primary\">MORE</a>"
+        },
+        {
+          "_name": "features3",
+          "_styles": {
+            "P": {
+              "font-family": "'Roboto Condensed', sans-serif",
+              "googleLink": "https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700",
+              "color": "#13cbe6"
+            },
+            "H4": {
+              "color": "#13cbe6"
+            }
+          },
+          "_anchor": "features3-6",
+          "_params": {
+            "paddingTop": 2,
+            "paddingBottom": 2,
+            "bgImageRadio": false,
+            "parallax": true,
+            "bgImage": "@PROJECT_PATH@/assets/images/fresh-grass-hd-wallpaper-2000x1250-84.jpg",
+            "bgColor": "#ffffff",
+            "bgColorRadio": true,
+            "bgVideo": {
+              "url": "https://www.youtube.com/watch?v=uNCr7NdOJgw"
+            },
+            "bgVideoRadio": false,
+            "overlay": true,
+            "overlayOpacity": "0.6",
+            "overlayColor": "#ffffff",
+            "columns": 4,
+            "showImages": true,
+            "showTitles": true,
+            "showSubtitles": false,
+            "ShowTexts": true,
+            "showButtons": false
+          },
+          "media1": {
+            "image": {
+              "src": "@PROJECT_PATH@/assets/images/10-3-600x450-98.jpg",
+              "class": "card-img-top",
+              "width": 600,
+              "active": true,
+              "link": "",
+              "alt": "",
+              "title": "",
+              "linkInNewWindow": false
+            }
+          },
+          "title1": "Patch",
+          "subtitle1": "Bootstrap 4 has been noted",
+          "caption1": "Anti-Mosquito Patch is all natural scented, adhesive, made by non-toxic materials, durable, waterproof and convenient to use. The Patch can be stuck on the clothes, or simply put in the bag.",
+          "button1": "<a data-app-btn=\"true\" href=\"https://mobirise.com\" class=\"btn btn-primary\" data-toolbar=\"-mbrBtnMove\">MORE</a>",
+          "media2": {
+            "image": {
+              "src": "@PROJECT_PATH@/assets/images/4-3-600x450-35.jpg",
+              "class": "card-img-top",
+              "width": 600,
+              "active": true,
+              "link": "",
+              "alt": "",
+              "title": "",
+              "linkInNewWindow": false
+            }
+          },
+          "title2": "Bracelet",
+          "subtitle2": "One of Bootstrap 4's big points",
+          "caption2": "Two natural scents for selecting : Citronella /Lemon Eucalyptus.They have been used since ancient time to prevent mosquito sting and registered in U.S. Environmental Protection Agency as mosquito repellent. You can just wear on wrist or ankle to repel mosquito.",
+          "button2": "<a data-app-btn=\"true\" href=\"https://mobirise.com\" class=\"btn btn-primary\">MORE</a>",
+          "media3": {
+            "image": {
+              "src": "@PROJECT_PATH@/assets/images/12-1-600x450-69.jpg",
+              "class": "card-img-top",
+              "width": 600,
+              "active": true,
+              "link": "",
+              "alt": "",
+              "title": "",
+              "linkInNewWindow": false
+            }
+          },
+          "title3": "Incense",
+          "subtitle3": "Google has a highly exhaustive list of fonts",
+          "caption3": "Environment friendly without fire or electricity.<br>You can put it indoor or outdoor to repel mosquito.<br>",
+          "button3": "<a data-app-btn=\"true\" href=\"https://mobirise.com\" class=\"btn btn-primary\">MORE</a>",
+          "media4": {
+            "image": {
+              "src": "@PROJECT_PATH@/assets/images/11-3-600x450-80.jpg",
+              "class": "card-img-top",
+              "width": 600,
+              "active": true,
+              "link": "",
+              "alt": "",
+              "title": "",
+              "linkInNewWindow": false
+            }
+          },
+          "title4": "Sucker",
+          "subtitle4": "Mobirise gives you the freedom to develop",
+          "caption4": "The Sucker is capable for sticking in smooth surface in bedroom or washroom etc.",
+          "button4": "<a data-app-btn=\"true\" href=\"https://mobirise.com\" class=\"btn btn-primary\">MORE</a>",
+          "media5": {
+            "image": {
+              "src": "@THEME_PATH@/components/_images/gallery/windows-books.jpg",
+              "class": "card-img-top",
+              "width": 600,
+              "active": true
+            }
+          },
+          "title5": "Trendy Website Blocks",
+          "subtitle5": "Choose from the large selection of blocks",
+          "caption5": "Choose from the large selection of latest pre-made blocks - jumbotrons, hero images, parallax scrolling, video backgrounds, hamburger menu, sticky header and more.",
+          "button5": "<a data-app-btn=\"true\" href=\"https://mobirise.com\" class=\"btn btn-primary\">MORE</a>",
+          "media6": {
+            "image": {
+              "src": "@THEME_PATH@/components/_images/gallery/room-laptop.jpg",
+              "class": "card-img-top",
+              "width": 600,
+              "active": true
+            }
+          },
+          "title6": "Host Anywhere",
+          "subtitle6": "Don't limit yourself to just one platform",
+          "caption6": "Publish your website to a local drive, FTP or host on Amazon S3, Google Drive, Github. Don't limit yourself to just one platform or service provider.",
+          "button6": "<a data-app-btn=\"true\" href=\"https://mobirise.com\" class=\"btn btn-primary\">MORE</a>"
+        },
+        {
+          "_name": "msg-box5",
+          "_styles": {
+            "P": {
+              "font-family": "'Roboto Condensed', sans-serif",
+              "googleLink": "https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700"
+            }
+          },
+          "_anchor": "msg-box5-9",
+          "_params": {
+            "paddingTop": "1",
+            "paddingBottom": "1",
+            "parallax": true,
+            "bgImageRadio": false,
+            "bgImage": "@THEME_PATH@/components/_images/jumbotron.jpg",
+            "bgColor": "#cccccc",
+            "bgColorRadio": true,
+            "bgVideo": {
+              "url": "https://www.youtube.com/watch?v=uNCr7NdOJgw"
+            },
+            "bgVideoRadio": false,
+            "overlay": false,
+            "overlayOpacity": 0.5,
+            "overlayColor": "#fff",
+            "inverse": false,
+            "showTitle": true,
+            "showText": true,
+            "showButtons": false
+          },
+          "media": {
+            "image": {
+              "active": true,
+              "width": 1400,
+              "src": "@PROJECT_PATH@/assets/images/7-1-1400x1260-73.jpg",
+              "link": "",
+              "alt": "",
+              "title": "",
+              "linkInNewWindow": false
+            },
+            "video": {
+              "src": "https://www.youtube.com/embed/Tq7p44IA-1U",
+              "aspectratio": "16:9",
+              "autoplay": false,
+              "loop": false
+            },
+            "iconFont": {
+              "class": "mbr-iconfont mbr-iconfont-msg-box5",
+              "link": "",
+              "size": 0
+            }
+          },
+          "title": "Flea &amp; Tick Repellent",
+          "text": "Pet-mate : The Flea &amp; Tick Repellent is capable for dog and cat which is made of Natural Lemon Eucalyptus + Cedar Wood<br><br>-It is non-toxic and pesticide-free.<br>so, it is safe for puppy and kitten<br>with pesticide allergies.<br>-Providing pleasant smell.<br>-Night glow to keep your pet safe in dark.<br>-Water resistant.<br>-Still effective when dirty.<br>-Long lasting.<br>-Free size from 10 to 50 cm.<br><br><br>Aluminium Bag 100x150mm<br>Lemon Eucalyptus and Cedar Wood were registered in Environmental Protection Agency as flea repellent.&nbsp;<br>",
+          "buttons": "<a data-app-btn=\"true\" class=\"btn btn-primary\" href=\"https://mobirise.com\">MORE</a>"
+        },
+        {
+          "_name": "msg-box5",
+          "_styles": {
+            "P": {
+              "font-family": "'Roboto Condensed', sans-serif",
+              "googleLink": "https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700",
+              "color": "#13cbe6"
+            },
+            "H3": {
+              "color": "#13cbe6"
+            }
+          },
+          "_anchor": "msg-box5-10",
+          "_params": {
+            "paddingTop": "1",
+            "paddingBottom": "2",
+            "parallax": true,
+            "bgImageRadio": false,
+            "bgImage": "@THEME_PATH@/components/_images/jumbotron.jpg",
+            "bgColor": "#efefef",
+            "bgColorRadio": true,
+            "bgVideo": {
+              "url": "https://www.youtube.com/watch?v=uNCr7NdOJgw"
+            },
+            "bgVideoRadio": false,
+            "overlay": false,
+            "overlayOpacity": 0.5,
+            "overlayColor": "#fff",
+            "inverse": true,
+            "showTitle": true,
+            "showText": true,
+            "showButtons": false
+          },
+          "media": {
+            "image": {
+              "active": true,
+              "width": 1400,
+              "src": "@PROJECT_PATH@/assets/images/8-1-1400x1136-65.jpg",
+              "link": "",
+              "alt": "",
+              "title": "",
+              "linkInNewWindow": false
+            },
+            "video": {
+              "src": "https://www.youtube.com/embed/Tq7p44IA-1U",
+              "aspectratio": "16:9",
+              "autoplay": false,
+              "loop": false
+            },
+            "iconFont": {
+              "class": "mbr-iconfont mbr-iconfont-msg-box5",
+              "link": "",
+              "size": 0
+            }
+          },
+          "title": "Odor Repellent",
+          "text": "NoDor 3 in 1 Insole : The Shoe Freshener is<br>Lavender scented to <br>1. Avoid odor<br><br>2. Massage softly to reduce leg fatigue<br><br>3. Repel insect in storage<br><br>-made of Non-toxic environment friendly EVA<br><br>-One size fits all<br><br>-packing with trimming guide card and <br>double adhesive tape&nbsp;<br>",
+          "buttons": "<a data-app-btn=\"true\" class=\"btn btn-primary\" href=\"https://mobirise.com\">MORE</a>"
+        },
+        {
+          "_styles": {
+            ".mbr-section-title, p": {
+              "color": "#fff"
+            },
+            ".mbr-section-title": {
+              "color": "#000000"
+            }
+          },
+          "_name": "msg-box8",
+          "_anchor": "msg-box8-11",
+          "_params": {
+            "paddingTop": "1",
+            "paddingBottom": "1",
+            "parallax": true,
+            "bgImageRadio": false,
+            "bgImage": "@THEME_PATH@/components/_images/desert.jpg",
+            "bgColor": "#ffffff",
+            "bgColorRadio": true,
+            "bgVideo": {
+              "url": "https://www.youtube.com/watch?v=uNCr7NdOJgw"
+            },
+            "bgVideoRadio": false,
+            "overlay": true,
+            "overlayOpacity": 0.5,
+            "overlayColor": "#222",
+            "showTitle": true,
+            "showText": false,
+            "showButton": false
+          },
+          "title": "Reference",
+          "text": "<p>Article header with background image and parallax effect.</p>",
+          "button": "<a data-app-btn=\"true\" class=\"btn btn-secondary\" href=\"https://mobirise.com\">SEE ALL TEMPLATES</a>"
+        },
+        {
+          "_styles": {
+            ".mbr-section-title, .mbr-section-subtitle": {
+              "text-align": "center"
+            },
+            "H3": {
+              "font-size": "14px",
+              "text-align": "right"
+            }
+          },
+          "_name": "header3",
+          "_anchor": "header3-16",
+          "_params": {
+            "paddingTop": 1,
+            "paddingBottom": 1,
+            "bgColor": "#fff",
+            "showMeta": false
+          },
+          "title": "Will Eucalyptus Oil Be More Effective in Killing Mosquito Larvae than<span style=\"color: inherit; line-height: 1.1;\">Insecticide?</span>",
+          "meta": "By John Smith posted July 20, 2016"
+        },
+        {
+          "_name": "content1",
+          "_styles": {
+            "P": {
+              "font-size": "11px",
+              "font-family": "'Roboto Condensed', sans-serif",
+              "googleLink": "https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700"
+            }
+          },
+          "_anchor": "content1-17",
+          "_params": {
+            "paddingTop": 1,
+            "paddingBottom": 1,
+            "bgColor": "#fff"
+          },
+          "text": "<p><br></p><p>26003</p><p>Objectives/Goals</p><p>My Goal was to find a way to kill mosquito larvae with a more nautral substance.</p><p>Methods/Materials</p><p>40 drops of Eucalyptus oil; </p><p>40 granules of Bayer Advanced Garden Mosquito Preventer;</p><p> 1,200 Mosquito&nbsp;<span style=\"line-height: 1.5;\">Larvae; 60 Petri dishes; </span></p><p><span style=\"line-height: 1.5;\">rubber gloves; mask; goggles; eyedropper; piece of screen; </span></p><p><span style=\"line-height: 1.5;\">1 gallon of Distilled&nbsp;</span><span style=\"line-height: 1.5;\">water; measuring cup.</span></p><p><span style=\"line-height: 1.5;\"><br></span></p><p>Results</p><p>The result of my investigation on the toxity level of eucalyptus oil vs. mosquito preventer insecticide&nbsp;<span style=\"line-height: 1.5;\">indicates that the eucalyptus oil is more effective.&nbsp;</span><span style=\"line-height: 1.5;\">Eucalyptus Oil 1 Drop: In 9 out of 10 Petri dishes 100% of all the larvae died. In 1 of the dishes 19 out&nbsp;</span><span style=\"line-height: 1.5;\">of 20 larvae died. Eucalyptus Oil 3 Drops: In 10 out of 10 dishes 100% of all the larvae died. Control&nbsp;</span><span style=\"line-height: 1.5;\">for eucalyptus oil: Out of all 10 dishes 11 mosquito larvae died.&nbsp;</span><span style=\"line-height: 1.5;\">Insecticide 1 Granule: In 3 out of 10 dishes there was 100% dead. Then only 8 larvae survived out of the&nbsp;</span><span style=\"line-height: 1.5;\">remaining 7 dishes. Insecticide 3 Granules: In 9 out of 10 dishes 100% of the larvae died. In 1 of the&nbsp;</span><span style=\"line-height: 1.5;\">dishes 9 out of 10 larvae survived. Control for insecticide: Out of all 10 dishes 10 larvae died.</span></p><p><span style=\"line-height: 1.5;\"><br></span></p><p>Conclusions/Discussion</p><p>After completing my investigation on determining if eucalyptus oil will work better at killing mosquito&nbsp;<span style=\"line-height: 1.5;\">larvae than insecticide; I found that my hypothesis was correct. My hypothesis stated that the eucalyptus&nbsp;</span><span style=\"line-height: 1.5;\">oil will work better than the mosquito preventer insecticide.</span></p><p>My results stated that the eucalyptus in the 3 drop dishes worked 100%. The lowest result was the 1&nbsp;<span style=\"line-height: 1.5;\">granule of mosquito preventer insecticide with 96%. One observation I made was that after just 10&nbsp;</span><span style=\"line-height: 1.5;\">minuets the 3 drop eucalyptus oil had killed more than half of the larvae.</span></p><p>I learned a lot from my research about mosquitoes for example they hatch from egg rafts and they have 4&nbsp;<span style=\"line-height: 1.5;\">different stages to their life cycle. First of all they start out as an egg, move to a larvae, change into a&nbsp;</span><span style=\"line-height: 1.5;\">pupae, and finally develop into an adult. I learned that eucalyptus oil is one of koala bears favorite snacks.</span></p><p>Also that eucalyptus oil is used in many tooth pastes. I also learned that the insecticide is a crystal and is&nbsp;<span style=\"line-height: 1.5;\">suppose to dissolve in the insects stomach and destroy their stomach and kill them.</span></p><p>In conclusion the eucalyptus oil would be a lot better thing to spray where larvae is. I was very surprised&nbsp;<span style=\"line-height: 1.5;\">about the insecticide not working as well as it says in my research. First of all it is safer, and secondly it&nbsp;</span><span style=\"line-height: 1.5;\">works better.</span></p><p>My project is about find a more natural substance to kill mosquito larva.&nbsp;<span style=\"line-height: 1.5;\">Selma Mosquito Abiment District supplied the mosquito larvae; Mrs.Wright helped go over paper&nbsp;</span><span style=\"line-height: 1.5;\">work;Mom helped put board together.</span></p>"
+        },
+        {
+          "_styles": {
+            ".mbr-section-title, .mbr-section-subtitle": {
+              "text-align": "center"
+            },
+            "H3": {
+              "text-align": "right",
+              "font-size": "14px"
+            },
+            "SMALL": {
+              "text-align": "right"
+            }
+          },
+          "_name": "header3",
+          "_anchor": "header3-14",
+          "_params": {
+            "paddingTop": 1,
+            "paddingBottom": 1,
+            "bgColor": "#fff",
+            "showMeta": false
+          },
+          "title": "Deterring mosquitoes with insect repellents",
+          "meta": "<br><br>"
+        },
+        {
+          "_name": "content1",
+          "_styles": {
+            "P": {
+              "font-size": "11px"
+            }
+          },
+          "_anchor": "content1-15",
+          "_params": {
+            "paddingTop": 1,
+            "paddingBottom": 1,
+            "bgColor": "#fff"
+          },
+          "text": "<p>Insect repellents are one good way to keep mosquitoes at bay. When used properly, repellents are safe for kids and adults alike. Keep in mind that even though some of them are classified as pesticides by the Environmental Protection Agency (EPA), repellents don't kill mosquitoes. So you may still see the pesky critters buzzing about. Repellents simply make you more difficult to find.</p><p>Common insect repellents include:</p><p>DEET. This pesticide has long been the insect repellent of choice in the United States. DEET blocks a mosquito's ability to find people who've applied it.&nbsp;</p><p>Picaridin. This pesticide offers protection that's comparable to DEET at similar concentrations. It also blocks a mosquito's ability to find people who've applied it. Picaridin is nearly odorless, which may make it a good alternative if you're sensitive to the smells of insect repellents.&nbsp;</p><p>Oil of lemon eucalyptus. This plant-based chemical may offer protection that's comparable to low concentrations of DEET.&nbsp;</p><p>Others. Shorter acting repellents — generally containing plant-based oils such as oil of geranium, cedar, lemon grass, soy or citronella — may offer limited protection.&nbsp;</p><p>Check the labels of insect repellent products to see which chemicals or other ingredients they contain. And be sure to follow the product's application guidelines.</p><p>Deterring mosquitoes with clothing</p><p>What you wear can also help keep mosquitoes at bay. Clothing tips to keep in mind, particularly in areas that are heavily infested with mosquitoes, include:</p><p>Wear long-sleeved shirts&nbsp;</p><p>Wear socks&nbsp;</p><p>Wear long pants and consider tucking your pants into your socks&nbsp;</p><p>Wear light-colored clothing, since mosquitoes are more attracted to darker colors&nbsp;</p><p>Wear a full-brimmed hat to protect your head and neck or a baseball cap with a fold-out flap to protect the back of your neck&nbsp;</p><p>Consider wearing a mosquito net to cover your head and face or torso&nbsp;</p><p>Deterring mosquitoes by removing standing water</p><p>Mosquitoes need stagnant or standing water to breed. Eliminate standing water, especially after rains, and you can reduce the mosquito population around your home and yard.</p><p>To eliminate standing water:</p><p>Unclog roof gutters.&nbsp;</p><p>If possible, empty wading pools and other children's pools at least once a week, and preferably more often.&nbsp;</p><p>Change water in birdbaths at least weekly. You can also purchase devices to place in birdbaths that keep the water circulating so that mosquitoes won't lay eggs there.&nbsp;</p><p>Get rid of old tires in your yard, since they collect water.&nbsp;</p><p>If you keep unused containers, such as flower pots, in your yard, empty them regularly or store them upside down so that they can't collect water.&nbsp;</p><p>If you have a fire pit, drain any collected water regularly.&nbsp;</p><p>Other mosquito-deterrent methods</p><p>Other methods of controlling mosquitoes also are popular, but their effectiveness is unproved. These other methods include:</p><p>Electronic insect control systems, better known as bug zappers&nbsp;</p><p>Citronella-scented candles&nbsp;</p><p>Replacing outdoor lights with yellow bug lights&nbsp;</p><p>Attracting birds and mammals that feed on mosquitoes, such as blue martins and bats&nbsp;</p><p>What to do when a mosquito bites</p><p>If a mosquito still finds you to be a tasty meal, use hydrocortisone cream, calamine lotion or a baking soda paste to ease the discomfort of an itchy bite. A cold pack or baggie filled with crushed ice may help, too.</p><p>If a mosquito bite seems to be causing more serious signs and symptoms — such as fever, severe headache, body aches, nausea, vomiting, swollen glands, a rash, lethargy, confusion or sensitivity to light — contact your health care provider. These signs and symptoms may indicate West Nile fever or, rarely, encephalitis. Prompt diagnosis and treatment are important.\n</p>"
+        },
+        {
+          "_name": "contacts2",
+          "_styles": {
+            "P": {
+              "font-family": "'Roboto Condensed', sans-serif",
+              "googleLink": "https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700"
+            }
+          },
+          "_anchor": "contacts2-18",
+          "_params": {
+            "paddingTop": 3,
+            "paddingBottom": 3,
+            "bgImageRadio": false,
+            "parallax": true,
+            "bgImage": "@PROJECT_PATH@/assets/images/fresh-grass-hd-wallpaper-2000x1250-7.jpg",
+            "bgColor": "#2e2e2e",
+            "bgColorRadio": true,
+            "overlay": false,
+            "overlayOpacity": 0.8,
+            "overlayColor": "#ffffff",
+            "googleMap": {
+              "address": "Rm 9, 11/F, Block A, New Trade Plaza,\n 6 On Ping Street, Siu Lek Yuen, Shatin, N.T., Hong Kong",
+              "placeId": "ChIJofvgE0cGBDQRhmdMAT9CN8Y",
+              "state": "ok",
+              "stateDetails": ""
+            }
+          },
+          "text1": "<strong>Address</strong><br>Rm 9, 11/F, Block A, New Trade Plaza,<br> 6 On Ping Street, Siu Lek Yuen, Shatin, N.T., Hong Kong<br><br>\n<strong>Contacts</strong><br>\nEmail: sales@gdragon-hk.com<br>\nPhone: 852 - 24231677<br>\nFax: 852 - 37479633",
+          "text2": "<br><ul><br></ul>"
+        },
+        {
+          "_name": "footer1",
+          "_anchor": "footer1-19",
+          "_params": {
+            "paddingTop": "1",
+            "paddingBottom": "1",
+            "bgImageRadio": false,
+            "parallax": true,
+            "bgImage": "@PROJECT_PATH@/assets/images/fresh-grass-hd-wallpaper-2000x1250-99.jpg",
+            "bgColor": "#2e2e2e",
+            "bgColorRadio": true,
+            "overlay": false,
+            "overlayOpacity": "0",
+            "overlayColor": "#444444"
+          },
+          "text": "Copyright (c) 2016 G. Dragon."
+        }
+      ]
+    },
+    "shop.htm": {
+      "settings": {
+        "title": "Shop"
+      },
+      "components": [
+        {
+          "_styles": {
+            ".mbr-section-title, p": {
+              "color": "#fff"
+            }
+          },
+          "_name": "msg-box8",
+          "_anchor": "msg-box8-18",
+          "_params": {
+            "paddingTop": 4,
+            "paddingBottom": 3,
+            "parallax": true,
+            "bgImageRadio": false,
+            "bgImage": "@PROJECT_PATH@/assets/images/mountain-hiking-wallpaper-1600x900-2000x1125-46.jpg",
+            "bgColor": "#ffffff",
+            "bgColorRadio": true,
+            "bgVideo": {
+              "url": "https://www.youtube.com/watch?v=uNCr7NdOJgw"
+            },
+            "bgVideoRadio": false,
+            "overlay": true,
+            "overlayOpacity": 0.5,
+            "overlayColor": "#222",
+            "showTitle": false,
+            "showText": false,
+            "showButton": false
+          },
+          "title": "ARTICLE HEADER",
+          "text": "<p>Article header with background image and parallax effect.</p>",
+          "button": "<a data-app-btn=\"true\" class=\"btn btn-secondary\" href=\"https://mobirise.com\">SEE ALL TEMPLATES</a>"
+        },
+        {
+          "_styles": {
+            ".hide-buttons .nav-btn": {
+              "display": "none !important"
+            },
+            ".navbar-caption": {
+              "color": "#ffffff"
+            },
+            ".navbar-toggler": {
+              "color": "#ffffff"
+            },
+            ".close-icon::before, .close-icon::after": {
+              "background-color": "#ffffff"
+            },
+            ".link, .dropdown-item": {
+              "color": "#ffffff"
+            },
+            ".link": {
+              "font-size": "0.75rem"
+            },
+            ".dropdown-item, .nav-dropdown-sm .link": {
+              "font-size": "0.812rem"
+            },
+            ".link:hover, .dropdown-item:hover, .link:focus, .dropdown-item:focus": {
+              "color": "#c0a375"
+            },
+            ".link[aria-expanded=\"true\"], .dropdown-menu": {
+              "background": "#0fa1b7"
+            },
+            ".nav-dropdown-sm .link:focus, .nav-dropdown-sm .link:hover, .nav-dropdown-sm .dropdown-item:focus, .nav-dropdown-sm .dropdown-item:hover": {
+              "background": "#12bfd8!important"
+            },
+            ".navbar, .nav-dropdown-sm, .nav-dropdown-sm .link[aria-expanded=\"true\"], .nav-dropdown-sm .dropdown-menu": {
+              "background": "#13cbe6"
+            },
+            ".bg-color.transparent .link": {
+              "color": "#ffffff",
+              "transition": "none"
+            },
+            ".bg-color.transparent.opened .link": {
+              "transition": "color .2s ease-in-out"
+            },
+            ".bg-color.transparent.opened .link:hover, .bg-color.transparent.opened .link:focus": {
+              "color": "#c0a375"
+            },
+            ".link[aria-expanded=\"true\"], .dropdown-item[aria-expanded=\"true\"]": {
+              "color": "#c0a375!important"
+            }
+          },
+          "_name": "menu",
+          "_anchor": "menu-15",
+          "_params": {
+            "bgColor": "#13cbe6",
+            "fontSize": 0.75,
+            "fontName": {},
+            "fontColor": "#ffffff",
+            "fontHoverColor": "#c0a375",
+            "transparent": false,
+            "sticky": true,
+            "logo": false,
+            "showBrand": false,
+            "collapsed": true,
+            "hideButtons": false
+          },
+          "logo": {
+            "image": {
+              "active": true,
+              "src": "@THEME_PATH@/components/_images/logo.png",
+              "height": 128,
+              "alt": "Mobirise",
+              "link": "https://mobirise.com"
+            },
+            "iconFont": {
+              "class": "mbr-iconfont mbr-iconfont-menu",
+              "link": "https://mobirise.com",
+              "size": 0
+            }
+          },
+          "brand": "<a class=\"navbar-caption\" data-app-btn=\"true\" data-app-selector=\".navbar-caption\" href=\"index.htm\" data-app-placeholder=\"Type Brand Name\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd,-mbrBtnRemove,mbrColor\">G. Dragon</a>",
+          "items": "<li class=\"nav-item\"><a data-app-btn=\"true\" class=\"nav-link link\" href=\"index.htm\">HOME</a></li><li class=\"nav-item\"><a data-app-btn=\"true\" class=\"nav-link link\" href=\"index.htm#header1-16\">ABOUT US</a></li><li class=\"nav-item dropdown\"><a data-app-btn=\"true\" class=\"nav-link link dropdown-toggle\" data-toggle=\"dropdown-submenu\" href=\"index.htm#header3-17\" aria-expanded=\"false\">REPELLENT</a><div class=\"dropdown-menu\"><div class=\"dropdown\"><a data-app-btn=\"true\" class=\"dropdown-item dropdown-toggle\" href=\"index.htm#features3-6\" data-toggle=\"dropdown-submenu\" aria-expanded=\"false\">Mosquito Repellent</a><div class=\"dropdown-menu dropdown-submenu\"><a data-app-btn=\"true\" class=\"dropdown-item\" href=\"index.htm#features3-6\">Patch</a><a data-app-btn=\"true\" class=\"dropdown-item\" href=\"index.htm#features3-6\">Bracelet</a><a data-app-btn=\"true\" class=\"dropdown-item\" href=\"index.htm#features3-6\">Incense</a><a data-app-btn=\"true\" class=\"dropdown-item\" href=\"index.htm#features3-6\">Sucker</a></div></div><a data-app-btn=\"true\" class=\"dropdown-item\" href=\"index.htm#msg-box5-9\">Flea &amp; Ticks Repellent</a><a data-app-btn=\"true\" class=\"dropdown-item\" href=\"index.htm#msg-box5-10\">Odor Repellent</a></div></li><li class=\"nav-item dropdown\"><a data-app-btn=\"true\" class=\"nav-link link\" href=\"index.htm#msg-box8-11\" aria-expanded=\"false\">REFERENCE</a></li><li class=\"nav-item\"><a data-app-btn=\"true\" class=\"nav-link link\" href=\"index.htm#contacts2-18\" aria-expanded=\"false\">CONTACT US</a></li><li class=\"nav-item\"><a data-app-btn=\"true\" class=\"nav-link link\" href=\"index.htm#contacts2-18\" aria-expanded=\"false\"></a></li><li class=\"nav-item nav-btn\"><a data-app-btn=\"true\" data-button=\"\" data-app-selector=\".btn\" class=\"nav-link btn btn-white btn-white-outline\" href=\"shop.htm\">SHOP</a></li>"
+        },
+        {
+          "_name": "contacts2",
+          "_styles": {
+            "P": {
+              "font-family": "'Roboto Condensed', sans-serif",
+              "googleLink": "https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700"
+            }
+          },
+          "_anchor": "contacts2-16",
+          "_params": {
+            "paddingTop": 3,
+            "paddingBottom": 3,
+            "bgImageRadio": false,
+            "parallax": true,
+            "bgImage": "@PROJECT_PATH@/assets/images/fresh-grass-hd-wallpaper-2000x1250-7.jpg",
+            "bgColor": "#2e2e2e",
+            "bgColorRadio": true,
+            "overlay": false,
+            "overlayOpacity": 0.8,
+            "overlayColor": "#ffffff",
+            "googleMap": {
+              "address": "Rm 9, 11/F, Block A, New Trade Plaza,\n 6 On Ping Street, Siu Lek Yuen, Shatin, N.T., Hong Kong",
+              "placeId": "ChIJofvgE0cGBDQRhmdMAT9CN8Y",
+              "state": "ok",
+              "stateDetails": ""
+            }
+          },
+          "text1": "<strong>Address</strong><br>Rm 9, 11/F, Block A, New Trade Plaza,<br> 6 On Ping Street, Siu Lek Yuen, Shatin, N.T., Hong Kong<br><br>\n<strong>Contacts</strong><br>\nEmail: sales@gdragon-hk.com<br>\nPhone: 852 - 24231677<br>\nFax: 852 - 37479633",
+          "text2": "<br><ul><br></ul>"
+        },
+        {
+          "_name": "footer1",
+          "_anchor": "footer1-17",
+          "_params": {
+            "paddingTop": "1",
+            "paddingBottom": "1",
+            "bgImageRadio": false,
+            "parallax": true,
+            "bgImage": "@PROJECT_PATH@/assets/images/fresh-grass-hd-wallpaper-2000x1250-99.jpg",
+            "bgColor": "#2e2e2e",
+            "bgColorRadio": true,
+            "overlay": false,
+            "overlayOpacity": "0",
+            "overlayColor": "#444444"
+          },
+          "text": "Copyright (c) 2016 G. Dragon."
+        }
+      ]
+    }
+  }
+}

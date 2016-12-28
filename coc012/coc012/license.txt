@@ -1,0 +1,46 @@
+﻿Extension Name: Alipay Transfer Payment For OpenCart 2.0.x
+Agreement 
+
+Author: Yang Zhao Feng
+版权作者：杨兆锋
+E-mail: opencartchina@qq.com
+Skype: opencartchina
+QQ: 1487063622
+Website: http://www.chinaopencart.com
+
+
+
+
+LICENSE:
+
+
+This extension is not free. By installing it, you are agreeing to use it only 
+with the applicable number of OpenCart installations for which you purchased 
+licenses. No matter the number of licenses purchased, redistribution or
+re-sale of this extension is not allowed.
+
+ Multiple OpenCart installations (including multi-store installations) are 
+covered by a single license, provided you are the sole owner and profiter of 
+all stores. If you receive any type of revenue from someone else for a store,
+you must purchase a license for that store.
+
+This extension is provided for the default installation of OpenCart. No 
+guarantee is provided that it will work with other customizations you've made.
+
+
+
+
+DISCLAIMER:
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+
+IF YOU DO N0T AGREE TO THIS LICENSE & DISCLAIMER YOU MAY NOT USE THIS SOFTWARE

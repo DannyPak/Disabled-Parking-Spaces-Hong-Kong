@@ -1,5 +1,5 @@
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 <?php
-
 require('dbconfig.php');
 
 
@@ -21,6 +21,7 @@ if (!$result) {
     exit;
 }
 
+$row = array();
 while ($row = mysqli_fetch_assoc($result)) {
     $id = $row['id'];
     $lat = $row['lat'];
@@ -29,9 +30,10 @@ while ($row = mysqli_fetch_assoc($result)) {
     $loc_c = $row['loc_c'];
     $loc_e = $row['loc_e'];
     $loc = $loc_e;
+
     if ($lang == 1) {
         echo '<li style="margin-top:10px;"><a href="#" onclick="goLocation(' . $id . ')">' . $row['are_c'] . '・' . $row['loc_c'] . '・' . $row['dis_c'] . '</a></li>';
-//         echo '<li style="margin-top:10px;"><a href="#" onclick="goToLocation(' . $id . ',' . $lat . ',' . $lng . ',' . $qty . ',\'' . $loc_c . '\')">' . $row['are_c'] . '・' . $row['loc_c'] . '・' . $row['dis_c'] . '</a></li>';
+       
     } else {
         switch ($loc_e) {
             case "Lower Albert Rd near St. Johns Building":
@@ -55,6 +57,7 @@ while ($row = mysqli_fetch_assoc($result)) {
         echo '<li style="margin-top:10px;"><a href="#" onclick="goLocation(' . $id . ')">' . $loc_e . '・' . $row['are_e'] . '・' . $row['dis_e'] . '</a></li>';
     }
 }
+
 mysqli_free_result($result);
 mysqli_close($link);
 ?>

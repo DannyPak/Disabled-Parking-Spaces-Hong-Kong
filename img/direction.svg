@@ -1,58 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 12.0.0, SVG Export Plug-In  -->
+<!-- Generator: Adobe Illustrator 12.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 51448)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
-	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
 	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
 	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
 ]>
-<svg  version="1.1" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-	 width="39" height="39" viewBox="43 25 39 39" enable-background="new 43 25 39 39" xml:space="preserve">
-<defs>
-</defs>
+<svg  version="1.1" id="Layer_1" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="39" height="39" viewBox="43 25 39 39"
+	 overflow="visible" enable-background="new 43 25 39 39" xml:space="preserve">
 <rect x="7.75" y="0.5" display="none" fill="#FFAC00" stroke="#FFFFFF" width="118.5" height="68.75"/>
-<circle display="none" fill="#FFAC00" stroke="#FFFFFF" stroke-width="3" cx="68.071" cy="39.084" r="24"/>
-<path display="none" fill="#FFFFFF" d="M69.377,59.544c-0.719,0.719-1.895,0.719-2.612,0L47.61,40.389
-	c-0.719-0.718-0.719-1.895,0-2.612l19.155-19.154c0.718-0.718,1.894-0.718,2.612,0l19.156,19.154c0.717,0.718,0.717,1.895,0,2.613
+<circle display="none" fill="#FFAC00" stroke="#FFFFFF" stroke-width="3" cx="68.07" cy="39.084" r="24"/>
+<path display="none" fill="#FFFFFF" d="M69.377,59.544c-0.719,0.72-1.895,0.72-2.611,0L47.61,40.389
+	c-0.719-0.718-0.719-1.895,0-2.612l19.156-19.154c0.717-0.718,1.895-0.718,2.611,0l19.156,19.154c0.717,0.718,0.717,1.895,0,2.613
 	L69.377,59.544z"/>
-<ellipse display="none" fill="#FFFFFF" stroke="#FFAC00" stroke-width="2" cx="67.821" cy="44.806" rx="12" ry="4.027"/>
+<ellipse display="none" fill="#FFFFFF" stroke="#FFAC00" stroke-width="2" cx="67.82" cy="44.806" rx="12" ry="4.027"/>
 <circle display="none" fill="#FFAC00" cx="68" cy="29.055" r="7"/>
 <circle display="none" fill="#FFFFFF" cx="68" cy="29.055" r="2.333"/>
 <polygon display="none" fill="#FFFFFF" points="74.385,34.791 68,46.75 61.616,34.791 "/>
 <polygon display="none" fill="#FFAC00" points="74.385,31.875 68,43.834 61.616,31.875 "/>
-<ellipse display="none" fill="#FFFFFF" stroke="#FFAC00" stroke-width="2" cx="68.071" cy="45.056" rx="12" ry="4.027"/>
-<rect x="61.963" y="37.368" display="none" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2" width="12.216" height="5.228"/>
+<ellipse display="none" fill="#FFFFFF" stroke="#FFAC00" stroke-width="2" cx="68.07" cy="45.056" rx="12" ry="4.027"/>
+<rect x="61.963" y="37.368" display="none" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2" width="12.217" height="5.228"/>
 <ellipse display="none" fill="#FFFFFF" stroke="#FFAC00" stroke-width="2" cx="68.135" cy="28.012" rx="2.875" ry="2.929"/>
 <g display="none">
 	<g display="inline">
-		<path fill="#FFFFFF" d="M72.806,35.832c0-2.63-2.092-4.759-4.671-4.759c-2.58,0-4.671,2.129-4.671,4.759
-			c0,0.125,0.027,0.242,0.036,0.365h-0.036v5.227h2.194v3.853h4.954v-3.853h2.194v-5.227H72.77
-			C72.779,36.074,72.806,35.957,72.806,35.832z"/>
+		<path fill="#FFFFFF" d="M72.807,35.832c0-2.63-2.093-4.759-4.672-4.759c-2.58,0-4.671,2.129-4.671,4.759
+			c0,0.125,0.027,0.242,0.036,0.365h-0.036v5.227h2.194v3.854h4.953v-3.854h2.195v-5.227H72.77
+			C72.779,36.074,72.807,35.957,72.807,35.832z"/>
 	</g>
 	<g display="inline">
-		<path fill="none" stroke="#FFAC00" stroke-width="2" d="M72.806,35.832c0-2.63-2.092-4.759-4.671-4.759
-			c-2.58,0-4.671,2.129-4.671,4.759c0,0.125,0.027,0.242,0.036,0.365h-0.036v5.227h2.194v3.853h4.954v-3.853h2.194v-5.227H72.77
-			C72.779,36.074,72.806,35.957,72.806,35.832z"/>
+		<path fill="none" stroke="#FFAC00" stroke-width="2" d="M72.807,35.832c0-2.63-2.093-4.759-4.672-4.759
+			c-2.58,0-4.671,2.129-4.671,4.759c0,0.125,0.027,0.242,0.036,0.365h-0.036v5.227h2.194v3.854h4.953v-3.854h2.195v-5.227H72.77
+			C72.779,36.074,72.807,35.957,72.807,35.832z"/>
 	</g>
 </g>
-<path display="none" fill="#FFAC00" d="M80.902,47.317c0.419,0.418,0.466,1.058,0.104,1.42l-1.891,1.891
-	c-0.361,0.361-1.001,0.314-1.42-0.104l-5.052-5.052c-0.419-0.42-0.466-1.059-0.104-1.421l1.891-1.891
-	c0.362-0.362,1.001-0.314,1.42,0.104L80.902,47.317z"/>
+<path display="none" fill="#FFAC00" d="M80.902,47.316c0.418,0.418,0.466,1.059,0.104,1.42l-1.891,1.892
+	c-0.361,0.361-1.002,0.313-1.42-0.104l-5.053-5.051c-0.418-0.421-0.467-1.06-0.104-1.422l1.892-1.891
+	c0.361-0.362,1.002-0.314,1.42,0.104L80.902,47.316z"/>
 <polygon display="none" fill="#FFAC00" points="72.498,45.407 72.086,41.708 75.786,42.119 "/>
 <circle display="none" fill="#FFFFFF" stroke="#FFAC00" stroke-width="2" cx="66.085" cy="35.707" r="8.836"/>
-<ellipse transform="matrix(0.7071 -0.7071 0.7071 0.7071 -7.3545 56.5368)" display="none" fill="#FFAC00" cx="64.565" cy="37.146" rx="4.186" ry="5.639"/>
-<ellipse transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.2685 57.4483)" display="none" fill="#FFFFFF" cx="66.709" cy="35.083" rx="5.164" ry="6.859"/>
+<ellipse transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 136.4886 17.7611)" display="none" fill="#FFAC00" cx="64.566" cy="37.15" rx="4.186" ry="5.639"/>
+<ellipse transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 138.6886 12.7239)" display="none" fill="#FFFFFF" cx="66.709" cy="35.087" rx="5.163" ry="6.859"/>
 <rect y="6" display="none" fill="#48B5E9" width="132" height="73"/>
-<path display="none" fill="#FFFFFF" d="M81.61,48.404c0.488,0.487,0.592,1.184,0.229,1.546l-1.891,1.891
-	c-0.361,0.361-1.058,0.258-1.546-0.23l-5.884-5.884c-0.488-0.489-0.591-1.185-0.23-1.547l1.891-1.891
-	c0.361-0.362,1.058-0.258,1.546,0.23L81.61,48.404z"/>
+<path display="none" fill="#FFFFFF" d="M81.609,48.404c0.488,0.486,0.593,1.184,0.229,1.546l-1.891,1.891
+	c-0.361,0.361-1.059,0.259-1.547-0.229l-5.885-5.885c-0.488-0.487-0.591-1.185-0.229-1.545l1.893-1.891
+	c0.359-0.362,1.057-0.258,1.545,0.23L81.609,48.404z"/>
 <polygon display="none" fill="#FFFFFF" points="72.248,45.536 71.836,41.837 75.536,42.248 "/>
 <circle display="none" fill="#48B5E9" stroke="#FFFFFF" stroke-width="2" cx="65.836" cy="35.835" r="8.836"/>
-<ellipse transform="matrix(0.707 -0.7072 0.7072 0.707 -7.518 56.4009)" display="none" fill="#FFFFFF" stroke="#48B5E9" cx="64.315" cy="37.274" rx="4.186" ry="5.639"/>
-<ellipse transform="matrix(0.7071 -0.7072 0.7072 0.7071 -5.4321 57.3119)" display="none" fill="#48B5E9" cx="66.459" cy="35.212" rx="5.164" ry="6.859"/>
-<circle fill="#48B5E9" stroke="#FFFFFF" stroke-width="2" cx="62.722" cy="44.279" r="18"/>
-<circle fill="#FFFFFF" stroke="#48B5E9" stroke-width="3" cx="62.722" cy="44.278" r="14.999"/>
-<path fill="#48B5E9" d="M63.515,56.701c-0.437,0.436-1.15,0.436-1.586,0L50.3,45.071c-0.437-0.436-0.437-1.149,0-1.585
-	l11.629-11.629c0.436-0.437,1.149-0.437,1.586,0l11.63,11.629c0.436,0.436,0.436,1.149,0,1.587L63.515,56.701z"/>
-<polygon fill="#FFFFFF" points="66.476,43.47 62.036,43.47 62.036,51.319 58.555,51.319 58.555,40.745 66.472,40.745 66.476,40.745 
-	66.476,39.32 71.681,42.099 66.472,44.829 "/>
+<ellipse transform="matrix(-0.707 0.7072 -0.7072 -0.707 136.1389 18.1383)" display="none" fill="#FFFFFF" stroke="#48B5E9" cx="64.312" cy="37.271" rx="4.186" ry="5.639"/>
+<ellipse transform="matrix(-0.7071 0.7072 -0.7072 -0.7071 138.3606 13.1042)" display="none" fill="#48B5E9" cx="66.466" cy="35.21" rx="5.164" ry="6.859"/>
+<circle display="none" fill="#48B5E9" stroke="#FFFFFF" stroke-width="2" cx="62.722" cy="44.279" r="18"/>
+<circle display="none" fill="#FFFFFF" stroke="#48B5E9" stroke-width="3" cx="62.722" cy="44.278" r="14.999"/>
+<path fill="#48B5E9" stroke="#FFFFFF" stroke-width="2" d="M63.596,60.716c-0.584,0.583-1.539,0.583-2.122,0L45.911,45.15
+	c-0.585-0.583-0.585-1.538,0-2.12l15.563-15.563c0.583-0.586,1.538-0.586,2.122,0L79.159,43.03c0.584,0.583,0.584,1.538,0,2.124
+	L63.596,60.716z"/>
+<polygon fill="#FFFFFF" points="66.448,43.101 61.689,43.101 61.689,51.512 57.958,51.512 57.958,40.182 66.443,40.182 
+	66.448,40.182 66.448,38.654 72.023,41.633 66.443,44.559 "/>
 </svg>

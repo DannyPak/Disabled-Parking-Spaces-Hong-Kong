@@ -1,3 +1,4 @@
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 <?php
 
 require('dbconfig.php');
