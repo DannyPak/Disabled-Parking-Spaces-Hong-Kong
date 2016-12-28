@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 12.0.0, SVG Export Plug-In  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
+	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
+]>
+<svg  version="1.1" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 width="52" height="52" viewBox="51.25 60.77 52 52" enable-background="new 51.25 60.77 52 52" xml:space="preserve">
+<defs>
+</defs>
+<rect x="17" y="48.27" display="none" fill="#FFAC00" stroke="#FFFFFF" width="118.5" height="68.75"/>
+<circle fill="#FFAC00" stroke="#FFFFFF" stroke-width="3" cx="77.322" cy="86.854" r="24"/>
+<path fill="#FFFFFF" d="M78.628,107.313c-0.719,0.719-1.895,0.719-2.612,0L56.86,88.158c-0.719-0.718-0.719-1.895,0-2.612
+	l19.155-19.154c0.718-0.718,1.894-0.718,2.612,0l19.156,19.154c0.717,0.718,0.717,1.895,0,2.613L78.628,107.313z"/>
+<ellipse display="none" fill="#FFFFFF" stroke="#FFAC00" stroke-width="2" cx="77.071" cy="92.575" rx="12" ry="4.027"/>
+<circle display="none" fill="#FFAC00" cx="77.25" cy="76.825" r="7"/>
+<circle display="none" fill="#FFFFFF" cx="77.25" cy="76.825" r="2.333"/>
+<polygon display="none" fill="#FFFFFF" points="83.635,82.561 77.25,94.52 70.867,82.561 "/>
+<polygon display="none" fill="#FFAC00" points="83.635,79.645 77.25,91.604 70.867,79.645 "/>
+<ellipse display="none" fill="#FFFFFF" stroke="#FFAC00" stroke-width="2" cx="77.322" cy="92.825" rx="12" ry="4.027"/>
+<rect x="71.213" y="85.138" display="none" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2" width="12.216" height="5.228"/>
+<ellipse display="none" fill="#FFFFFF" stroke="#FFAC00" stroke-width="2" cx="77.385" cy="75.782" rx="2.875" ry="2.929"/>
+<g display="none">
+	<g display="inline">
+		<path fill="#FFFFFF" d="M82.056,83.602c0-2.63-2.092-4.759-4.671-4.759c-2.58,0-4.671,2.129-4.671,4.759
+			c0,0.125,0.027,0.242,0.036,0.365h-0.036v5.227h2.194v3.853h4.954v-3.853h2.194v-5.227H82.02
+			C82.029,83.844,82.056,83.727,82.056,83.602z"/>
+	</g>
+	<g display="inline">
+		<path fill="none" stroke="#FFAC00" stroke-width="2" d="M82.056,83.602c0-2.63-2.092-4.759-4.671-4.759
+			c-2.58,0-4.671,2.129-4.671,4.759c0,0.125,0.027,0.242,0.036,0.365h-0.036v5.227h2.194v3.853h4.954v-3.853h2.194v-5.227H82.02
+			C82.029,83.844,82.056,83.727,82.056,83.602z"/>
+	</g>
+</g>
+<image display="none" width="52" height="52" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAYAAADFeBvrAAAEPklEQVRoQ9WajXUTMQyA6QTABmEC
+6AQcE1AmIJ0AmIDrBNAJOCZomYB0AmACwgTABKAvtYMi7PPP+foues8vSWNL/iRZti89uTdNHsjw
+x9K6iJqN/P2btF/TzOSPPsnvuu+5kncvpZ1Je5I5/qv0u5b2Udo2c0xVtxIgQN5KW1dZ+jdokLcX
+c4HlAJFWgLyeCGKHv3dgTdMxBURKfRhJrU8ulUgjJkZqIYzDEUSV1HwecQb9z9W4yT4bA2JSn93E
+tKEf8qF3ILneBQ4wonLfzBodz1pBxYCA+RJwF7nPpHJBrArASF1S2MppC6gQUCgyv8VY18Kgo8DG
+xkSrSaQsEB4kzXQ5Zh8BpjYqgWDs/oQtoNjHvLCmSL9qWxaIdHqlDBCZ1RQDMRr3d6C2JlKX8rm6
+omogJv7dwBAZX7kSc6v+OrReHznQYqUaaJDRnAC8UAD6Yo11A7CjCwUninWNKg9ko0NpxnPVuVw4
+mVDqVUXJA1kPsdkRsbsUIsImPilDPBB7jq5sD+8wOh6AKP1UQKxd9qYiAcgq4jjDrq6lkw+bIs11
+na9lmD4mFTsWICbL3uMllG5UP3J6bqFcv1NG2JOKHAlQL01XGKuEaF1JSx1kW8Ba5xZX2hCQPVN5
+4GJvVRDaPakJkI0EIX8qrVh5BRBD/qhxxTZDEYoBVVWdCqjmQDblfISY29xpN0vK2UnrogEc388l
+tii8EUMcmLMlp2yvRZvewV/IZ/aLOaRJ2U5trPb7JhexiDeabKzoZsHri5bdoQf5Xp/Ety71eG0l
+1nE3opgULJLcw2noNNw6Uja1i9cP5LHrA5PlqKOvD9ag91wvb7hlTrlq4DCOV7x6KT7HaSDeD9JS
+F7wYFDCAcbDdFuXIbWfGNr3goXTlvKTnE3q0xNkOePt8zY9jPfoqCByN9RATu/fQr+pyx0B7KqDm
+64ckodRjHKlBiaXFwOhHxNC5idCEUq34uKN1WyAMYLzk0VIn/WlaiBJtG43LrVNCj8yIWLWErgQo
+BEp7vnVFw0boMTOpysZdLbE7TiivMdJLm1LRiAopjZ6YDM4GN1cizPrjNUvGLm2hSKGUaLF2WB+5
+pRoQJsh60qU5Z5LYYE8CNCmpWyhQKNJrSislRWh4kKesrBuEcaQsr520s8hM8D4Tjv3cooed50Cl
+gFCIR3tpuvolPZXoADw6iRgySNN7YGx4EioHyCtfuUnkGI5NCBAiCsxWderkvX5QM+aPUagSIA22
+lg+kUSwV7YRILUCIRGjdARj6zag4UjVA2gjp6NeJNc7EWVObMXe77ygy+vFVxpDdT5k46ECmAuUY
+zumzcvBjp46Qnv+glgLEZNfS9M04xxH0OYBaElATqKUBTYZaItAUqNOlAtVCXS4ZqAbqZulApVAX
+xwCUC7X7F4RjAUpB7f/T5ZiAYlAH/7ZzbEBAcXbkVOEvoFxB9gfev95ZA1Q1cPeUAAAAAElFTkSu
+QmCC" transform="matrix(0.7071 0.7071 -0.7071 0.7071 36.7695 0)">
+</image>
+<path fill="#FFAC00" d="M90.153,95.087c0.419,0.418,0.466,1.058,0.104,1.42l-1.891,1.891c-0.361,0.361-1.001,0.314-1.42-0.104
+	l-5.052-5.052c-0.419-0.42-0.466-1.059-0.104-1.421l1.891-1.891c0.362-0.362,1.001-0.314,1.42,0.104L90.153,95.087z"/>
+<polygon fill="#FFAC00" points="81.749,93.177 81.337,89.478 85.037,89.889 "/>
+<circle fill="#FFFFFF" stroke="#FFAC00" stroke-width="2" cx="75.336" cy="83.476" r="8.836"/>
+<ellipse transform="matrix(0.7071 -0.7071 0.7071 0.7071 -38.4244 77.0709)" fill="#FFAC00" cx="73.815" cy="84.915" rx="4.186" ry="5.639"/>
+<ellipse transform="matrix(0.7071 -0.7071 0.7071 0.7071 -36.3382 77.9821)" fill="#FFFFFF" cx="75.959" cy="82.853" rx="5.164" ry="6.859"/>
+</svg>

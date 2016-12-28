@@ -1,0 +1,11 @@
+ExpiresActive On
+ExpiresDefault "access plus 1 years"
+
+<FilesMatch ".(js|css|html|htm|php|xml|svg)$">
+SetOutputFilter DEFLATE
+</FilesMatch>
+
+Header unset ETag
+FileETag None
+
+
