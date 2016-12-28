@@ -46,6 +46,7 @@
                     mapTypeId: google.maps.MapTypeId.ROADMAP,
                     zoomControl: false,
                     mapTypeControl: false,
+                    fullscreenControl: false,
                     streetViewControl: false
                 };
                 map = new google.maps.Map(document.getElementById("map"), myOptions);
@@ -109,7 +110,7 @@
         <script src="../js/pace.min.js" type="text/javascript"></script>
         <script async defer src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
         <script async defer src="//code.jquery.com/jquery-1.11.3.min.js" type="text/javascript"></script>
-        <script src="//maps.googleapis.com/maps/api/js?v=3.26&key=AIzaSyCphX_SNu5HcrQAMHbkJlt-g7vJuX_MGo0" type="text/javascript">
+        <script src="//maps.googleapis.com/maps/api/js?v=3.25&key=AIzaSyCphX_SNu5HcrQAMHbkJlt-g7vJuX_MGo0" type="text/javascript">
         </script>	
         <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
         <script async defer src="../js/map.js" type="text/javascript" ></script>
@@ -123,21 +124,22 @@
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="theme-color" content="#ffffff">
         <style>                 
-            html, body, #map{
+           html, body, #map{
                 margin: 0;
                 padding:0;
                 width: 100%;
                 height: 100%;
                 overflow-x: hidden;
                 overflow-y: hidden;
-                font-family: sans-serif;
+                font-family: sans-serif;      
                 background-color: #FFAC00;
             }
 
             #map{
-                position:relative;
+                position:relative;  
                 top:20px;
-                z-index:1
+                z-index:1;
+                
             }
 
 
@@ -190,10 +192,12 @@
                     <div class="logo">
                         <a href="index.php">
                             <img  id="logo" src="../img/disabled-parking-logo.svg" alt="Disabled Parking Spaces Hong Kong" title="Disabled Parking Spaces Hong Kong"></a>
-                    </div>    
+                    </div>   
+                    
                     <div id="map">
-
-                    </div>                              
+</div> 
+                    
+                   
                 </div><!-- /scroller -->
                 <!-- mp-menu -->
                 <nav id="mp-menu" class="mp-menu">
@@ -243,8 +247,10 @@
                     <div id="sch-btn" class="btn" style="right:10px; ">
                         <img src="../img/sc_white.svg" class="imageBtn hidden" id="schButton" alt="Search" title="Search"></div>
 
-                    <div id="map-btn" class="btn"><img src="../img/mp.svg"  class="imageBtn hidden" id="mapViewButton" alt="Map View" title="Map View"></div>                   
-                    <div id="showChkBox" class="hidden">
+                    <div id="map-btn" class="btn">
+                        <img src="../img/mp.svg"  class="imageBtn hidden" id="mapViewButton" alt="Map View" title="Map View"></div>                   
+                 
+                        <div id="showChkBox" class="hidden">
 
                         <input type="checkbox" value="None" id="drawMarkerChk" name="check" checked="checked" style="display:inline-block; width:19px; height:19px; margin:0px 2px 10px; vertical-align: middle; float:left; cursor: pointer;transform: translateY(20%)"/>
                         <label id="ctext" for="drawMarkerChk" style="margin-top: 4px; margin-right:4px; margin-bottom:2px; color:white;font-size: 0.8em;font-family: sans-serif;font-weight: 900; float:left; transform: translateY(-10%)" ></label>

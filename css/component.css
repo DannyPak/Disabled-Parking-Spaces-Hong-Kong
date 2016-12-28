@@ -9,7 +9,7 @@
 .menu-trigger{position:relative;padding-left:0px;font-size:0.6em;font-weight:200;}
 .menu-trigger:before{position:absolute;top:20px;left:0px;width:25px;height:4px;background:#ffacoo;box-shadow:0 4px #FFAC00, 0 8px #ffac00, 0 12px #FFAC00, 0 16px #ffac00;content:'';}
 .header{position:fixed;top:0px;left:0px;float:left;}
-.logo{z-index:2;position:relative;top:10px;left:55px;float:left;cursor:pointer;}
+.logo{z-index:10;position:relative;top:10px;left:55px;float:left;cursor:pointer;}
 .mp-pusher{position:relative;left:0;height:100%;}
 .mp-menu{position:absolute;top:0;left:0;z-index:1;width:320px;height:100%;-webkit-transform:translate3d(-100%, 0, 0);-moz-transform:translate3d(-100%, 0, 0);transform:translate3d(-100%, 0, 0);}
 .mp-level{position:absolute;top:0;left:0;width:100%;height:100%;background:#48b5e9;font-family: sans-serif;-webkit-transform:translate3d(-100%, 0, 0);-moz-transform:translate3d(-100%, 0, 0);transform:translate3d(-100%, 0, 0);}

@@ -213,6 +213,15 @@
     outline: none;
 }
 
+#map{
+                position:relative;
+                top:20px;
+                z-index:1;
+               
+            }
+
+
+
 img{
     border: none;
 }	
@@ -231,9 +240,9 @@ img{
 
 
 #str-btn, #map-btn, #sch-btn{
-    width: 35px;
-    height: 35px;    
+     
     top:12px;	
+    z-index: 10;
     position:absolute;
 }
 .imageBtn{
@@ -324,7 +333,7 @@ img{
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 3; /* Sit on top */
+    z-index: 11; /* Sit on top */
     padding-top:0px;
     left: 0;
     top: 0;
