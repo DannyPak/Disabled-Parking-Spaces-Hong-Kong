@@ -113,7 +113,7 @@
         <script async defer src="../js/pace.min.js" type="text/javascript" ></script>
         <script async defer src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript"  ></script>
         <script src="//code.jquery.com/jquery-1.11.3.min.js" type="text/javascript"></script>
-        <script src="//maps.googleapis.com/maps/api/js?v=3.26&key=AIzaSyCphX_SNu5HcrQAMHbkJlt-g7vJuX_MGo0" type="text/javascript"></script>        	
+        <script src="//maps.googleapis.com/maps/api/js?v=3.25&key=AIzaSyCphX_SNu5HcrQAMHbkJlt-g7vJuX_MGo0" type="text/javascript"></script>        	
         <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js" ></script>
         <script async defer src="../js/map.js" type="text/javascript"  ></script>
         <script src="../js/modernizr.custom.js" type="text/javascript"  ></script>
@@ -140,7 +140,8 @@
             #map{
                 position:relative;  
                 top:20px;
-                z-index:1
+                z-index:1;
+                
             }
 
 
