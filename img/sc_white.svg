@@ -7,7 +7,7 @@
 <svg  version="1.1" id="Layer_1" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="30" height="30" viewBox="55 25 30 30"
 	 overflow="visible" enable-background="new 55 25 30 30" xml:space="preserve">
 <rect x="7.75" y="0.5" display="none" fill="#FFAC00" stroke="#FFFFFF" width="118.5" height="68.75"/>
-<circle fill="#FFAC00" stroke="#FFFFFF" stroke-width="3" cx="68.071" cy="39.084" r="24"/>
+<circle display="none" fill="#FFAC00" stroke="#FFFFFF" stroke-width="3" cx="68.071" cy="39.084" r="24"/>
 <path display="none" fill="#FFFFFF" d="M69.377,59.544c-0.719,0.72-1.895,0.72-2.612,0L47.61,40.389
 	c-0.719-0.718-0.719-1.895,0-2.612l19.155-19.154c0.718-0.718,1.894-0.718,2.612,0l19.156,19.154c0.717,0.718,0.717,1.895,0,2.614
 	L69.377,59.544z"/>
@@ -32,18 +32,18 @@
 	</g>
 </g>
 <path display="none" fill="#FFAC00" d="M80.902,47.316c0.418,0.418,0.466,1.059,0.104,1.42l-1.891,1.892
-	c-0.361,0.361-1.002,0.313-1.42-0.104l-5.053-5.051c-0.418-0.421-0.468-1.06-0.104-1.422l1.892-1.891
+	c-0.361,0.361-1.002,0.313-1.42-0.104l-5.053-5.051c-0.418-0.421-0.469-1.06-0.104-1.422l1.892-1.891
 	c0.361-0.362,1.002-0.314,1.42,0.104L80.902,47.316z"/>
 <polygon display="none" fill="#FFAC00" points="72.498,45.407 72.086,41.708 75.786,42.119 "/>
 <circle display="none" fill="#FFFFFF" stroke="#FFAC00" stroke-width="2" cx="66.085" cy="35.707" r="8.836"/>
-<ellipse transform="matrix(0.7071 0.7071 -0.7071 0.7071 45.1798 -34.7729)" display="none" fill="#FFAC00" cx="64.564" cy="37.15" rx="5.639" ry="4.186"/>
-<ellipse transform="matrix(0.7071 0.7071 -0.7071 0.7071 44.3502 -36.8942)" display="none" fill="#FFFFFF" cx="66.709" cy="35.086" rx="6.859" ry="5.163"/>
+<ellipse transform="matrix(0.7071 -0.7071 0.7071 0.7071 -7.357 56.5374)" display="none" fill="#FFAC00" cx="64.564" cy="37.149" rx="4.186" ry="5.639"/>
+<ellipse transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.2696 57.4479)" display="none" fill="#FFFFFF" cx="66.711" cy="35.085" rx="5.163" ry="6.859"/>
 <rect y="6" display="none" fill="#48B5E9" width="132" height="73"/>
 <path fill="#FFFFFF" d="M81.609,48.404c0.488,0.486,0.593,1.184,0.229,1.546l-1.891,1.891c-0.361,0.361-1.059,0.259-1.547-0.229
-	l-5.885-5.885c-0.488-0.486-0.592-1.185-0.229-1.547l1.894-1.891c0.358-0.362,1.057-0.258,1.545,0.23L81.609,48.404z"/>
+	l-5.885-5.885c-0.488-0.485-0.593-1.185-0.229-1.547l1.894-1.891c0.358-0.362,1.057-0.258,1.545,0.23L81.609,48.404z"/>
 <polygon fill="#FFFFFF" points="72.248,45.536 71.836,41.837 75.536,42.248 "/>
 <circle fill="none" stroke="#FFFFFF" stroke-width="2" cx="65.836" cy="35.835" r="8.836"/>
 <path display="none" fill="#FFFFFF" d="M60.325,33.283c1.634-1.635,1.222,1.765,3.425,3.967c2.202,2.202,6.185,2.372,4.551,4.007
 	c-1.634,1.636-4.745,1.175-6.947-1.026C59.151,38.028,58.69,34.918,60.325,33.283z"/>
-<ellipse transform="matrix(0.7071 0.7071 -0.7071 0.7071 44.3649 -36.6875)" fill="none" cx="66.467" cy="35.208" rx="6.859" ry="5.164"/>
+<ellipse transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.427 57.3121)" fill="none" cx="66.468" cy="35.207" rx="5.164" ry="6.859"/>
 </svg>
