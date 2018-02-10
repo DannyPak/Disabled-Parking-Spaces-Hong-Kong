@@ -25,43 +25,6 @@
         <script>
 
 
-
-            function initialize(){
-
-                /* lang = 1: Chinese, 2: English  */
-                lang = 1 ;
-                $("#mapViewButton").removeClass('hidden') ;
-                $("#showChkBox").removeClass('hidden') ;
-                $('#schButton').removeClass('hidden') ;
-                $('#usrLocButton').removeClass('hidden') ;
-                $('#usrLocButton').hide() ;
-                $('#spacer').removeClass('hidden') ;
-                $('#footer').removeClass('hidden') ;
-                $('#spacer').hide() ;
-                $('#mapViewButton').hide() ;
-                $('#strViewButton').hide() ;
-                $('#schButton').hide() ;
-                $('#showChkBox').hide() ;
-                $('#footer').hide() ;
-                var latlng = new google.maps.LatLng(22.3113729 ,114.1719263) ;
-                var myOptions = {
-                    center : latlng ,
-                    zoom : 16 ,
-                    mapTypeId : google.maps.MapTypeId.ROADMAP ,
-                    zoomControl : false ,
-                    mapTypeControl : false ,
-                    streetViewControl : false ,
-                    fullscreenControl : false
-                } ;
-                map = new google.maps.Map(document.getElementById("map") ,myOptions) ;
-                window.map = map ;
-                map.setOptions({styles : remove_featureType}) ;
-                google.maps.event.addListener(map ,'idle' ,chkDrawMarker) ;
-                window.map = map ;
-                init = 1 ;
-                getUsrLocation() ;
-            }
-
             function getUsrLocation(){
                 n = navigator.geolocation ;
                 n ? n.getCurrentPosition(locPosition ,locError ,locProp) : alert("Your brower doesn't support geolocation.") ;
@@ -114,9 +77,13 @@
         <script async defer src="../js/pace.min.js" type="text/javascript" ></script>
         <script async defer src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript"  ></script>
         <script src="//code.jquery.com/jquery-1.11.3.min.js" type="text/javascript"></script>
-        <script src="//maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCphX_SNu5HcrQAMHbkJlt-g7vJuX_MGo0" type="text/javascript"></script>        	
+
         <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js" ></script>
-        <script async defer src="../js/map.js" type="text/javascript"  ></script>
+
+
+
+
+
         <script src="../js/modernizr.custom.js" type="text/javascript"  ></script>
         <link rel="apple-touch-icon" sizes="57x57" href="../img/apple-touch-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="../img/apple-touch-icon-60x60.png">
@@ -126,24 +93,7 @@
         <link rel="mask-icon" href="../img/safari-pinned-tab.svg" color="#5bbad5">
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="theme-color" content="#ffffff">
-        <style>                 
-            html, body{
-                margin: 0;
-                padding:0;
-                width: 100%;
-                height: 100%;
-                overflow-x: hidden;
-                overflow-y: hidden;
-                font-family: sans-serif;      
-                background-color: #FFAC00;
-            }
 
-
-
-
-
-
-        </style>
         <title>香港路邊傷殘泊車位搜尋器 | Disabled Parking Spaces Hong Kong</title>            
         <link rel="stylesheet" type="text/css" href="../css/style_m.css">	
         <link rel="stylesheet" type="text/css" href="../css/demo.css" />
@@ -153,6 +103,9 @@
 
 
         <script>
+
+
+/*
             function autocomplet(){
                 var min_length = 1 ; // min caracters to display the autocomplete
                 var keyword = $('#searchInput').val() ;
@@ -170,13 +123,15 @@
                     $('#searchResult').hide() ;
                 }
             }
+            
+            */
             // set_item : this function will be executed when we select an item
-//            function set_item(item) {
-//                // change input value
-//                $('#searchInput').val(item);
-//                // hide proposition list
-//                $('#searchResult').show();
-//            }
+            //            function set_item(item) {
+            //                // change input value
+            //                $('#searchInput').val(item);
+            //                // hide proposition list
+            //                $('#searchResult').show();
+            //            }
         </script>
 
         <!-- Google Tag Manager -->
@@ -191,7 +146,15 @@
                         'https://www.googletagmanager.com/gtm.js?id=' + i + dl ;
                 f.parentNode.insertBefore(j ,f) ;
             })(window ,document ,'script' ,'dataLayer' ,'GTM-MF23L7') ;</script>
+
+
+
+
+
         <!-- End Google Tag Manager -->
+
+
+      
     </head>
     <body onload="initialize()">
 
@@ -206,76 +169,95 @@
         <div class="container">
             <div class="mp-pusher" id="mp-pusher">
                 <div class="scroller">
+
+                   
                     <div class="header block block-40 clearfix">
                         <a href="#" id="trigger" class="menu-trigger">                                        
                             <img class="hidden" id="spacer" src='../img/menu-icon.svg'></a>
                     </div>  
-                    <div class="logo">
+                    
+                      <div class="logo">
                         <a>
                             <img  id="logo" src="../img/disabled-parking-logo.svg" alt="香港路邊傷殘泊車位搜尋器" title="香港路邊傷殘泊車位搜尋器">
                         </a>
                     </div>    
-                                      
-                        <div id="map">
-                        </div>  
+
+                  
+
+                    <div id="map">
+                    </div>  
 
                 </div><!-- /scroller -->
                 <!-- mp-menu -->
                 <nav id="mp-menu" class="mp-menu"> 
                     <div class="mp-level" id="mainMenu" >  
 
-
-
-                        <?php
-                        require 'menu.php';
-                        ?>          
+                        <?php require 'menu.php'; ?>        
 
                     </div>
                 </nav>
-                <div id="myModal" class="modal">
-                    <!-- Modal content -->
-                    <div class="modal-content">
-                        <div class="modal-wrapper">
-                            <div class="search_container" style="padding:0px 5px 0px 5px;">
-                                <img id="searchIcon" src="../img/sc_white.svg" style="color:white; float:left; margin: 2px 10px 0px 0px;">                                              
-                                <input type="text" id="searchInput" onkeyup="autocomplet()" placeholder="尖沙咀, Tsim Sha Tsui...." onblur="if (this.placeholder === '') {
-                                            this.placeholder = '尖沙咀, Tsim Sha Tsui....' ;
-                                        }" onfocus="if (this.placeholder === '尖沙咀, Tsim Sha Tsui....') {
-                                                    this.placeholder = '' ;
-                                                }" >
-                                <span class="clrSchBtn btn" style="border-style:none; padding: 0; margin-left: 10px;">
-                                    <img src="../img/cb.svg" id="clearButton" title="消除" alt="Clear">
-                                </span>                                         
-                                <span class="cloSchBtn btn" style="color: #fff; float: right; margin-top: 10px;">
-                                    <img src="../img/upArrow.svg" id="upArrow" title="關閉" alt="Close">
-                                </span>
-                            </div>
-                            <div class="modal-body">                                      
-                                <form>                                                                                      
-                                    <ul id="searchResult" style="background-color:#48b5e9; color: white"></ul>
+                <!--
+                 <div id="myModal" class="modal">
+                    
+                     <div class="modal-content">
+                         <div class="modal-wrapper">
 
-                                </form>
-                            </div>
-                            <div class="modal-footer">
 
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- The Modal -->
+                           
+                             <div class="search_container" >
+
+                                 <img id="searchIcon" src="../img/sc_white.svg" >                                              
+                                 <input type="text" id="searchInput" onkeyup="autocomplet()" placeholder="尖沙咀, Tsim Sha Tsui...." onblur="if (this.placeholder === '') {
+                                             this.placeholder = '尖沙咀, Tsim Sha Tsui....' ;
+                                         }" onfocus="if (this.placeholder === '尖沙咀, Tsim Sha Tsui....') {
+                                                     this.placeholder = '' ;
+                                                 }" >
+                                 <span class="clrSchBtn btn" >
+                                     <img src="../img/cb.svg" id="clearButton" title="消除" alt="Clear">
+                                 </span>                                         
+                                 <span class="cloSchBtn btn">
+                                     <img src="../img/upArrow.svg" id="upArrow" title="關閉" alt="Close">
+                                 </span>
+                             </div>                          <div class="modal-body">                                      
+                                 <form>                                                                                      
+                                     <ul id="searchResult" ></ul>
+
+                                 </form>
+                             </div>
+                             <div class="modal-footer">
+
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+                -->
+                <!-- The Modal -->
+
+
+
                 <div>
-                    <span id="ul-btn" style="bottom:50px;right:15px;position:absolute;z-index: 2;"  class="btn">
+                    <span id="ul-btn"  class="btn">
                         <img src="../img/ul.svg" class="imageBtn hidden" id="usrLocButton" alt="現在位置" title="現在位置"></span>
                 </div>
                 <div> 
-                    <div id="sch-btn"  style="right:10px;" class="btn">
+                    <!--
+                    <div id="sch-btn" class="btn">
                         <img src="../img/sc_white.svg" class="imageBtn hidden" id="schButton" alt="搜尋" title="搜尋"></div>
+                    -->
+
                     <div id="map-btn"  class="btn" >
                         <img src="../img/mp.svg"  class="imageBtn hidden" id="mapViewButton" alt="返回地圖" title="返回地圖"></div>                   
+
+
                     <div id="showChkBox" class="hidden">
 
-                        <input type="checkbox" value="None" id="drawMarkerChk" name="check" checked="checked" style="display:inline-block; width:19px; height:19px; margin:0px 2px 10px; vertical-align: middle; cursor: pointer;"/>
-                        <label id="ctext" for="drawMarkerChk" style="margin-top: 4px; margin-right:4px; margin-bottom:2px; color:white;font-size: 0.8em;font-family: sans-serif;font-weight: 900; float:right" ></label>
+                        <input type="checkbox" value="None" id="drawMarkerChk" name="check" checked="checked" />
+                        <label id="ctext" for="drawMarkerChk" ></label>
 
+
+                    </div>
+                    <div>
+                        <form> <input id="pac-input" type="text" placeholder="輸入目的地" autocomplete="off" ></form>
 
                     </div>
                 </div>
@@ -297,7 +279,7 @@
 
 
                                     <a href="mailto:fan.danny@gmail.com?Subject=About%20Disabled%20Parking%20Spaces%20Hong%20Kong" target="_top"><img class="footerIcon" src="../img/disabled-parking-mail.png" alt="Email" title="Email to Me" ></a>       
-                                    <a href="intent://send/85293771344#Intent;scheme=smsto;package=com.whatsapp;action=android.intent.action.SENDTO;end"><img  class="footerIcon" src="../img/disabled-parking-whatsapp.png" alt="whatsApp" title="WhatsApp to Me"></a>
+                                    <a href="https://api.whatsapp.com/send?phone=85293771344"><img  class="footerIcon" src="../img/disabled-parking-whatsapp.png" alt="whatsApp" title="WhatsApp to Me"></a>
                                     <a href="https://www.facebook.com/intel.centrino.92" target="_blank"><img  class="footerIcon" src="../img/disabled-parking-facebook.png" alt="Facebook" title="My Facebook" ></a>
 
 
@@ -316,41 +298,132 @@
         </div><!-- /container -->
         <script src="../js/classie.js" type="text/javascript"></script>
         <script src="../js/mlpushmenu.js" type="text/javascript"></script>
+
+        <script async defer src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDIjv0zlUY5Na_5e4atBqwkGTtYVKHecec&libraries=places&callback=initialize" ></script>  
+        <script  async defer src="../js/map.js" type="text/javascript"  ></script>  
+
+
         <script>
-                                            // Get the modal
-                                            var footerModal = document.getElementById('footerModal') ;
-
-
-// Get the button that opens the modal
-                                            var footerBtn = document.getElementById("footerBtn") ;
-
-
-// Get the <span> element that closes the modal
-                                            var FooterSpan = document.getElementsByClassName("footerClose")[0] ;
-
-// When the user clicks the button, open the modal
-                                            footerBtn.onclick = function(){
-                                                footerModal.style.display = "block" ;
-                                            } ;
-
-// When the user clicks on <span> (x), close the modal
-                                            FooterSpan.onclick = function(){
-                                                footerModal.style.display = "none" ;
-                                            } ;
-
-// When the user clicks anywhere outside of the modal, close it
-                                            window.onclick = function(event){
-                                                if (event.target === footerModal) {
-                                                    footerModal.style.display = "none" ;
-                                                }
-                                            } ;
 
 
 
-                                            document.getElementById("ctext").innerHTML = "顯示附近" ;
-                                            new mlPushMenu(document.getElementById('mp-menu') ,document.getElementById('trigger')) ;
+
+                        // Get the modal
+                        var footerModal = document.getElementById('footerModal') ;
+
+
+                        // Get the button that opens the modal
+                        var footerBtn = document.getElementById("footerBtn") ;
+
+
+                        // Get the <span> element that closes the modal
+                        var FooterSpan = document.getElementsByClassName("footerClose")[0] ;
+
+                        // When the user clicks the button, open the modal
+                        footerBtn.onclick = function(){
+                            footerModal.style.display = "block" ;
+                        } ;
+
+                        // When the user clicks on <span> (x), close the modal
+                        FooterSpan.onclick = function(){
+                            footerModal.style.display = "none" ;
+                        } ;
+
+                        // When the user clicks anywhere outside of the modal, close it
+                        window.onclick = function(event){
+                            if (event.target === footerModal) {
+                                footerModal.style.display = "none" ;
+                            }
+                        } ;
+
+
+
+                        document.getElementById("ctext").innerHTML = "顯示附近" ;
+                        new mlPushMenu(document.getElementById('mp-menu') ,document.getElementById('trigger')) ;
+
+
+
+
+
+                        function initialize(){
+
+                            /* lang = 1: Chinese, 2: English  */
+                            lang = 1 ;
+                            $("#mapViewButton").removeClass('hidden') ;
+                            $("#showChkBox").removeClass('hidden') ;
+                            $('#schButton').removeClass('hidden') ;
+                            $('#usrLocButton').removeClass('hidden') ;
+                            $('#usrLocButton').hide() ;
+                            $('#spacer').removeClass('hidden') ;
+                            $('#footer').removeClass('hidden') ;
+                            $('#spacer').hide() ;
+                            $('#mapViewButton').hide() ;
+                            $('#strViewButton').hide() ;
+                            $('#schButton').hide() ;
+                            $('#showChkBox').hide() ;
+                            $('#footer').hide() ;
+
+
+                            var remove_featureType = [
+                                {
+                                    "featureType" : "poi" ,
+                                    "elementType" : "labels" ,
+                                    "stylers" : [
+                                        {"visibility" : "off"}
+                                    ]
+                                } ,{
+                                    "featureType" : "transit.station.bus" ,
+                                    "elementType" : "all" ,
+                                    "stylers" : [
+                                        {"visibility" : "off"}
+                                    ]
+                                } ,{
+                                    "featureType" : "transit.station.rail" ,
+                                    "elementType" : "labels" ,
+                                    "stylers" : [
+                                        {"visibility" : "off"}
+                                    ]
+                                }
+                            ] ;
+
+                            var latlng = new google.maps.LatLng(22.3113729 ,114.1719263) ;
+                            var myOptions = {
+                                center : latlng ,
+                                zoom : 16 ,
+                                disableDefaultUI : true ,
+                                mapTypeId : google.maps.MapTypeId.ROADMAP ,
+                                zoomControl : false ,
+                                mapTypeControl : false ,
+                                streetViewControl : false ,
+                                fullscreenControl : false
+                            } ;
+                            map = new google.maps.Map(document.getElementById("map") ,myOptions) ;
+
+                            map.setOptions({styles : remove_featureType}) ;
+                            google.maps.event.addListener(map ,'idle' ,chkDrawMarker) ;
+                            window.map = map ;
+                            init = 1 ;
+                            getUsrLocation() ;
+
+
+                            googleSearch() ;
+
+
+
+
+
+                        }
+
+
+
+
+
+
+
+
 
         </script>
+
 
 
 

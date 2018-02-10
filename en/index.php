@@ -24,39 +24,7 @@
         <script>
 
 
-            function initialize(){
-
-                /* lang = 1: Chinese, 2: English  */
-                lang = 2 ;
-                $("#mapViewButton").removeClass('hidden') ;
-                $("#showChkBox").removeClass('hidden') ;
-                $('#schButton').removeClass('hidden') ;
-                $('#usrLocButton').removeClass('hidden') ;
-                $('#usrLocButton').hide() ;
-                $('#spacer').removeClass('hidden') ;
-                $('#spacer').hide() ;
-                $('#mapViewButton').hide() ;
-                $('#strViewButton').hide() ;
-                $('#schButton').hide() ;
-                $('#showChkBox').hide() ;
-                var latlng = new google.maps.LatLng(22.3113729 ,114.1719263) ;
-                var myOptions = {
-                    center : latlng ,
-                    zoom : 16 ,
-                    mapTypeId : google.maps.MapTypeId.ROADMAP ,
-                    zoomControl : false ,
-                    mapTypeControl : false ,
-                    fullscreenControl : false ,
-                    streetViewControl : false
-                } ;
-                map = new google.maps.Map(document.getElementById("map") ,myOptions) ;
-                window.map = map ;
-                map.setOptions({styles : remove_featureType}) ;
-                google.maps.event.addListener(map ,'idle' ,chkDrawMarker) ;
-                window.map = map ;
-                init = 1 ;
-                getUsrLocation() ;
-            }
+           
 
             function getUsrLocation(){
                 n = navigator.geolocation ;
@@ -110,10 +78,9 @@
         <script src="../js/pace.min.js" type="text/javascript"></script>
         <script async defer src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
         <script async defer src="//code.jquery.com/jquery-1.11.3.min.js" type="text/javascript"></script>
-        <script src="//maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCphX_SNu5HcrQAMHbkJlt-g7vJuX_MGo0" type="text/javascript">
-        </script>	
+       	
         <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
-        <script async defer src="../js/map.js" type="text/javascript" ></script>
+       
         <script src="../js/modernizr.custom.js" type="text/javascript"></script>
         <link rel="apple-touch-icon" sizes="57x57" href="../img/apple-touch-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="../img/apple-touch-icon-60x60.png">
@@ -264,12 +231,14 @@
                         <img src="../img/ul.svg" class="imageBtn hidden" id="usrLocButton" alt="Current Location" title="Current Location"></span>
                 </div>
                 <div> 
+                    
+                    <!--
                     <div id="sch-btn" class="btn" style="right:10px; ">
                         <img src="../img/sc_white.svg" class="imageBtn hidden" id="schButton" alt="Search" title="Search"></div>
-
+-->
                     <div id="map-btn" class="btn">
                         <img src="../img/mp.svg"  class="imageBtn hidden" id="mapViewButton" alt="Map View" title="Map View"></div>                   
-
+<input id="pac-input" class="controls" type="text" placeholder="Your Destination..." >
                     <div id="showChkBox" class="hidden">
 
                         <input type="checkbox" value="None" id="drawMarkerChk" name="check" checked="checked" style="display:inline-block; width:19px; height:19px; margin:0px 2px 10px; vertical-align: middle; float:left; cursor: pointer;transform: translateY(20%)"/>
@@ -310,6 +279,9 @@
         </div><!-- /container -->
         <script src="../js/classie.js" type="text/javascript"></script>
         <script src="../js/mlpushmenu.js" type="text/javascript"></script>
+          <script async defer src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDIjv0zlUY5Na_5e4atBqwkGTtYVKHecec&libraries=places&callback=initialize" ></script>  
+    
+        <script async defer src="../js/map.js" type="text/javascript"  ></script>   
         <script>
                                             // Get the modal
                                             var footerModal = document.getElementById('footerModal') ;
@@ -340,6 +312,107 @@
                                             document.getElementById("ctext").innerHTML = "nearby" ;
                                             new mlPushMenu(document.getElementById('mp-menu') ,document.getElementById('trigger')) ;
 
+       
+        
+        
+         function initialize(){
+
+                /* lang = 1: Chinese, 2: English  */
+                lang = 2 ;
+                $("#mapViewButton").removeClass('hidden') ;
+                $("#showChkBox").removeClass('hidden') ;
+                $('#schButton').removeClass('hidden') ;
+                $('#usrLocButton').removeClass('hidden') ;
+                $('#usrLocButton').hide() ;
+                $('#spacer').removeClass('hidden') ;
+                $('#spacer').hide() ;
+                $('#mapViewButton').hide() ;
+                $('#strViewButton').hide() ;
+                $('#schButton').hide() ;
+                $('#showChkBox').hide() ;
+                var latlng = new google.maps.LatLng(22.3113729 ,114.1719263) ;
+                var myOptions = {
+                    center : latlng ,
+                    zoom : 16 ,
+                    mapTypeId : google.maps.MapTypeId.ROADMAP ,
+                    zoomControl : false ,
+                    mapTypeControl : false ,
+                    fullscreenControl : false ,
+                    streetViewControl : false
+                } ;
+                map = new google.maps.Map(document.getElementById("map") ,myOptions) ;
+                window.map = map ;
+                map.setOptions({styles : remove_featureType}) ;
+                google.maps.event.addListener(map ,'idle' ,chkDrawMarker) ;
+                window.map = map ;
+                init = 1 ;
+                getUsrLocation() ;
+                
+                 // Create the search box and link it to the UI element.
+        var input = document.getElementById('pac-input');
+        var searchBox = new google.maps.places.SearchBox(input);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+        // Bias the SearchBox results towards current map's viewport.
+        map.addListener('bounds_changed', function() {
+          searchBox.setBounds(map.getBounds());
+        });
+
+        var smarkers = [];
+        // Listen for the event fired when the user selects a prediction and retrieve
+        // more details for that place.
+        searchBox.addListener('places_changed', function() {
+          var places = searchBox.getPlaces();
+
+          if (places.length == 0) {
+            return;
+          }
+
+          // Clear out the old markers.
+          smarkers.forEach(function(marker) {
+            marker.setMap(null);
+          });
+          smarkers = [];
+
+          // For each place, get the icon, name and location.
+          var sbounds = new google.maps.LatLngBounds();
+          
+          places.forEach(function(place) {
+            if (!place.geometry) {
+              console.log("Returned place contains no geometry");
+              return;
+            }
+                      
+            
+
+            // Create a marker for each place.
+            smarkers.push(new google.maps.Marker({
+              map: map,             
+              title: place.name,
+              position: place.geometry.location
+            }));
+            
+            
+
+            if (place.geometry.viewport) {
+              // Only geocodes have viewport.
+              sbounds.union(place.geometry.viewport);
+            } else {
+              sbounds.extend(place.geometry.location);
+            }                               
+            
+          });
+          map.fitBounds(sbounds);
+        });
+                
+                
+                
+            }
+        
+        
+        
+        
+        
         </script>
 
     </body>

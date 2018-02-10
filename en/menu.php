@@ -55,7 +55,7 @@ while ($row = mysqli_fetch_assoc($result_l)) {
 
 <div style="height:60px">
     
-    <img id="homeBtn" class="btn" alt="Home" title="Home" src="../img/home.svg" style="position: relative;     float: left;    left: 20px;     top:17px;">
+    <img id="homeBtn" class="btn" alt="Home" title="Home" src="../img/home.svg" >
     <img id="tc" class="btn" alt="繁中" title="繁中" src="../img/tc.svg">
    
    
